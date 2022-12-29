@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nonconsumable.harmonica</key>
+	<string>The complete toolkit with No Ads. Includes translation from first position to twelve alternative positions for all twelve richter harmonicas</string>
+    <key>subscription.htkpro</key>
+    <string>The complete toolkit with No Ads. Includes translation from first position to twelve alternative positions for all twelve richter harmonicas. \pMonthly Subscription.</string>
+    <key>subscription.htkpro12</key>
+    <string>The complete toolkit with No Ads. Includes translation from first position to twelve alternative positions for all twelve richter harmonicas. \pYearlySubscription.</string>
+</dict>
+</plist>

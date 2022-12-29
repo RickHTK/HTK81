@@ -1,0 +1,71 @@
+{
+  "identifier" : "4A29459F",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "BB706393",
+      "localizations" : [
+
+      ],
+      "name" : "HTKPRO",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "1",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "37A0540F",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "(monthly)",
+              "displayName" : "The Harmonica Toolkit",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "subscription.htkpro",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Harmonica Toolkit Pro Monthly",
+          "subscriptionGroupID" : "BB706393",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "10",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "DCF79B21",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "(yearly)",
+              "displayName" : "The Harmonica Toolkit",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "subscription.htkpro12",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Harmonica Toolkit Pro Yearly",
+          "subscriptionGroupID" : "BB706393",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}
