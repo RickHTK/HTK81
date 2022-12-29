@@ -52,9 +52,11 @@ class TunerConductor: TunerConductorModel {
     
     /// Testing Specific Variables
     var _testPitch : Float = 200.0
-    ///
+    let environmentType : String = ProcessInfo.processInfo.environment["Environment"] ?? "UNKNOWN"
     
-    let environmentType : String = ""
+
+    
+    
     /* WHAT IS THIS?? */
     var test_id : Int = 0
     
@@ -109,6 +111,9 @@ class TunerConductor: TunerConductorModel {
     // init (ext_tracker: HTKPitchTapProtocol) {
     //init (tracker1: HTKPitchTapProtocol) { // inject tracker
     {
+        print ("ENV SET UP:")
+        print (ProcessInfo.processInfo.environment["Environment"] ?? "UNKNOWN")
+        
         
         let sustainSensitivity = sustainSensitivity
     
@@ -138,11 +143,11 @@ class TunerConductor: TunerConductorModel {
                 if self.environmentType == "Test1" {
                     self.update_test(0, 0, sustainSensitivity: 1)
                 }
-                ///Takes A frequency and converts to Notename
+                ///Function getTestFrequency Generates mock frequencies and returns them
                 else if self.environmentType == "Test2" {
                     self.update(self.getTestFrequency(), 500, sustainSensitivity: self.sustainSensitivity)
                 }
-                else if self.environmentType == "" {
+                else if self.environmentType == "Production" {
                     self.update(pitch[0], amp[0], sustainSensitivity: self.sustainSensitivity)
                 }
             }
@@ -155,7 +160,7 @@ class TunerConductor: TunerConductorModel {
         //conductor = TunerConductor()
     }
     
-    
+    ///Function getTestFrequency Generates mock frequencies and returns them
     func getTestFrequency () -> Float
     {
         _testPitch += 0.1
