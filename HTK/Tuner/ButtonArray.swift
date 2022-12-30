@@ -5,6 +5,12 @@
 //  Created by HarmonicaToolkit on 30/12/2022.
 //
 
+struct buttonArrayStruct
+{
+    
+    let keyboard : [[interfaceButton]] = buttonArray(note: "", noteHistory: [noteDetail ( note: "£", sustainLength : 1, pianoKey: 0)], position: 0, harmonicaBase: 13, sharpsFlats: 0, mode: 0, register: 0, translationMap: [0:0])
+}
+
 func buttonArray (note: String, noteHistory : [noteDetail] , position : Int, harmonicaBase : Int, sharpsFlats : Int, mode : Int, register : Int, translationMap : [Int : Int] ) -> [[interfaceButton]] {
     
     let buttonColumns = [0,1,2,3,4,5,6,7,8,9,10,11]

@@ -25,7 +25,6 @@
 		1D45BE0228C8AD2500823044 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45BE0028C8AD2500823044 /* SubscriptionsView.swift */; };
 		1D692FCF28D384DD0084CBCD /* HarmonicaToolkit.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C4A2F2C3253D45D4007C1032 /* HarmonicaToolkit.entitlements */; };
 		1D7CB7C92898592E005BFF68 /* BannerAdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CB7C82898592E005BFF68 /* BannerAdsView.swift */; };
-		1D7DF65E295B0DFC00D33FE1 /* BespokePitchTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */; };
 		1D8384D628C348D20046C017 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8384D528C348D20046C017 /* GridView.swift */; };
 		1D8384D828C3491C0046C017 /* setupParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8384D728C3491C0046C017 /* setupParams.swift */; };
 		1DA35E0528CD0FF500969FB4 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1DA35E0428CD0FF500969FB4 /* AudioKit */; };
@@ -46,6 +45,7 @@
 		CE757CC2295F25390011420E /* InterfaceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC1295F25390011420E /* InterfaceButtonView.swift */; };
 		CE757CC4295F263E0011420E /* ButtonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC3295F263E0011420E /* ButtonArray.swift */; };
 		CE757CC6295F26CA0011420E /* ButtonDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */; };
+		CE8D4069295F975B008458D8 /* buttonArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D4068295F975B008458D8 /* buttonArrayTests.swift */; };
 		CE8DCF60295F6059001972D4 /* HarmonicaToolkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DCF5F295F6059001972D4 /* HarmonicaToolkitTests.swift */; };
 		CE8DCF67295F626B001972D4 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DCF66295F626B001972D4 /* AudioKit */; };
 		CE8DCF69295F6270001972D4 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DCF68295F6270001972D4 /* AudioKitEX */; };
@@ -101,6 +101,7 @@
 		CE757CC1295F25390011420E /* InterfaceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceButtonView.swift; sourceTree = "<group>"; };
 		CE757CC3295F263E0011420E /* ButtonArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonArray.swift; sourceTree = "<group>"; };
 		CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefinitions.swift; sourceTree = "<group>"; };
+		CE8D4068295F975B008458D8 /* buttonArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonArrayTests.swift; sourceTree = "<group>"; };
 		CE8DCF5D295F6059001972D4 /* HarmonicaToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarmonicaToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8DCF5F295F6059001972D4 /* HarmonicaToolkitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +254,7 @@
 			children = (
 				1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */,
 				CE8DCF5F295F6059001972D4 /* HarmonicaToolkitTests.swift */,
+				CE8D4068295F975B008458D8 /* buttonArrayTests.swift */,
 			);
 			path = HarmonicaToolkitTests;
 			sourceTree = "<group>";
@@ -416,6 +418,7 @@
 			files = (
 				CE8DCF6C295F6338001972D4 /* BespokePitchTap.swift in Sources */,
 				CE8DCF60295F6059001972D4 /* HarmonicaToolkitTests.swift in Sources */,
+				CE8D4069295F975B008458D8 /* buttonArrayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
