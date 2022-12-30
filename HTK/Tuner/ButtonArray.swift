@@ -31,14 +31,14 @@ func buttonArray (note: String, noteHistory : [noteDetail] , position : Int, har
                 buttonKey.first (where: {$0.button == buttonTagNo})
                                    )
             
-            let currentButton = interfaceButton (buttonColor: chosenButton!.backColor!,
-                                                 textColor: chosenButton!.textColor!,
-                                                 title: (chosenButton?.buttonLabel)!,
-                                                 wingdings: chosenButton!.wingdings!,
+            let currentButton = interfaceButton (buttonColor: chosenButton?.backColor ?? .black,
+                                                 textColor: chosenButton?.textColor ?? .white,
+                                                 title: (chosenButton?.buttonLabel) ?? "x",
+                                                 wingdings: chosenButton?.wingdings ?? "x",
                                                  rowNo: rowValue,
                                                  colNo: columnValue,
                                                  Tag: rowValue * 100 + columnValue,
-                                                 displayed: chosenButton!.displayed!
+                                                 displayed: chosenButton?.displayed ?? ""
             )
             buttonRow.append (currentButton)
             

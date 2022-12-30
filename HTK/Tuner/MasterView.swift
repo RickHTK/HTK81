@@ -107,37 +107,6 @@ struct MasterView: View {
             
             // NAVIGATION TO TUNER VIEW -- THE SCREEN THAT MIMICS THE HARMONICA
             
-
-            
-            
-                //Label("Text", systemImage: "mic").buttonStyle(.plain) //.font(.system(size: 40))
-                
-                /*
-                if positionIndex == 0 {Text (" Play \(selectedHarmonica) In First Position - No Translation").foregroundColor(.yellow).bold().font(.system(size: 20))
-                        .padding(16)
-                        .background(.blue)
-                        .frame(maxWidth: .infinity)
-                        .background(.blue)
-                        .cornerRadius(8)
-                    
-                }
-                else {
-                    Text  ("Translate to \(selectedPosition) Position >")
-                        .foregroundColor(.yellow).bold()
-                        .font(.system(size: 20))
-                        .padding(16)
-                        .background(.blue)
-                        .frame(maxWidth: .infinity)
-                        .background(.blue)
-                        .cornerRadius(8)
-                    
-                }
-                 {UILabel ()}*/
-                
-            
-            
-            
-            
             NavigationLink(destination: TunerView <TunerConductor> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensetivityIndex, adsOnOff: store.getAdsOnOff(), conductor: TunerConductor()))
             {
                 Label("", systemImage: "mic").font(.system(size: 40))
@@ -226,9 +195,6 @@ struct MasterView: View {
                     
                     Spacer(minLength: 35)
                 }
-                
-                
-                //storeCallView ().environmentObject(store)
          
                     NavigationLink(destination: SubscriptionsView().environmentObject(store) ) { Text("Remove Ads - Purchase Features")
                         

@@ -175,9 +175,22 @@ let freqRangeDict :  [String : (Float, Float)] =
 
 
 
+struct KeyboardButton {
+    var button : Int = 0; // button
+    var offset : Int? = nil; // offset
+    var wingdings : String? = nil; // wingDings
+    //var background : String? = nil; // background
+    var backColor : UIColor? = nil; // background
+    var displayed : String? = nil; // displayed Y/N
+    var textColor : UIColor? = nil; // Text Colour
+    //var foreColor : UIColor? = nil; // Text Colour
+    var boilerplate : String? = nil; // Text displayed
+    var buttonLabel : String? = nil; // Text displayed
+    var fontSize : Int = 10; // text size
+    
+}
 
-
-
+/*
 struct keyboardButton  {
     var button : Int = 0; // button
     var offset : String? = nil; // offset
@@ -220,8 +233,7 @@ struct keyboardButton  {
         
     }
     
-    
-}
+}*/
 
 class Notes {
     var pianoKey : Int? = nil; // pianoKey

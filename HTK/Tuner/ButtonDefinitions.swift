@@ -49,21 +49,21 @@ func getNotes( flatsSharps: Int) -> [Notes]{
     return _notes
 }
 
+
+
 func getColor (colour: String) -> UIColor
 {
-    
-let black = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-let white = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-let lblue1 = UIColor(red: 38/255.0, green: 49/255.0, blue: 197/255.0, alpha: 0.5) // sRGB
-let lblue2 = UIColor(red: 38/255.0, green: 49/255.0, blue: 197/255.0, alpha: 0.7) // sRGB
-let lblue3 = UIColor(red: 38/255.0, green: 49/255.0, blue: 190/255.0, alpha: 0.9) // sRGB
-let lorange1 = UIColor(red: 255/255.0, green: 150/255.0, blue: 75/255.0, alpha: 0.8) // sRGB
-let orange = UIColor(red: 255/255.0, green: 150/255.0, blue: 75/255.0, alpha: 0.8) // sRGB
-let green = UIColor(red: 0/255.0, green: 150/255.0, blue: 75/255.0, alpha: 1.0) // sRGB
+let black =     UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+let white =     UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+let lblue1 =    UIColor(red: 38/255.0, green: 49/255.0, blue: 197/255.0, alpha: 0.5) // sRGB
+let lblue2 =    UIColor(red: 38/255.0, green: 49/255.0, blue: 197/255.0, alpha: 0.7) // sRGB
+let lblue3 =    UIColor(red: 38/255.0, green: 49/255.0, blue: 190/255.0, alpha: 0.9) // sRGB
+let lorange1 =  UIColor(red: 255/255.0, green: 150/255.0, blue: 75/255.0, alpha: 0.8) // sRGB
+let orange =    UIColor(red: 255/255.0, green: 150/255.0, blue: 75/255.0, alpha: 0.8) // sRGB
+let green =     UIColor(red: 0/255.0, green: 150/255.0, blue: 75/255.0, alpha: 1.0) // sRGB
 let lgreen = UIColor(red: 0/255.0, green: 150/255.0, blue: 75/255.0, alpha: 0.4) // sRGB
 let blowColor = UIColor(red: 1.0, green:1.0, blue: 0.717, alpha: 1.0) // sRGB
 let drawColor = UIColor(red: 1.0, green:0.8, blue: 0.417, alpha: 0.7) // sRGB
-
 
 var colourRet : UIColor
 switch colour
@@ -97,21 +97,6 @@ return colourRet
 }
 
 
-struct KeyboardButton {
-    var button : Int = 0; // button
-    var offset : Int? = nil; // offset
-    var wingdings : String? = nil; // wingDings
-    //var background : String? = nil; // background
-    var backColor : UIColor? = nil; // background
-    var displayed : String? = nil; // displayed Y/N
-    var textColor : UIColor? = nil; // Text Colour
-    //var foreColor : UIColor? = nil; // Text Colour
-    var boilerplate : String? = nil; // Text displayed
-    var buttonLabel : String? = nil; // Text displayed
-    var fontSize : Int = 10; // text size
-    
-}
-
 // Uses a PLIST to get the current button definitions
 // Runs in dynamic or static mode.
 // in dynamic mode (call type = dynamic) displayed for the note being played is set to P which highlights the button
@@ -122,8 +107,7 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
     let notes = getNotes(flatsSharps: sharpsFlats)
     
     if let allData = NSArray(contentsOfFile: AUTO_PLIST_HARPDEF_PATH!) {
-        
-        
+     
         for dict in allData {
             
             guard let dict = dict as? [String: AnyObject] else {continue}
@@ -136,27 +120,22 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
                                             textColor: getColor (colour: (dict["textColor"] as? String ?? "white")),
                                             boilerplate: dict["boilerplate"] as? String
                                             )
-            
-            
-            // Boilerplate buttons
+
+            /// Boilerplate buttons
             if thisButton.displayed == "B" {
                 thisButton.buttonLabel = thisButton.boilerplate
                 
             }
             
-            // Playing buttons
+            /// Playing buttons
             else if thisButton.displayed == "1" {
                 
                 let holeNote =  notesBase + thisButton.offset! + harmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
-                //let holeNote =  harmonica_base  + harmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
                 
-                //do {
+                
                 thisButton.buttonLabel = notes[holeNote].noteName! as String //try
-                //} catch {}
-
-                //print ("noteName in buttondefs : ", notes[holeNote].noteName!)
                 
-                // The note being played currently
+                /// The note being played currently
                 if notes[holeNote].noteNameSharps! == note  && callType == "dynamic" && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
                         
                     thisButton.displayed = "P"
@@ -164,7 +143,7 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
                     }
             }
             
-            // History buttons
+            /// History buttons
             else if thisButton.displayed == "H"  {
                 thisButton.buttonLabel = thisButton.wingdings
             }
@@ -172,10 +151,8 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
             else {
                 thisButton.buttonLabel = "NA" // changed
             }
-            //if callType != "static" && buttonDefns.button != 103 && buttonDefns.button != 207 {
+            
                 _buttonDefns.append(thisButton)
-                
-            //}
         }
     }
     

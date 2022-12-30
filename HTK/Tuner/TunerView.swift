@@ -25,8 +25,6 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
 
     let adsOnOff : ads = .AdsOn
     
-    
-    
     @ObservedObject var conductor : TunerObservable
     
     init ( position : Int = 15, harmonicaBase: Int = 0, sharpsFlats: Int = 0, freqRange: (Float, Float) =  (2800.00, 80.00), mode: Int = 0 , register: Int = 0, translationMap: [Int:Int] = [0:0], sustainSensitivity :Int = 1, adsOnOff: ads = .AdsOn, conductor: TunerObservable)
@@ -39,9 +37,7 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
         self.translationMap = translationMap
         self.conductor = conductor
         
-
     }
-    
     
     var body: some View {
         

@@ -41,7 +41,7 @@ class TunerConductor: TunerConductorModel {
     let silence: Fader
     
     //var tracker1:  PitchTap!
-    var tracker: HTKPitchTapProtocol! // PitchTap!
+    var tracker: PitchTap! // PitchTap!
     
     var currentNote : noteDetail // =  noteDetail (note: "REST",sustainLength: 0,pianoKey: 0)
     
@@ -87,13 +87,15 @@ class TunerConductor: TunerConductorModel {
         silence = Fader(tappableNodeC, gain: 0)
         engine.output = silence
         
-                tracker = HTKPitchTap (input, handler: {pitch, amp in
+                tracker = PitchTap (input, handler: {pitch, amp in
                     DispatchQueue.main.async
                     {
                             self.update(pitch[0], amp[0], sustainSensitivity: self.sustainSensitivity)
                     }
                 }
                 )
+        
+
     }
     
     func start() {
@@ -136,9 +138,11 @@ class TunerConductor: TunerConductorModel {
             return
         }       /// pitch range depends on the harmonica key
         
-        /// Observable Data
+        /// Observable @Published Data
         data.pitch = pitch
         data.amplitude = amp
+        
+        
         
         var noteDetected : String = ""
         var frequency = pitch
