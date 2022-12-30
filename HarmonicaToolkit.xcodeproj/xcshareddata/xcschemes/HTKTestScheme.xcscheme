@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE757CB0295EE5510011420E"
-               BuildableName = "HarmonicaToolkitTests"
+               BlueprintIdentifier = "CE8DCF5C295F6059001972D4"
+               BuildableName = "HarmonicaToolkitTests.xctest"
                BlueprintName = "HarmonicaToolkitTests"
                ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
             </BuildableReference>

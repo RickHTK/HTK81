@@ -1,3 +1,5 @@
+
+
 //
 //  HarmonicaToolkitTests.swift
 //  HarmonicaToolkitTests
@@ -5,11 +7,13 @@
 //  Created by HarmonicaToolkit on 30/12/2022.
 //
 
+@testable import HarmonicaToolkit
 import XCTest
-//import AVFoundation
+import AVFoundation
 import AudioKit
 import AudioKitEX
-@testable import HarmonicaToolkit
+import SoundpipeAudioKit
+
 
 
 /* Not used extension creates a dummy update function in tuner conductor

@@ -3,19 +3,6 @@
 import SwiftUI
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // KEYBOARD
 // View of the Harmonica being played recieves the note being played by the conductor (state object)
 // Called by Tuner
