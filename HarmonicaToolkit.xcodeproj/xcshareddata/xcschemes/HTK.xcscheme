@@ -28,8 +28,8 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DA35E1C28CD26A300969FB4"
-               BuildableName = "HarmonicaToolkitTests.xctest"
+               BlueprintIdentifier = "CE757CB0295EE5510011420E"
+               BuildableName = "HarmonicaToolkitTests"
                BlueprintName = "HarmonicaToolkitTests"
                ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
             </BuildableReference>
