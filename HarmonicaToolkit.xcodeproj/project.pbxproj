@@ -10,7 +10,6 @@
 		176E7F1E25380CAF00602020 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176E7F1D25380CAF00602020 /* Colors.xcassets */; };
 		176E7F2C253A13AB00602020 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E7F2B253A13AA00602020 /* SplashView.swift */; };
 		1D0597C9289429B200AFE2C7 /* pianoNotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D0597C8289429B200AFE2C7 /* pianoNotes.plist */; };
-		1D0F216428721DB4001A645A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F216328721DB4001A645A /* SceneDelegate.swift */; };
 		1D2A6D3628C361E4006C0A49 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2A6D3528C361E4006C0A49 /* StoreView.swift */; };
 		1D2A6D3828C362CE006C0A49 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2A6D3728C362CE006C0A49 /* ProductDetailView.swift */; };
 		1D2A6D3A28C362DD006C0A49 /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2A6D3928C362DD006C0A49 /* ListCellView.swift */; };
@@ -76,7 +75,6 @@
 		176E7F2B253A13AA00602020 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1D0597C8289429B200AFE2C7 /* pianoNotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pianoNotes.plist; sourceTree = "<group>"; };
 		1D0597CA2894706C00AFE2C7 /* Apple Symbols Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Symbols Regular.ttf"; sourceTree = "<group>"; };
-		1D0F216328721DB4001A645A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1D119C2428CC78BE003737C0 /* MOCKTunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCKTunerConductor.swift; sourceTree = "<group>"; };
 		1D2A6D3528C361E4006C0A49 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		1D2A6D3728C362CE006C0A49 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
@@ -195,17 +193,16 @@
 		1D53B37628CA1F480075BF90 /* Tuner */ = {
 			isa = PBXGroup;
 			children = (
+				C446DE472528D8E600138D0A /* AppDelegate.swift */,
+				176E7F2B253A13AA00602020 /* SplashView.swift */,
 				1DC0D4C2295DF60A005AAB14 /* MasterView.swift */,
 				1D3800E7295C884A00F5230D /* TunerConductor1.swift */,
-				1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */,
 				C446DEA12528D9CA00138D0A /* TunerView.swift */,
+				1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */,
 				C446DE4B2528D8E600138D0A /* ContentView.swift */,
-				C446DE472528D8E600138D0A /* AppDelegate.swift */,
-				1D0F216328721DB4001A645A /* SceneDelegate.swift */,
 				6350E7CC27A9360200D0F510 /* KeyboardView.swift */,
 				1D2A6D4728C3CC28006C0A49 /* OrientationExt.swift */,
 				1D8384D528C348D20046C017 /* GridView.swift */,
-				176E7F2B253A13AA00602020 /* SplashView.swift */,
 				1D7CB7C82898592E005BFF68 /* BannerAdsView.swift */,
 				1D8384D728C3491C0046C017 /* setupParams.swift */,
 				1D0597C8289429B200AFE2C7 /* pianoNotes.plist */,
@@ -469,7 +466,6 @@
 				1D2A6D3628C361E4006C0A49 /* StoreView.swift in Sources */,
 				1D3800E9295C888D00F5230D /* TunerConductor1.swift in Sources */,
 				1D2A6D3A28C362DD006C0A49 /* ListCellView.swift in Sources */,
-				1D0F216428721DB4001A645A /* SceneDelegate.swift in Sources */,
 				CE757CC2295F25390011420E /* InterfaceButtonView.swift in Sources */,
 				1D8384D628C348D20046C017 /* GridView.swift in Sources */,
 				1D2A6D3828C362CE006C0A49 /* ProductDetailView.swift in Sources */,

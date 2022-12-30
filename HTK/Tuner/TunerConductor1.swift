@@ -5,9 +5,6 @@
 //  Created by Richard Hardy on 10/09/2022.
 //
 
-
-
-
 import AudioKit
 import AudioKitEX
 import SoundpipeAudioKit
@@ -15,60 +12,25 @@ import SwiftUI
 import AVFoundation
 import CSoundpipeAudioKit
 
-
-
-// Copyright AudioKit. All Rights Reserved. Revision History at http://github.com/AudioKit/AudioKit/
-
-
-
-
 //Tuner Conductor (class) is an observable object that constantly returns information from the microphone and publishes it for use by views
 
 protocol TunerConductorModel : ObservableObject {
     var data : TunerData { get }
-    //var freqRange : (Float) { get }
-    /*
-    var sharpsFlats : Int  { get }
-    var sustainSensitivity : Int { get }
-    */
-    //func update(_ pitch: AUValue, _ amp: AUValue, sustainSensitivity : Int)
     func start()
     func stop()
 }
-
-
-
-
-
-
-    
     
 class TunerConductor: TunerConductorModel {
-//class TunerConductor: ObservableObject {
    
-    
     @Published var data = TunerData()
     
-    
-    /// Testing Specific Variables
-    var _testPitch : Float = 200.0
-    ///
-    
-    let environmentType : String = ""
-    /* WHAT IS THIS?? */
-    var test_id : Int = 0
-    
     var freqRange : (lowestNote: Float, highestNote : Float)  = (85.00, 2800.00) //F2 to F7 could be dynamic
-    
     var sharpsFlats : Int = 0
-    
     var ampSensetivity : Float = 0.6
-    
-    //To remove
+
     var freqLowerLimit : Float = 75.0
     
     var octave = 0
-    
     let engine = AudioEngine()
     //let initialDevice: Device
     
@@ -106,10 +68,7 @@ class TunerConductor: TunerConductorModel {
     let dummyNote = noteDetail ( note: "£", sustainLength : 1, pianoKey: 0)
     
     init()
-    // init (ext_tracker: HTKPitchTapProtocol) {
-    //init (tracker1: HTKPitchTapProtocol) { // inject tracker
     {
-        
         let sustainSensitivity = sustainSensitivity
     
         noteNames = noteNamesWithFlats
@@ -119,8 +78,7 @@ class TunerConductor: TunerConductorModel {
         noteFound2 = dummyNote
         currentNote = dummyNote
         previousNote = dummyNote
-        
-    
+
         guard let input = engine.input else { fatalError() }
         
         tappableNodeA = Fader(input)
@@ -129,41 +87,30 @@ class TunerConductor: TunerConductorModel {
         silence = Fader(tappableNodeC, gain: 0)
         engine.output = silence
         
-        
-
-        tracker = HTKPitchTap (input, handler: {pitch, amp in
-            DispatchQueue.main.async
-            {
-                ///Uses a hardcoded Notename
-                if self.environmentType == "Test1" {
-                    self.update_test(0, 0, sustainSensitivity: 1)
+                tracker = HTKPitchTap (input, handler: {pitch, amp in
+                    DispatchQueue.main.async
+                    {
+                            self.update(pitch[0], amp[0], sustainSensitivity: self.sustainSensitivity)
+                    }
                 }
-                ///Takes A frequency and converts to Notename
-                else if self.environmentType == "Test2" {
-                    self.update(self.getTestFrequency(), 500, sustainSensitivity: self.sustainSensitivity)
-                }
-                else if self.environmentType == "" {
-                    self.update(pitch[0], amp[0], sustainSensitivity: self.sustainSensitivity)
-                }
-            }
-            //self.update(pitch[0], amp[0], sustainSensitivity: self.sustainSensitivity)
+                )
+    }
+    
+    func start() {
+        do {
+            try  engine.start()
+            tracker.start()
+        } catch let err {
+            Log(err)
         }
-        )
-        
+    }
+    
+    func stop() {
+        engine.stop()
+    }
 
-        
-        //conductor = TunerConductor()
-    }
     
-    
-    func getTestFrequency () -> Float
-    {
-        _testPitch += 0.1
-        print (_testPitch)
-        return _testPitch
-        
-    }
-    
+    /// Sets up an array of dummy notes
     func initiateNoteDetail () -> [noteDetail] {
         var initialPlayHistory : [noteDetail] = []
         
@@ -173,18 +120,7 @@ class TunerConductor: TunerConductorModel {
         return initialPlayHistory
     }
     
-    
-    func update_test(_ pitch: AUValue, _ amp: AUValue, sustainSensitivity : Int) {
-        print ("update_test")
-        
-            data.pitch = 400
-            data.amplitude = 1000
-        //data.noteName = "C5"
-        data.noteName = lastSustainedNote
-        data.lastNotes = [dummyNote,dummyNote,dummyNote,dummyNote,dummyNote]
-        
-    }
-    
+    /// The main update script
     func update(_ pitch: AUValue, _ amp: AUValue, sustainSensitivity : Int) {
         
         playHistory = initiateNoteDetail()
@@ -197,21 +133,18 @@ class TunerConductor: TunerConductorModel {
         guard amp > 1.0 else { return } // can change base amplitude in settings
         guard pitch > freqRange.lowestNote && pitch < freqRange.highestNote
         else {
-            //print ("rejected pitch:", pitch);
             return
-        }       // pitch range depends on the harmonica key
+        }       /// pitch range depends on the harmonica key
         
-        // Observable Data
+        /// Observable Data
         data.pitch = pitch
         data.amplitude = amp
         
-        //Uses factor to find the equivalent note in octave 0
         var noteDetected : String = ""
         var frequency = pitch
         var index = 0
         
-        
-        // BLOCK 1 -- Factors the frequency to the current octave by repeatedly dividing
+        /// BLOCK 1 -- Factors the frequency to the current octave by repeatedly dividing
         if pitch > freqLowerLimit {
             while frequency > Float(noteFrequencies[noteFrequencies.count - 1]) {
                 frequency /= 2.0
@@ -221,7 +154,7 @@ class TunerConductor: TunerConductorModel {
             frequency = 0
         }
         
-        //BLOCK 2 -- Find the Octave and Note being played
+        /// BLOCK 2 -- Find the Octave and Note being played
         if frequency > 0 {
             octave = Int(log2f(pitch / frequency))
             //print ("Octave ", octave)
@@ -235,9 +168,7 @@ class TunerConductor: TunerConductorModel {
                     noteDetected = "\(noteNamesWithSharps[checkRange])\(octave)"
                     
                     noteFound2 = noteDetail (note: noteDetected, sustainLength: 1, pianoKey: pianoKey)
-                    
                 }
-                
             }
         }
         else {
@@ -247,15 +178,15 @@ class TunerConductor: TunerConductorModel {
             
         }
         
-        // BLOCK 3 --
+        /// BLOCK 3 --
         
-        // 3a. -- Has the note changed?
+        /// 3a. -- Has the note changed?
         if noteFound2.note == currentNote.note {
             // Increment the playing length
             currentNote.sustainLength += 1
         }
         
-        // 3b. -- if the note has changed
+        /// 3b. -- if the note has changed
         else { //Note has changed now current note is the previous note played, previous note is the head of played history (11)
             
             if currentNote.sustainLength > sustainSensitivity {
@@ -287,7 +218,7 @@ class TunerConductor: TunerConductorModel {
                 }
                 playHistory.append(currentNote)
             }
-        } // End of else
+        } /// End of else
         
         data.noteName = "\(noteNames[index])\(octave)"
         data.pianoKey = pianoKey
@@ -297,21 +228,7 @@ class TunerConductor: TunerConductorModel {
         
         data.lastNotes = playHistoryPublished
         
-    } // End of Func Update
-    
-    
-    func start() {
-        do {
-            try  engine.start()
-            tracker.start()
-        } catch let err {
-            Log(err)
-        }
-    }
-    
-    func stop() {
-        engine.stop()
-    }
-}
+    } /// End of Func Update
+} /// End of class Tuner Conductor
 
 
