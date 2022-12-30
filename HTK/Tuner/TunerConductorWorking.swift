@@ -40,7 +40,6 @@ protocol TunerConductorModel : ObservableObject {
 
 
 
-
     
     
 class TunerConductor: TunerConductorModel {
@@ -98,7 +97,7 @@ class TunerConductor: TunerConductorModel {
     //let dummyNote = noteDetail ( note: "", sustainLength : 1, pianoKey: 0)
     var playHistory : [noteDetail] = []
     
-    let noteFrequencies  = [16.35, 17.32, 18.35, 19.45, 20.6, 21.83, 23.12, 24.5, 25.96, 27.5, 29.14, 30.87]
+    let noteFrequencies : [Float] = [16.35, 17.32, 18.35, 19.45, 20.6, 21.83, 23.12, 24.5, 25.96, 27.5, 29.14, 30.87]
     
     let noteFreqRange : [(lowerRange: Float, higherRange: Float)] = [(15.89, 16.83), (16.84,17.84), (17.85,18.89), (18.90,20.01), (20.02,21.20), (21.21,22.47), (22.48,23.80), (23.81,25.22), (25.23,26.72), (26.73,28.31), (28.32,29.99), (30.00,31.78)]
     
@@ -147,7 +146,7 @@ class TunerConductor: TunerConductorModel {
                 else if self.environmentType == "Test2" {
                     self.update(self.getTestFrequency(), 500, sustainSensitivity: self.sustainSensitivity)
                 }
-                else if self.environmentType == "Production" {
+                else  {
                     self.update(pitch[0], amp[0], sustainSensitivity: self.sustainSensitivity)
                 }
             }
