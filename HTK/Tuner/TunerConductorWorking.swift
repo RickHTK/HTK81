@@ -40,7 +40,6 @@ protocol TunerConductorModel : ObservableObject {
 
 
 
-
     
     
 class TunerConductor: TunerConductorModel {
@@ -52,9 +51,11 @@ class TunerConductor: TunerConductorModel {
     
     /// Testing Specific Variables
     var _testPitch : Float = 200.0
-    ///
+    let environmentType : String = ProcessInfo.processInfo.environment["Environment"] ?? "UNKNOWN"
     
-    let environmentType : String = ""
+
+    
+    
     /* WHAT IS THIS?? */
     var test_id : Int = 0
     
@@ -96,7 +97,7 @@ class TunerConductor: TunerConductorModel {
     //let dummyNote = noteDetail ( note: "", sustainLength : 1, pianoKey: 0)
     var playHistory : [noteDetail] = []
     
-    let noteFrequencies  = [16.35, 17.32, 18.35, 19.45, 20.6, 21.83, 23.12, 24.5, 25.96, 27.5, 29.14, 30.87]
+    let noteFrequencies : [Float] = [16.35, 17.32, 18.35, 19.45, 20.6, 21.83, 23.12, 24.5, 25.96, 27.5, 29.14, 30.87]
     
     let noteFreqRange : [(lowerRange: Float, higherRange: Float)] = [(15.89, 16.83), (16.84,17.84), (17.85,18.89), (18.90,20.01), (20.02,21.20), (21.21,22.47), (22.48,23.80), (23.81,25.22), (25.23,26.72), (26.73,28.31), (28.32,29.99), (30.00,31.78)]
     
@@ -109,6 +110,9 @@ class TunerConductor: TunerConductorModel {
     // init (ext_tracker: HTKPitchTapProtocol) {
     //init (tracker1: HTKPitchTapProtocol) { // inject tracker
     {
+        print ("ENV SET UP:")
+        print (ProcessInfo.processInfo.environment["Environment"] ?? "UNKNOWN")
+        
         
         let sustainSensitivity = sustainSensitivity
     
@@ -138,11 +142,11 @@ class TunerConductor: TunerConductorModel {
                 if self.environmentType == "Test1" {
                     self.update_test(0, 0, sustainSensitivity: 1)
                 }
-                ///Takes A frequency and converts to Notename
+                ///Function getTestFrequency Generates mock frequencies and returns them
                 else if self.environmentType == "Test2" {
                     self.update(self.getTestFrequency(), 500, sustainSensitivity: self.sustainSensitivity)
                 }
-                else if self.environmentType == "" {
+                else  {
                     self.update(pitch[0], amp[0], sustainSensitivity: self.sustainSensitivity)
                 }
             }
@@ -155,7 +159,7 @@ class TunerConductor: TunerConductorModel {
         //conductor = TunerConductor()
     }
     
-    
+    ///Function getTestFrequency Generates mock frequencies and returns them
     func getTestFrequency () -> Float
     {
         _testPitch += 0.1
