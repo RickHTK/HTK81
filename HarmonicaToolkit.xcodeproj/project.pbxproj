@@ -193,7 +193,6 @@
 				1D8384D728C3491C0046C017 /* setupParams.swift */,
 				1D0597C8289429B200AFE2C7 /* pianoNotes.plist */,
 				1DE536B12868A19F001FB927 /* richterHarmonica.plist */,
-				CED06BEE295E37EA00E845DE /* GitTestView.swift */,
 			);
 			path = Tuner;
 			sourceTree = "<group>";
@@ -398,7 +397,6 @@
 				1D2A6D3E28C362F9006C0A49 /* BuyButtonStyle.swift in Sources */,
 				C446DE482528D8E600138D0A /* AppDelegate.swift in Sources */,
 				1D45BE0128C8AD2500823044 /* StatusInfoView.swift in Sources */,
-				CED06BEF295E37EA00E845DE /* GitTestView.swift in Sources */,
 				1DC0D4C3295DF629005AAB14 /* MasterView.swift in Sources */,
 				1D2A6D3628C361E4006C0A49 /* StoreView.swift in Sources */,
 				1D3800E9295C888D00F5230D /* TunerConductorWorking.swift in Sources */,
