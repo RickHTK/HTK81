@@ -20,6 +20,62 @@
                ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1DA35E1C28CD26A300969FB4"
+               BuildableName = "HarmonicaToolkitTests.xctest"
+               BlueprintName = "HarmonicaToolkitTests"
+               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1D119C2828CC8149003737C0"
+               BuildableName = "HarmonicaToolkitMockTunerTests.xctest"
+               BlueprintName = "HarmonicaToolkitMockTunerTests"
+               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CEBDBDE1295ED91200E233FD"
+               BuildableName = "HarmonicaToolkitFrequencyTests.xctest"
+               BlueprintName = "HarmonicaToolkitFrequencyTests"
+               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CEF32059295EDA0100118BA4"
+               BuildableName = "HarmonicaToolkitFrequencyTests2.xctest"
+               BlueprintName = "HarmonicaToolkitFrequencyTests2"
+               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -30,26 +86,6 @@
       language = "en"
       region = "GB">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C446DE592528D8E800138D0A"
-               BuildableName = "HarmonicaToolkitTests.xctest"
-               BlueprintName = "HarmonicaToolkitTests"
-               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D119C2828CC8149003737C0"
-               BuildableName = "HarmonicaToolkitMockTunerTests.xctest"
-               BlueprintName = "HarmonicaToolkitMockTunerTests"
-               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
