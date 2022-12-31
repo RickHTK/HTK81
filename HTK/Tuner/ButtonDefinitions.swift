@@ -1,6 +1,10 @@
 import SwiftUI
 
 
+
+
+
+
 // This defines the style of the button label
 struct keyboardButtonLabelStyle: ButtonStyle {
 
@@ -97,6 +101,95 @@ return colourRet
 }
 
 
+/// The following two structs could be merged
+///  The merger needs to conform as for interfaceButton
+///
+struct interfaceButton  : View, Identifiable, Hashable {
+    
+    
+    // Function to conform to equatable
+    static func == (lhs: interfaceButton, rhs: interfaceButton) -> Bool {
+        return
+        
+            lhs.Tag == rhs.Tag
+        && lhs.displayed == rhs.displayed
+        && lhs.id == rhs.id
+        && lhs.title == rhs.title
+        && lhs.wingdings == rhs.wingdings
+    }
+    
+    
+    var id = UUID() // Variable to satisfy Identifiable
+    
+    //var nonDisplayedColor : UIColor = .white
+    
+    // variable parameters  passed from Array
+    var buttonColor: UIColor // = .blue
+    var textColor: UIColor // = .black
+    var title: String
+    var wingdings: String
+    var rowNo: Int
+    var colNo: Int
+    var Tag: Int
+    var displayed: String
+ 
+    
+    // Function to conform to hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(Tag)
+    }
+    
+    
+
+    var body: some View {
+        
+        let historyButtonStyle = keyboardButtonLabelStyle (fontSize: 24, fontName: "Wingdings2", textColor: textColor)
+        let playingButtonStyle = keyboardButtonLabelStyle (fontSize: 20, fontName: "AppleSymbols", textColor: textColor)
+        let BoilerplateButtonStyle = keyboardButtonLabelStyle (fontSize: 11, fontName: "", textColor: textColor)
+        let NotDisplayed = keyboardButtonLabelStyle (fontSize: 14, fontName: "", textColor: textColor)
+        let NotePlayingButtonStyle = keyboardButtonLabelStyle (fontSize: 20, fontName: "AppleSymbols", textColor: .white)
+        
+        if #available(iOS 15.0, *) {
+        Button {}
+            
+        // This is the label text shown on the button
+        label: { Text (title)}
+            .frame ( minWidth: 0, maxWidth: .infinity, minHeight: 20, maxHeight: .infinity, alignment: .center )
+            .buttonStyle (displayed == "H" ? historyButtonStyle : ( displayed == "1" ? playingButtonStyle : (displayed == "B" ? BoilerplateButtonStyle : (displayed == "P" ? NotePlayingButtonStyle : NotDisplayed))))
+            .tag (rowNo * 100 + colNo)
+            .background(displayed == "P" ? .black  : Color(buttonColor))
+            .clipped()
+            
+        }
+        else {
+            // Fallback on earlier versions
+        }
+    }
+}
+
+
+
+
+struct KeyboardButton {
+    
+    /// 7 Attributes fron richterHarmonica plist
+    var button : Int; /// Identifier
+    var offset : Int? = nil; // offset
+    var wingdings : String? = nil; // wingDings
+    var backColor : UIColor? = nil; // background
+    var displayed : String? = nil; // displayed Y/N
+    var textColor : UIColor? = nil; // Text Colour
+    var boilerplate : String? = nil; // Text displayed
+    
+    ///    Added by GetButtonDefns
+    ///    Uses a calculation based on the other values
+    var buttonLabel : String? = nil; // Text displayed
+}
+
+
+
+
+
 // Uses a PLIST to get the current button definitions
 // Runs in dynamic or static mode.
 // in dynamic mode (call type = dynamic) displayed for the note being played is set to P which highlights the button
@@ -105,6 +198,8 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
     var _buttonDefns = [KeyboardButton]() //Declare empty array
     var thisButton : KeyboardButton
     let notes = getNotes(flatsSharps: sharpsFlats)
+    
+    /// Plist data structure is restrictive but flexible.
     
     if let allData = NSArray(contentsOfFile: AUTO_PLIST_HARPDEF_PATH!) {
      
@@ -121,19 +216,19 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
                                             boilerplate: dict["boilerplate"] as? String
                                             )
 
+            /// Move all the functionality below to button array script
+                        
             /// Boilerplate buttons
             if thisButton.displayed == "B" {
                 thisButton.buttonLabel = thisButton.boilerplate
-                
             }
             
             /// Playing buttons
             else if thisButton.displayed == "1" {
                 
-                let holeNote =  notesBase + thisButton.offset! + harmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
+                let holeNote =  notesBase + thisButton.offset! + harmonicaBase
                 
-                
-                thisButton.buttonLabel = notes[holeNote].noteName! as String //try
+                thisButton.buttonLabel = notes[holeNote].noteName! as String
                 
                 /// The note being played currently
                 if notes[holeNote].noteNameSharps! == note  && callType == "dynamic" && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
@@ -159,3 +254,100 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
     return _buttonDefns
      
 }
+
+
+// The following two structs could be merged
+///  The merger needs to conform as for interfaceButton
+///
+struct newInterfaceButton  : View, Identifiable, Hashable {
+    
+    
+    // Function to conform to equatable
+    static func == (lhs: newInterfaceButton, rhs: newInterfaceButton) -> Bool {
+        return
+        
+        lhs.Tag == rhs.Tag
+        && lhs.displayedType == rhs.displayedType
+        && lhs.id == rhs.id
+        && lhs.title == rhs.title
+        && lhs.wingdings == rhs.wingdings
+    }
+    
+    
+    var id = UUID() // Variable to satisfy Identifiable
+    
+    
+    
+    // variable parameters  passed from Array
+    
+    var rowNo: Int
+    var colNo: Int
+    var Tag: Int
+    
+    var buttonColor: UIColor
+    var textColor: UIColor
+    
+    var displayedType: String
+    var offset: Int
+    
+    var title: String
+    var wingdings: String
+    var boilerplate: String
+    
+    
+    
+    // Function to conform to hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(Tag)
+        
+    }
+    
+    
+    
+    var body: some View {
+        
+        let historyButtonStyle = keyboardButtonLabelStyle (fontSize: 24, fontName: "Wingdings2", textColor: textColor)
+        let playingButtonStyle = keyboardButtonLabelStyle (fontSize: 20, fontName: "AppleSymbols", textColor: textColor)
+        let BoilerplateButtonStyle = keyboardButtonLabelStyle (fontSize: 11, fontName: "", textColor: textColor)
+        let NotDisplayed = keyboardButtonLabelStyle (fontSize: 14, fontName: "", textColor: textColor)
+        let NotePlayingButtonStyle = keyboardButtonLabelStyle (fontSize: 20, fontName: "AppleSymbols", textColor: .white)
+        
+        if #available(iOS 15.0, *) {
+            Button {}
+            
+            // This is the label text shown on the button
+        label: { Text (title)}
+                .frame ( minWidth: 0, maxWidth: .infinity, minHeight: 20, maxHeight: .infinity, alignment: .center )
+                .buttonStyle (displayedType == "H" ? historyButtonStyle : ( displayedType == "1" ? playingButtonStyle : (displayedType == "B" ? BoilerplateButtonStyle : (displayedType == "P" ? NotePlayingButtonStyle : NotDisplayed))))
+                .tag (rowNo * 100 + colNo)
+                .background(displayedType == "P" ? .black  : Color(buttonColor))
+                .clipped()
+            
+        }
+        else {
+            // Fallback on earlier versions
+        }
+    }
+    
+}
+    func getButtonDefs2() -> NSArray { //Type is not used
+        
+        var _buttonDefns = [KeyboardButton]() //Declare empty array
+        var thisButton : KeyboardButton
+        var allData : NSArray
+        //let notes = getNotes(flatsSharps: sharpsFlats)
+        
+        /// Plist data structure is restrictive but flexible.
+        
+        allData = NSArray(contentsOfFile: AUTO_PLIST_HARPDICT_PATH!)!
+            
+            for dict in allData {
+                
+            }
+        return allData
+        
+        
+        
+        
+    }
+

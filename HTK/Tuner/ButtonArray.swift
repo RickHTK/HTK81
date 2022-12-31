@@ -11,13 +11,21 @@ struct buttonArrayStruct
     let keyboard : [[interfaceButton]] = buttonArray(note: "", noteHistory: [noteDetail ( note: "£", sustainLength : 1, pianoKey: 0)], position: 0, harmonicaBase: 13, sharpsFlats: 0, mode: 0, register: 0, translationMap: [0:0])
 }
 
+
+// Uses the Button definitions list and turns it into a 2d grid
+
+
 func buttonArray (note: String, noteHistory : [noteDetail] , position : Int, harmonicaBase : Int, sharpsFlats : Int, mode : Int, register : Int, translationMap : [Int : Int] ) -> [[interfaceButton]] {
     
     let buttonColumns = [0,1,2,3,4,5,6,7,8,9,10,11]
     let actionRows = [1,2,3,4,5,6,7,8]
-    var buttonArray : [[interfaceButton]] = [[]]
+    
     var buttonRow : [interfaceButton] = []
-    var buttonRow2 : [interfaceButton] = []
+    var historyButtonRow : [interfaceButton] = []
+    var translationButtonRow : [interfaceButton] = []
+    
+    var buttonArray : [[interfaceButton]] = [[]]
+    
     let buttonKey = getButtonDefs(note: note, callType: "dynamic", harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats)
     let staticButtonKey = getButtonDefs(note: note, callType: "static", harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats)
     
@@ -28,7 +36,6 @@ func buttonArray (note: String, noteHistory : [noteDetail] , position : Int, har
     // 1. Creates a grid
     
     for rowValue in actionRows {
-        
         for columnValue in buttonColumns {
             
             let buttonTagNo = (rowValue * 100) + columnValue
@@ -53,9 +60,12 @@ func buttonArray (note: String, noteHistory : [noteDetail] , position : Int, har
         buttonRow = []
     }
     
-    // 2. Adds the notes played  buttons at the bottom
+    
+    
+    
+    // 2. Adds the history and translation  buttons at the bottom
     for (index, playedNote) in noteHistory.enumerated() {
-        // This is the history of notes played
+        // 2.a This is the history of notes played
         guard let chosenButton = (
             staticButtonKey.first (where: {$0.buttonLabel! == playedNote.note && $0.button != 103 && $0.button != 207 }) //there is more than one button for the same note 103, 107
         ) else {
@@ -72,9 +82,11 @@ func buttonArray (note: String, noteHistory : [noteDetail] , position : Int, har
                                              Tag: 900 + index,
                                              displayed: "H"
         )
-        buttonRow.append (currentButton)
+        historyButtonRow.append (currentButton)
         
-        // 3. adds the Translate  button  row at the bottom
+        
+        
+        // 2.b adds the Translate  button  row at the bottom
         if position != 0 {
         
             guard let translationButton = (
@@ -94,10 +106,10 @@ func buttonArray (note: String, noteHistory : [noteDetail] , position : Int, har
                                                  displayed: "H"
             )
             
-            buttonRow2.append (currentTranslationButton)
+            translationButtonRow.append (currentTranslationButton)
         }
         else {
-            buttonRow2.append (
+            translationButtonRow.append (
                 interfaceButton (buttonColor: .white,
                                  textColor: .white,
                                  title: "",
@@ -113,8 +125,8 @@ func buttonArray (note: String, noteHistory : [noteDetail] , position : Int, har
         
     } // END OF LOOP
     
-    buttonArray.append(buttonRow)
-    buttonArray.append(buttonRow2)
+    buttonArray.append(historyButtonRow)
+    buttonArray.append(translationButtonRow)
     
     return buttonArray
 }

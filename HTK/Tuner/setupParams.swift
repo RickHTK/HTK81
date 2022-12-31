@@ -175,20 +175,7 @@ let freqRangeDict :  [String : (Float, Float)] =
 
 
 
-struct KeyboardButton {
-    var button : Int = 0; // button
-    var offset : Int? = nil; // offset
-    var wingdings : String? = nil; // wingDings
-    //var background : String? = nil; // background
-    var backColor : UIColor? = nil; // background
-    var displayed : String? = nil; // displayed Y/N
-    var textColor : UIColor? = nil; // Text Colour
-    //var foreColor : UIColor? = nil; // Text Colour
-    var boilerplate : String? = nil; // Text displayed
-    var buttonLabel : String? = nil; // Text displayed
-    var fontSize : Int = 10; // text size
-    
-}
+
 
 /*
 struct keyboardButton  {
@@ -558,6 +545,8 @@ var modeOffset : [Int: [Int]]
 let notesBase = 23  //23 is the first note in the notes list G2 C4 is 17 semi-ones higher
 
 let AUTO_PLIST_HARPDEF_PATH = Bundle.main.path(forResource: "richterHarmonica", ofType: "plist")
+
+let AUTO_PLIST_HARPDICT_PATH = Bundle.main.path(forResource: "richterHarmonicaDict", ofType: "plist")
 
 let AUTO_PLIST_NOTES_PATH = Bundle.main.path(forResource: "pianoNotes", ofType: "plist")
 

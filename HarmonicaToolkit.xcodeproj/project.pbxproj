@@ -46,6 +46,7 @@
 		CE757CC4295F263E0011420E /* ButtonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC3295F263E0011420E /* ButtonArray.swift */; };
 		CE757CC6295F26CA0011420E /* ButtonDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */; };
 		CE8D4069295F975B008458D8 /* buttonArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D4068295F975B008458D8 /* buttonArrayTests.swift */; };
+		CE8D406B2960EBD8008458D8 /* richterHarmonicaDict.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE8D406A2960EBD8008458D8 /* richterHarmonicaDict.plist */; };
 		CE8DCF60295F6059001972D4 /* HarmonicaToolkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DCF5F295F6059001972D4 /* HarmonicaToolkitTests.swift */; };
 		CE8DCF67295F626B001972D4 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DCF66295F626B001972D4 /* AudioKit */; };
 		CE8DCF69295F6270001972D4 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = CE8DCF68295F6270001972D4 /* AudioKitEX */; };
@@ -102,6 +103,7 @@
 		CE757CC3295F263E0011420E /* ButtonArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonArray.swift; sourceTree = "<group>"; };
 		CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefinitions.swift; sourceTree = "<group>"; };
 		CE8D4068295F975B008458D8 /* buttonArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonArrayTests.swift; sourceTree = "<group>"; };
+		CE8D406A2960EBD8008458D8 /* richterHarmonicaDict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = richterHarmonicaDict.plist; sourceTree = "<group>"; };
 		CE8DCF5D295F6059001972D4 /* HarmonicaToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarmonicaToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8DCF5F295F6059001972D4 /* HarmonicaToolkitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,11 +173,11 @@
 			isa = PBXGroup;
 			children = (
 				1DE536B12868A19F001FB927 /* richterHarmonica.plist */,
+				CE8D406A2960EBD8008458D8 /* richterHarmonicaDict.plist */,
 				1D0597C8289429B200AFE2C7 /* pianoNotes.plist */,
 				C446DE472528D8E600138D0A /* AppDelegate.swift */,
 				176E7F2B253A13AA00602020 /* SplashView.swift */,
 				1DC0D4C2295DF60A005AAB14 /* MasterView.swift */,
-				1D3800E7295C884A00F5230D /* TunerConductor1.swift */,
 				C446DEA12528D9CA00138D0A /* TunerView.swift */,
 				C446DE4B2528D8E600138D0A /* ContentView.swift */,
 				6350E7CC27A9360200D0F510 /* KeyboardView.swift */,
@@ -184,6 +186,7 @@
 				1D7CB7C82898592E005BFF68 /* BannerAdsView.swift */,
 				1D2A6D4728C3CC28006C0A49 /* OrientationExt.swift */,
 				1D8384D728C3491C0046C017 /* setupParams.swift */,
+				1D3800E7295C884A00F5230D /* TunerConductor1.swift */,
 				CE757CC3295F263E0011420E /* ButtonArray.swift */,
 				CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */,
 			);
@@ -363,6 +366,7 @@
 				1D692FCF28D384DD0084CBCD /* HarmonicaToolkit.entitlements in Resources */,
 				176E7F1E25380CAF00602020 /* Colors.xcassets in Resources */,
 				1D2A6D4628C373EF006C0A49 /* Products.storekit in Resources */,
+				CE8D406B2960EBD8008458D8 /* richterHarmonicaDict.plist in Resources */,
 				1D0597C9289429B200AFE2C7 /* pianoNotes.plist in Resources */,
 				1DE536B22868A19F001FB927 /* richterHarmonica.plist in Resources */,
 				1D2A6D4428C372CC006C0A49 /* Products.plist in Resources */,

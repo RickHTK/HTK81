@@ -13,8 +13,11 @@ struct SplashView: View {
         ZStack {
             if self.isContentReady {
             
-                //newviewcontroller()
-                ContentView()
+                NavigationView {
+                    MasterView()
+                    
+                }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+                
             } else {
                 VStack(spacing: 0) {
                     Image("HTK-icon")
