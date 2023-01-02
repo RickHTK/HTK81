@@ -330,24 +330,4 @@ struct newInterfaceButton  : View, Identifiable, Hashable {
     }
     
 }
-    func getButtonDefs2() -> NSArray { //Type is not used
-        
-        var _buttonDefns = [KeyboardButton]() //Declare empty array
-        var thisButton : KeyboardButton
-        var allData : NSArray
-        //let notes = getNotes(flatsSharps: sharpsFlats)
-        
-        /// Plist data structure is restrictive but flexible.
-        
-        allData = NSArray(contentsOfFile: AUTO_PLIST_HARPDICT_PATH!)!
-            
-            for dict in allData {
-                
-            }
-        return allData
-        
-        
-        
-        
-    }
-
+   
