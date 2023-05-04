@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE757CB0295EE5510011420E"
-               BuildableName = "HarmonicaToolkitTests"
-               BlueprintName = "HarmonicaToolkitTests"
+               BuildableName = "HarmonicaToolkitTestsOLD"
+               BlueprintName = "HarmonicaToolkitTestsOLD"
                ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -86,6 +86,39 @@
       language = "en"
       region = "GB">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE13FB7129FEE44B00168035"
+               BuildableName = "HarmonicaToolkitUITests.xctest"
+               BlueprintName = "HarmonicaToolkitUITests"
+               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE6629E32A043368006451D6"
+               BuildableName = "HarmonicaToolkitTests.xctest"
+               BlueprintName = "HarmonicaToolkitTests"
+               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE4632ED2A043AD90092F254"
+               BuildableName = "HarmonicaToolkitUITests2.xctest"
+               BlueprintName = "HarmonicaToolkitUITests2"
+               ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

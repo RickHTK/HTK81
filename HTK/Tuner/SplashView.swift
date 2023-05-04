@@ -15,6 +15,7 @@ struct SplashView: View {
             
                 //newviewcontroller()
                 ContentView()
+                //MasterView ()
             } else {
                 VStack(spacing: 0) {
                     Image("HTK-icon")

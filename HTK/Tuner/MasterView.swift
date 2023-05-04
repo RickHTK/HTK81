@@ -51,7 +51,6 @@ extension Binding {
 struct MasterView: View {
     
     
-    
     @ObservedObject var store : Store = Store()
     
     @State private var selectedHarmonica : String = "C-Maj"
@@ -62,7 +61,7 @@ struct MasterView: View {
     @State private var modeIndex : Int = 1
     //@State private var registerIndex : Int = 1
     @State private var sharpsFlats : Int = 1
-    @State private var positionIndex : String = "1st"
+    //@State private var positionIndex : String = "1st"
     @State private var selectedRegister : String = "Low"
     @State private var modeKeyList : [String] = defaultMode
     @State private var translationMap : [Int:Int]  = [0:0]
@@ -85,7 +84,11 @@ struct MasterView: View {
 
     }
     
+    //@ScaledMetric var width: CGFloat = 30
+    //@ScaledMetric var height: CGFloat = 20
+    
     var body: some View {
+        
         
         
         // These are the positions sent to tunerview
@@ -101,7 +104,7 @@ struct MasterView: View {
         
         
         //NavigationView {
-        List {
+        VStack {
             //navigationTitle("FORM")
             
             
@@ -138,7 +141,7 @@ struct MasterView: View {
             
             
             
-            NavigationLink(destination: TunerView <TunerConductor> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensetivityIndex, adsOnOff: store.getAdsOnOff(), conductor: TunerConductor()))
+            NavigationLink(destination: TunerView <TunerConductor> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensetivityIndex, adsOnOff: .AdsOff, conductor: TunerConductor()))
             {
                 Label("", systemImage: "mic").font(.system(size: 40))
                 
@@ -179,12 +182,14 @@ struct MasterView: View {
                         .frame(maxWidth: .infinity)
                         .background(.blue)
                         .cornerRadius(8)
+                        .accessibilityIdentifier("HarmonicaPicker")
                 }
                 VStack {
                     generalPickerView (selectedKeyValue: $selectedPosition.onChange(posValueChanged), gIndex: positionIndex, pickerArray: positionKeys, pickerLabel: "Position") //, defaultValue: "2nd")
                         .frame(maxWidth: .infinity)
                         .background(.blue)
                         .cornerRadius(8)
+                        .accessibilityIdentifier("PositionPicker")
                     //Text(selectedPosition)
                 }
                 if positionIndex != 0 {
@@ -193,6 +198,7 @@ struct MasterView: View {
                             .frame(maxWidth: .infinity)
                             .background(.blue)
                             .cornerRadius(8)
+                            .accessibilityIdentifier("ModePicker")
                         //Text(selectedMode)
                     }
                     /*
@@ -206,12 +212,14 @@ struct MasterView: View {
                             .frame(maxWidth: .infinity)
                             .background(.blue)
                             .cornerRadius(8)
+                            .accessibilityIdentifier("RegisterPicker")
                         //Text(selectedRegister)
                     }
                     
                 }
                 Spacer(minLength: 18)
             }.padding(0)
+            
             
             //if store.purchasedSubscriptions == [] {
             if store.getAdsOnOff() == .AdsOn {
@@ -283,8 +291,9 @@ struct MasterView: View {
             }
             
         }
-        ._safeAreaInsets(EdgeInsets(top: -18, leading: 0, bottom: 0, trailing: 0))
-        .background(Color.clear)
+        
+        //._safeAreaInsets(EdgeInsets(top: -18, leading: 0, bottom: 0, trailing: 0))
+        //.background(Color.clear)
         .onAppear {
             UITableView.appearance().backgroundColor = .clear
             

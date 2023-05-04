@@ -56,17 +56,19 @@ struct interfaceButton  : View, Identifiable, Hashable {
         let BoilerplateButtonStyle = keyboardButtonLabelStyle (fontSize: 11, fontName: "", textColor: textColor)
         let NotDisplayed = keyboardButtonLabelStyle (fontSize: 14, fontName: "", textColor: textColor)
         let NotePlayingButtonStyle = keyboardButtonLabelStyle (fontSize: 20, fontName: "AppleSymbols", textColor: .white)
+        let accessibilityIdentifierString : String = String(rowNo*100+colNo)
         
         if #available(iOS 15.0, *) {
         Button {}
             
         // This is the label text shown on the button
-        label: { Text (title)}
+        label: { Text (title)} // can be replaced with accessibility id for testing
             .frame ( minWidth: 0, maxWidth: .infinity, minHeight: 20, maxHeight: .infinity, alignment: .center )
             .buttonStyle (displayed == "H" ? historyButtonStyle : ( displayed == "1" ? playingButtonStyle : (displayed == "B" ? BoilerplateButtonStyle : (displayed == "P" ? NotePlayingButtonStyle : NotDisplayed))))
             .tag (rowNo * 100 + colNo)
             .background(displayed == "P" ? .black  : Color(buttonColor))
             .clipped()
+            .accessibilityIdentifier(accessibilityIdentifierString)
             
         }
         else {

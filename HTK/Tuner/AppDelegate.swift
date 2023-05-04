@@ -65,10 +65,11 @@ struct HTK202201App: App {
     
     var mainAudioEngine : AudioEngine = AudioEngine()
     
+    
     init ()
     {
         
-#if os(iOS)
+/* #if os(iOS)
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
@@ -85,11 +86,14 @@ struct HTK202201App: App {
     
     
         
-#endif
+#endif*/
     }
     var body: some Scene {
         WindowGroup {
             SplashView ()
+            //MasterView ()
+            //DummyView ()
+            //MasterView ()
 
         }
     }

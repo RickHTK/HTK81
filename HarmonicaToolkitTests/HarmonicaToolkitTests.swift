@@ -6,9 +6,11 @@
 //
 
 import XCTest
-//import AVFoundation
+import AVFoundation
 import AudioKit
+import SoundpipeAudioKit
 import AudioKitEX
+import CAudioKitEX
 @testable import HarmonicaToolkit
 
 
