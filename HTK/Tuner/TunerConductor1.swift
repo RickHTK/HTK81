@@ -18,13 +18,32 @@ protocol TunerConductorModel : ObservableObject {
     var data : TunerData { get }
     func start()
     func stop()
+    //func update(_ pitch: AUValue, _ amp: AUValue, sustainSensitivity : Int)
+    //var noteFrequencies : [Float] { get }
 }
-    
+
+
+protocol HTKPitchTapProtocol {
+    var amplitude: Float { get }
+    var leftPitch: Float { get }
+    var rightPitch: Float { get }
+    //typealias Handler = ([Float], [Float]) -> Void
+    //init (_ input: Node, bufferSize: UInt32, handler: @escaping Handler)
+    //deinit {}
+    func start()
+    func stop()
+    func doHandleTapBlock(buffer: AVAudioPCMBuffer, at time: AVAudioTime)
+
+}
+
+
+
+
 class TunerConductor: TunerConductorModel {
    
     @Published var data = TunerData()
     
-    var freqRange : (lowestNote: Float, highestNote : Float)  = (85.00, 2800.00) //F2 to F7 could be dynamic
+    var freqRange : (lowestNote: Float, highestNote : Float)  // = (85.00, 4000.00) //F2 to F7 could be dynamic
     var sharpsFlats : Int = 0
     var ampSensetivity : Float = 0.6
 
@@ -41,7 +60,8 @@ class TunerConductor: TunerConductorModel {
     let silence: Fader
     
     //var tracker1:  PitchTap!
-    var tracker: HTKPitchTapProtocol! // PitchTap!
+    var tracker: PitchTap! // HTKPitchTapProtocol! // PitchTap!
+    //var tracker: HTKPitchTapProtocol! // PitchTap!
     
     var currentNote : noteDetail // =  noteDetail (note: "REST",sustainLength: 0,pianoKey: 0)
     
@@ -67,7 +87,8 @@ class TunerConductor: TunerConductorModel {
     var noteNames : [String]
     let dummyNote = noteDetail ( note: "£", sustainLength : 1, pianoKey: 0)
     
-    init()
+    
+    init(freqRangeIn: (lowestNote: Float, highestNote : Float))
     {
         let sustainSensitivity = sustainSensitivity
     
@@ -78,8 +99,10 @@ class TunerConductor: TunerConductorModel {
         noteFound2 = dummyNote
         currentNote = dummyNote
         previousNote = dummyNote
+        freqRange = freqRangeIn
 
-        guard let input = engine.input else { fatalError() }
+        guard let input : Mixer = engine.input else { fatalError() }
+        
         
         tappableNodeA = Fader(input)
         tappableNodeB = Fader(tappableNodeA)
@@ -87,10 +110,12 @@ class TunerConductor: TunerConductorModel {
         silence = Fader(tappableNodeC, gain: 0)
         engine.output = silence
         
-                tracker = HTKPitchTap (input, handler: {pitch, amp in
-                    DispatchQueue.main.async
+            //tracker = HTKPitchTap (input, handler: {pitch, amp in
+            tracker = PitchTap (input, handler: {pitch, amp in
+                DispatchQueue.main.async
                     {
                             self.update(pitch[0], amp[0], sustainSensitivity: self.sustainSensitivity)
+                        
                     }
                 }
                 )
@@ -133,6 +158,7 @@ class TunerConductor: TunerConductorModel {
         guard amp > 1.0 else { return } // can change base amplitude in settings
         guard pitch > freqRange.lowestNote && pitch < freqRange.highestNote
         else {
+            print ("FREQ RANGE FAILURE")
             return
         }       /// pitch range depends on the harmonica key
         

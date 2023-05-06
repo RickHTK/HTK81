@@ -7,10 +7,10 @@
 
 import XCTest
 import AVFoundation
-import AudioKit
-import SoundpipeAudioKit
-import AudioKitEX
-import CAudioKitEX
+//import AudioKit
+//import SoundpipeAudioKit
+//import AudioKitEX
+//import CAudioKitEX
 @testable import HarmonicaToolkit
 
 
@@ -40,18 +40,19 @@ extension TunerConductor {
 final class HarmonicaToolkitTunerConductorTests: XCTestCase {
     
     
+    
     //Start a conductor to be used by any of the tests in this class
-    let x = TunerConductor()
-
+    let x = TunerConductor(freqRangeIn:   (100.0,4000.0))
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func test500givesC5() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -59,7 +60,7 @@ final class HarmonicaToolkitTunerConductorTests: XCTestCase {
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
         
-        let x = TunerConductor()
+        let x = TunerConductor(freqRangeIn:   (200.0,4000.0))
         
         for i in 1...10
         {
@@ -68,7 +69,7 @@ final class HarmonicaToolkitTunerConductorTests: XCTestCase {
             print (x.data.noteName)
             XCTAssertTrue(x.data.noteName=="C5")
         }
-
+        
         XCTAssertTrue(x.data.noteName=="C5")
         
         
@@ -92,14 +93,16 @@ final class HarmonicaToolkitTunerConductorTests: XCTestCase {
         x.update(500, 1.01, sustainSensitivity: 0)
         print (x.data.noteName, x.data.amplitude)
         XCTAssertTrue(x.data.noteName=="C5")
-    
+        
         
         
     }
     
     func testCFrequencies() throws {
-
-        /// Checks if the frequencies of pure C notes give the expected notes - C3 to C7 only.
+        
+        
+        
+        /// Checks if the frequencies of  C notes give the expected notes - C3 to C7 only.
         
         //let x = TunerConductor()
         
@@ -121,51 +124,66 @@ final class HarmonicaToolkitTunerConductorTests: XCTestCase {
             
             XCTAssertTrue (x.data.noteName == expected)
         }
-
-
+        
+        
         
         
     }
-
+    
+    
+    let noteList =
+    [
+        "C",
+        "D♭",
+        "D",
+        "E♭",
+        "E",
+        "F",
+        "G♭",
+        "G",
+        "A♭",
+        "A",
+        "B♭",
+        "B"
+    ]
     
     func testFrequencies() throws {
-
+        
+        print ("NOTE FREQs", x.noteFrequencies)
+        
         /// Checks if the frequencies of pure C notes give the expected notes - C3 to C7 only.
-        
-        
-
-        
-        for i in 3...7
-        {
-            //x.update(500, 500, sustainSensitivity: 0)
-            //x.data.pitch = 500
-            print ("octave", i)
+        for  (seq, note) in noteList.enumerated() {
             
-            let expected : String = "C" + String (i)
-            let pitch : Float = pow (2, Float(Int(i))) * x.noteFrequencies[0]
+            for i in 3...7
+            {
+                //x.update(500, 500, sustainSensitivity: 0)
+                //x.data.pitch = 500
+                print ("octave", i, note)
+                
+                let expected : String = note + String (i)
+                let pitch : Float = pow (2, Float(Int(i))) * x.noteFrequencies[seq] // set pitch C1 * 2  to the power i
+                
             
-            x.update(AUValue ( pitch ) , 500, sustainSensitivity: 0)
-            
-            
-            //octave = Int(log2f(pitch / frequency))
-            
-            print (pow (2, Float(Int(i))) * x.noteFrequencies[0])
-            print (x.data.pitch , x.data.noteName)
-            
-            
-            XCTAssertTrue (x.data.noteName == expected)
+                
+                x.update(AUValue ( pitch ) , 500, sustainSensitivity: 0)
+                
+                
+                //octave = Int(log2f(pitch / frequency))
+                
+                
+                print (pitch, x.data.pitch , x.data.noteName, expected)
+                
+                
+                XCTAssertTrue (x.data.noteName == expected)
+            }
         }
-
+        
         //XCTAssertTrue(x.data.noteName=="C5")
         
         
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
+    
+    
+    
+    

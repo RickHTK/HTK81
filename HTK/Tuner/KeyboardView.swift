@@ -23,12 +23,12 @@ import SwiftUI
 
 
 //KEYBOARD Calls Button Array -- Called by Tuner View
-func keyboard2 (buttonArray: [[interfaceButton]]) -> some View {
+func keyboardView (keyboardButtonArray: [[interfaceButton]]) -> some View {
     
     var body: some View {
         VStack (spacing: 3) {
             
-            ForEach (buttonArray, id:\.self) { buttonRow in
+            ForEach (keyboardButtonArray, id:\.self) { buttonRow in
                 HStack (spacing: 3) {
                     ForEach(buttonRow, id:\.self) { buttonKey in
                         buttonKey

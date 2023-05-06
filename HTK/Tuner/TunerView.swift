@@ -38,27 +38,26 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
         self.register = register
         self.translationMap = translationMap
         self.conductor = conductor
-        
-
     }
-    
-    
+
     var body: some View {
         
+        /// Has to be in the body of the view so as to react to changes in the conductor at each point of creation
+        let buttonGrid = buttonArray (notePlaying: "\(conductor.data.noteName)",
+                                  noteHistory : conductor.data.lastNotes,
+                                  position: position,
+                                  harmonicaBase: harmonicaBase,
+                                  sharpsFlats: sharpsFlats,
+                                  mode: mode, register: register,
+                                  translationMap: translationMap
+                                 )
+        
         ZStack(alignment: .leading) {
-            keyboard2 (
-          
-                buttonArray: buttonArray (note: "\(conductor.data.noteName)",
-                                          noteHistory : conductor.data.lastNotes,
-                                          position: position,
-                                          harmonicaBase: harmonicaBase,
-                                          sharpsFlats: sharpsFlats,
-                                          mode: mode, register: register,
-                                          translationMap: translationMap
-                                         )
+
+            keyboardView (
+                keyboardButtonArray: buttonGrid
             )
             .onAppear () {
-                
                 conductor.start()
                 print ("starting conductor")
 
@@ -74,9 +73,7 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
             if adsOnOff == .AdsOn {
                 gridContentView()
             }
-            
         }
-
     }// END BODY
 } // END VIEW
 

@@ -116,12 +116,7 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testExample2() throws {
-        let app = XCUIApplication()
-        app.launch()
-        
-        
-    }
+
     
     func testCanSelectAllHarmonicas() throws {
         // UI tests must launch the application that they test.
@@ -150,26 +145,31 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
             }
             if !app.collectionViews.buttons[testHarmonica].exists
             {
+                sleep (1)
                 app.buttons["HarmonicaPicker"].swipeDown(velocity: 3)
             }
             
             if !app.collectionViews.buttons[testHarmonica].exists
             {
+                sleep (1)
                 app.buttons["HarmonicaPicker"].swipeDown(velocity: 4)
             }
             
             if !app.collectionViews.buttons[testHarmonica].exists
             {
+                sleep (1)
                 app.buttons["HarmonicaPicker"].swipeDown()
                 print (" swipe down 4")
             }
             if !app.collectionViews.buttons[testHarmonica].exists
             {
+                sleep (1)
                 app.buttons["HarmonicaPicker"].swipeDown()
                 print (" swipe down 5")
             }
             if !app.collectionViews.buttons[testHarmonica].exists
             {
+                sleep (1)
                 app.buttons["HarmonicaPicker"].swipeDown()
                 print (" swipe down 6")
             }

@@ -98,7 +98,7 @@ return colourRet
 
 
 struct KeyboardButton {
-    var button : Int = 0; // button
+    var buttonId : Int = 0; // button
     var offset : Int? = nil; // offset
     var wingdings : String? = nil; // wingDings
     //var background : String? = nil; // background
@@ -128,7 +128,7 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
             
             guard let dict = dict as? [String: AnyObject] else {continue}
             
-            thisButton = KeyboardButton (   button: (dict["button"] as? Int)!,
+            thisButton = KeyboardButton (   buttonId: (dict["button"] as? Int)!,
                                             offset: (dict["offset"] as? Int)!,
                                             wingdings: (dict["wingDings"] as? String)!,
                                             backColor: getColor (colour: (dict["background"] as? String ?? "white")),
@@ -157,7 +157,7 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
                 //print ("noteName in buttondefs : ", notes[holeNote].noteName!)
                 
                 // The note being played currently
-                if notes[holeNote].noteNameSharps! == note  && callType == "dynamic" && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
+                if notes[holeNote].noteNameSharps! == note  && callType == "dynamic" && thisButton.buttonId != 103 && thisButton.buttonId != 207  { //Not for buttons that play the same note as the main buttons
                         
                     thisButton.displayed = "P"
                         
