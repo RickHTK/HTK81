@@ -177,7 +177,7 @@ let freqRangeDict :  [String : (Float, Float)] =
 
 
 
-
+/*
 struct keyboardButton  {
     var button : Int = 0; // button
     var offset : String? = nil; // offset
@@ -221,7 +221,7 @@ struct keyboardButton  {
     }
     
     
-}
+}*/
 
 class Notes {
     var pianoKey : Int? = nil; // pianoKey

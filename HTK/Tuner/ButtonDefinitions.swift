@@ -52,8 +52,11 @@ func getNotes( flatsSharps: Int) -> [Notes]{
 func getColor (colour: String) -> UIColor
 {
     
-let black = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+    let black = UIColor(.black)
+//    let black = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+
 let white = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    
 let lblue1 = UIColor(red: 38/255.0, green: 49/255.0, blue: 197/255.0, alpha: 0.5) // sRGB
 let lblue2 = UIColor(red: 38/255.0, green: 49/255.0, blue: 197/255.0, alpha: 0.7) // sRGB
 let lblue3 = UIColor(red: 38/255.0, green: 49/255.0, blue: 190/255.0, alpha: 0.9) // sRGB
@@ -97,6 +100,24 @@ return colourRet
 }
 
 
+extension Color {
+    static let lblue1 =  Color( UIColor (red: 38/255.0, green: 49/255.0, blue: 197/255.0, alpha: 0.5))
+    static let lblue2 = Color  ( UIColor(red: 38/255.0, green: 49/255.0, blue: 197/255.0, alpha: 0.7))
+    static let lblue3 =  Color   (UIColor(red: 38/255.0, green: 49/255.0, blue: 190/255.0, alpha: 0.9))
+    static let lorange1  = Color   (  UIColor(red: 255/255.0, green: 150/255.0, blue: 75/255.0, alpha: 0.8))
+    static let lgreen    = Color   (  UIColor(red: 0/255.0, green: 150/255.0, blue: 75/255.0, alpha: 0.4))
+    static let blowColor = Color   (  UIColor(red: 1.0, green:1.0, blue: 0.717, alpha: 1.0))
+    static let drawColor = Color   (  UIColor(red: 1.0, green:0.8, blue: 0.417, alpha: 0.7))
+ 
+}
+
+extension UIColor{
+    class func getCustomBlueColor() -> UIColor{
+        return UIColor(red:0.043, green:0.576 ,blue:0.588 , alpha:1.00)
+    }
+}
+
+
 struct KeyboardButton {
     var buttonId : Int = 0; // button
     var offset : Int? = nil; // offset
@@ -112,6 +133,20 @@ struct KeyboardButton {
     
 }
 
+struct KeyboardButton2 : Codable {
+    var buttonId : Int = 0; // button
+    var offset : Int = 0; // offset
+    var wingdings : String? = nil; // wingDings
+    
+    var backColor : String? = nil; // background
+    var displayed : String? = nil; // displayed Y/N
+    var textColor : String? = nil; // Text Colour
+    //var foreColor : UIColor? = nil; // Text Colour
+    var boilerplate : String? = nil; // Text displayed
+
+    
+}
+
 // Uses a PLIST to get the current button definitions
 // Runs in dynamic or static mode.
 // in dynamic mode (call type = dynamic) displayed for the note being played is set to P which highlights the button
@@ -121,12 +156,20 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
     var thisButton : KeyboardButton
     let notes = getNotes(flatsSharps: sharpsFlats)
     
-    if let allData = NSArray(contentsOfFile: AUTO_PLIST_HARPDEF_PATH!) {
+    if let harpDef = NSArray(contentsOfFile: AUTO_PLIST_HARPDEF_PATH!) {
         
         
-        for dict in allData {
+        for plistData in harpDef {
             
-            guard let dict = dict as? [String: AnyObject] else {continue}
+            
+            guard let dict = plistData as? [String: AnyObject] else {continue}
+            let dict2 = plistData as? KeyboardButton2 //else {continue}
+            
+            
+            print ("D2***")
+            print ("DICT2: ", dict2, type(of: dict2))
+            print  ("BackColor" , dict2?.backColor)
+            
             
             thisButton = KeyboardButton (   buttonId: (dict["button"] as? Int)!,
                                             offset: (dict["offset"] as? Int)!,

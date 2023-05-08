@@ -60,6 +60,10 @@
 		CE757CC6295F26CA0011420E /* ButtonDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */; };
 		CE9DE00B2A0689CC00628B5E /* MockTunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DE00A2A0689CC00628B5E /* MockTunerConductor.swift */; };
 		CE9DE00D2A06B64000628B5E /* MockMicrophone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DE00C2A06B64000628B5E /* MockMicrophone.swift */; };
+		CEA2EFF32A0902EE000918F4 /* richterHarmonica.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */; };
+		CEA2EFF52A09057E000918F4 /* JsonEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */; };
+		CEA2EFF72A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF62A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift */; };
+		CEA2EFF92A0907D6000918F4 /* DBEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +136,10 @@
 		CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefinitions.swift; sourceTree = "<group>"; };
 		CE9DE00A2A0689CC00628B5E /* MockTunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTunerConductor.swift; sourceTree = "<group>"; };
 		CE9DE00C2A06B64000628B5E /* MockMicrophone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMicrophone.swift; sourceTree = "<group>"; };
+		CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = richterHarmonica.json; sourceTree = "<group>"; };
+		CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonEncoder.swift; sourceTree = "<group>"; };
+		CEA2EFF62A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitJsonLoadTests.swift; sourceTree = "<group>"; };
+		CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEncoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +222,9 @@
 		1D53B37628CA1F480075BF90 /* Tuner */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */,
+				CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */,
+				CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */,
 				1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */,
 				C446DE472528D8E600138D0A /* AppDelegate.swift */,
 				176E7F2B253A13AA00602020 /* SplashView.swift */,
@@ -317,6 +328,7 @@
 		CE6629E52A043368006451D6 /* HarmonicaToolkitTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2EFF62A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift */,
 				CE6629E62A043368006451D6 /* HarmonicaToolkitTests.swift */,
 				CE6B12D72A06DBBF009D78A8 /* HarmonicaToolkitTunerButtonArray.swift */,
 			);
@@ -474,6 +486,7 @@
 				1D2A6D4428C372CC006C0A49 /* Products.plist in Resources */,
 				C446DE4E2528D8E700138D0A /* Assets.xcassets in Resources */,
 				1D2A6D4128C370DE006C0A49 /* Descriptions.plist in Resources */,
+				CEA2EFF32A0902EE000918F4 /* richterHarmonica.json in Resources */,
 				1DB54A58286E364800AE5FF0 /* Wingdings2.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA2EFF52A09057E000918F4 /* JsonEncoder.swift in Sources */,
 				1D2A6D3E28C362F9006C0A49 /* BuyButtonStyle.swift in Sources */,
 				C446DE482528D8E600138D0A /* AppDelegate.swift in Sources */,
 				1D45BE0128C8AD2500823044 /* StatusInfoView.swift in Sources */,
@@ -512,6 +526,7 @@
 				1D8384D628C348D20046C017 /* GridView.swift in Sources */,
 				1D2A6D3828C362CE006C0A49 /* ProductDetailView.swift in Sources */,
 				CE35FEFF29F52D1100385F15 /* DummyView.swift in Sources */,
+				CEA2EFF92A0907D6000918F4 /* DBEncoder.swift in Sources */,
 				1D2A6D3C28C362EF006C0A49 /* Store.swift in Sources */,
 				C446DF032528D9CA00138D0A /* TunerView.swift in Sources */,
 				C446DE4C2528D8E600138D0A /* ContentView.swift in Sources */,
@@ -546,6 +561,7 @@
 				CE6B12D62A06CC96009D78A8 /* BespokePitchTap.swift in Sources */,
 				CE6B12D82A06DBBF009D78A8 /* HarmonicaToolkitTunerButtonArray.swift in Sources */,
 				CE6629E72A043368006451D6 /* HarmonicaToolkitTests.swift in Sources */,
+				CEA2EFF72A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
