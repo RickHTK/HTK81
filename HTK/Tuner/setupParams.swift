@@ -555,3 +555,8 @@ enum ads: Int {
     case AdsOn = 0
     case AdsOff = 1
 }
+
+enum keyDisplayType : Int {
+    case dynamicDisplayKey = 0
+    case staticDisplayKey = 1
+}

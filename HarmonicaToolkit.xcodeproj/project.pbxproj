@@ -64,6 +64,9 @@
 		CEA2EFF52A09057E000918F4 /* JsonEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */; };
 		CEA2EFF72A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF62A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift */; };
 		CEA2EFF92A0907D6000918F4 /* DBEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */; };
+		CEA4D84A2A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D8492A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift */; };
+		CEA4D84C2A0B747800CD8294 /* pianoNotes.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA4D84B2A0B747800CD8294 /* pianoNotes.json */; };
+		CEA4D8502A0B868B00CD8294 /* getPianoFromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D84F2A0B868B00CD8294 /* getPianoFromJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,9 @@
 		CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonEncoder.swift; sourceTree = "<group>"; };
 		CEA2EFF62A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitJsonLoadTests.swift; sourceTree = "<group>"; };
 		CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEncoder.swift; sourceTree = "<group>"; };
+		CEA4D8492A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getHarmonicaFromJSON.swift; sourceTree = "<group>"; };
+		CEA4D84B2A0B747800CD8294 /* pianoNotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pianoNotes.json; sourceTree = "<group>"; };
+		CEA4D84F2A0B868B00CD8294 /* getPianoFromJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPianoFromJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,7 @@
 			children = (
 				CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */,
 				CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */,
+				CEA4D84B2A0B747800CD8294 /* pianoNotes.json */,
 				CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */,
 				1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */,
 				C446DE472528D8E600138D0A /* AppDelegate.swift */,
@@ -243,6 +250,8 @@
 				CE757CC3295F263E0011420E /* ButtonArray.swift */,
 				CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */,
 				CE35FEFE29F52D1100385F15 /* DummyView.swift */,
+				CEA4D8492A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift */,
+				CEA4D84F2A0B868B00CD8294 /* getPianoFromJSON.swift */,
 			);
 			path = Tuner;
 			sourceTree = "<group>";
@@ -487,6 +496,7 @@
 				C446DE4E2528D8E700138D0A /* Assets.xcassets in Resources */,
 				1D2A6D4128C370DE006C0A49 /* Descriptions.plist in Resources */,
 				CEA2EFF32A0902EE000918F4 /* richterHarmonica.json in Resources */,
+				CEA4D84C2A0B747800CD8294 /* pianoNotes.json in Resources */,
 				1DB54A58286E364800AE5FF0 /* Wingdings2.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,9 +538,11 @@
 				CE35FEFF29F52D1100385F15 /* DummyView.swift in Sources */,
 				CEA2EFF92A0907D6000918F4 /* DBEncoder.swift in Sources */,
 				1D2A6D3C28C362EF006C0A49 /* Store.swift in Sources */,
+				CEA4D84A2A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift in Sources */,
 				C446DF032528D9CA00138D0A /* TunerView.swift in Sources */,
 				C446DE4C2528D8E600138D0A /* ContentView.swift in Sources */,
 				1D8384D828C3491C0046C017 /* setupParams.swift in Sources */,
+				CEA4D8502A0B868B00CD8294 /* getPianoFromJSON.swift in Sources */,
 				1D45BE0228C8AD2500823044 /* SubscriptionsView.swift in Sources */,
 				1DB88B0828C53FB400A1CBA4 /* SubscriptionInfoSheetView.swift in Sources */,
 				1D2E96E828C750A700B68342 /* HelpView.swift in Sources */,

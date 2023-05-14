@@ -17,8 +17,12 @@ struct keyboardButtonLabelStyle: ButtonStyle {
 }
 
 
+
+
+
+/*
 func getNotes( flatsSharps: Int) -> [Notes]{
-    
+
     var _notes = [Notes]()
     
     if _notes.count > 0 {
@@ -47,7 +51,7 @@ func getNotes( flatsSharps: Int) -> [Notes]{
         }
     }
     return _notes
-}
+}*/
 
 func getColor (colour: String) -> UIColor
 {
@@ -154,7 +158,8 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
     
     var _buttonDefns = [KeyboardButton]() //Declare empty array
     var thisButton : KeyboardButton
-    let notes = getNotes(flatsSharps: sharpsFlats)
+    //let notes2 = getNotes(flatsSharps: sharpsFlats)
+    let pianoNotes = setupPiano().getPianoFromJSON()
     
     if let harpDef = NSArray(contentsOfFile: AUTO_PLIST_HARPDEF_PATH!) {
         
@@ -191,16 +196,21 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
             else if thisButton.displayed == "1" {
                 
                 let holeNote =  notesBase + thisButton.offset! + harmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
-                //let holeNote =  harmonica_base  + harmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
                 
-                //do {
-                thisButton.buttonLabel = notes[holeNote].noteName! as String //try
-                //} catch {}
+                
+           
+                if sharpsFlats == 0 {
+                    thisButton.buttonLabel = pianoNotes[holeNote].noteNameFlats
+                }
+                else {
+                    thisButton.buttonLabel = pianoNotes[holeNote].noteNameSharps
+                }
+
 
                 //print ("noteName in buttondefs : ", notes[holeNote].noteName!)
                 
                 // The note being played currently
-                if notes[holeNote].noteNameSharps! == note  && callType == "dynamic" && thisButton.buttonId != 103 && thisButton.buttonId != 207  { //Not for buttons that play the same note as the main buttons
+                if pianoNotes[holeNote].noteNameSharps == note  && callType == "dynamic" && thisButton.buttonId != 103 && thisButton.buttonId != 207  { //Not for buttons that play the same note as the main buttons
                         
                     thisButton.displayed = "P"
                         

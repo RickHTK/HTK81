@@ -634,11 +634,7 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
         //let app = XCUIApplication()
         //app.launch()
         
-        /*
-         var _buttonDefns = [KeyboardButton]() //Declare empty array
-         var thisButton : KeyboardButton
-         let notes = getNotes(flatsSharps: sharpsFlats)
-         */
+
         //let AUTO_PLIST_HARPDEF_PATH = Bundle.main.path(forResource: "richterHarmonica", ofType: "plist")
         let AUTO_PLIST_HARPDEF_PATH = Self.getFile("richterHarmonica", withExtension: "plist")
         

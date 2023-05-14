@@ -357,7 +357,9 @@ struct MasterView: View {
     {
         //print ("Getting Mapping for: ", position, harmonicaBase, mode, registerIndex)
         
-        let pianoNotes = getNotes(flatsSharps: sharpsFlats)
+        // let pianoNotes = getNotes(flatsSharps: sharpsFlats)
+        let pianoNotes = setupPiano().getPianoFromJSON()
+        
         //var harmonicaActions : [(Int,Int)] = []
         var harmonicaActionsDict = [Int: Int]()
         let position : Int = positionDict [selectedPosition]!
@@ -374,16 +376,16 @@ struct MasterView: View {
             for i in pianoNotes {
                 if i.defaultAction != 0 {
                     //harmonicaActions.append ((i.pianoKey ?? 0 , i.defaultAction))
-                    harmonicaActionsDict.updateValue (i.defaultAction, forKey: i.pianoKey!)
+                    harmonicaActionsDict.updateValue (i.defaultAction, forKey: i.pianoKey)
                 }
             }
             // This does the calculation to calculate the translation defined in the settings screen
             for i in pianoNotes {
                 if i.defaultAction != 0 {
                     
-                    let modeCorrection = (i.pianoKey! - 40) % 12 // the mote played
+                    let modeCorrection = (i.pianoKey - 40) % 12 // the mote played
                     let modeOffsetValue = modeOffset [modeCorrection]![mode - 1]
-                    let translationKey = i.pianoKey! + posOffsetReg + modeOffsetValue
+                    let translationKey = i.pianoKey + posOffsetReg + modeOffsetValue
                     let translationAction = harmonicaActionsDict [translationKey] ?? 999
                     
                     translationMap.updateValue(translationAction, forKey: i.defaultAction)
