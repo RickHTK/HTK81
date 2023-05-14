@@ -2,7 +2,20 @@
 
 
 class setupKeyboard {
-    var harmonicaKeyboard : [KeyboardRow] = []
+    var harmonicaKeyboard : [KeyboardRow]
+    var keyboardNotePlaying : String = ""
+    var keyboardCallType: keyDisplayType
+    var keyboardHarmonicaBase: Int
+    var keyboardSharpsFlats: Int
+    let pianoKeyboard = setupPiano().getPianoFromJSON ()
+    
+    init (note: String, callType: keyDisplayType, harmonicaBase: Int, sharpsFlats: Int) {
+        harmonicaKeyboard = []
+        keyboardNotePlaying = note
+        keyboardCallType = callType
+        keyboardHarmonicaBase = harmonicaBase
+        keyboardSharpsFlats = sharpsFlats
+    }
     
     
     func getHarmonicaFromJSON () throws {
@@ -17,19 +30,7 @@ class setupKeyboard {
         
         harmonicaKeyboard = rawHarmonica.keyboardRows
         
-        print ("RAW H Type: " , type(of: rawHarmonica))
-        print ("RAW I Type: " , type(of: rawHarmonica.instrument))
-        print ("RAW KR Type: " , type(of: rawHarmonica.keyboardRows))
         
-        
-        for i in rawHarmonica.keyboardRows  {
-            print ("KEYBOARD ROW TYPE: ", type(of: i), type(of: i.keyboardKeys))
-            print ("KEYBOARD ROW: ", i)
-            
-            for j in i.keyboardKeys {
-                print (j)
-            }
-        }
         
         
         
@@ -72,22 +73,68 @@ class setupKeyboard {
    
     }
     
-    func getKeyboardDisplayed (note: String, callType: keyDisplayType, harmonicaBase: Int, sharpsFlats: Int) { //}-> [[interfaceButton]] {
+    func getKeyboardDisplayed () -> [[interfaceButton]] {
         
-        for i in harmonicaKeyboard {
-            for j in i.keyboardKeys {
-                print ("ROW: ", i.rowNumber, i.rowName, j.button, j.offset, j.displayed)
-                if j.displayed == "1" {
-                    let keyNote = harmonicaBase + j.offset
-                    print ("PLAYS: ", keyNote)
-                    
+        var displayedKeyboardRow : [interfaceButton] = []
+        var displayedKeyboard : [[interfaceButton]] = [[]]
+        var buttonLabel : String = ""
+        
+        do
+        {  try getHarmonicaFromJSON() }
+        catch {print ("Failed to get keyboard")}
+                
+        for thisRow in harmonicaKeyboard {
+            
+            for (columnNumber , thisButton) in thisRow.keyboardKeys.enumerated() {
+                print ("ROW: ", thisRow.rowNumber, thisRow.rowName, thisButton.button, thisButton.offset, thisButton.displayed)
+
+                
+                if thisButton.displayed == "B" {
+                    buttonLabel = thisButton.boilerplate
                     
                 }
+                
+                // Playing buttons
+                else if thisButton.displayed == "1" {
+                    
+                    let holeNote =  notesBase + thisButton.offset + keyboardHarmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
+                    
+                    
+               
+                    if keyboardSharpsFlats == 0 {
+                        buttonLabel = pianoKeyboard[holeNote].noteNameFlats
+                    }
+                    else {
+                        buttonLabel = pianoKeyboard[holeNote].noteNameSharps
+                    }
+
+
+                    //print ("noteName in buttondefs : ", notes[holeNote].noteName!)
+                    
+                    // The note being played currently
+                    if pianoKeyboard[holeNote].noteNameSharps == keyboardNotePlaying  && keyboardCallType == .dynamicDisplayKey && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
+                            
+                        //thisButton.displayed = "P"
+                            
+                        }
+                }
+                
+                // History buttons
+                else if thisButton.displayed == "H"  {
+                    buttonLabel = thisButton.wingdings
+                }
+                
+                else {
+                    buttonLabel = "NA" // changed
+                }
+                
+                displayedKeyboardRow.append( interfaceButton (buttonColor: getColor(colour: thisButton.background), textColor: getColor(colour: thisButton.textColor), title: thisButton.wingdings, wingdings: thisButton.wingdings, rowNo: thisRow.rowNumber, colNo: columnNumber, Tag: 100*thisRow.rowNumber * columnNumber, displayed: thisButton.displayed))
             }
-            
+            displayedKeyboard.append (displayedKeyboardRow)
+            displayedKeyboardRow = []
         }
-        
-        
+       return displayedKeyboard
+    
     }
     
 }

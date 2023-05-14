@@ -168,12 +168,12 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
             
             
             guard let dict = plistData as? [String: AnyObject] else {continue}
-            let dict2 = plistData as? KeyboardButton2 //else {continue}
+            //let dict2 = plistData as? KeyboardButton2 //else {continue}
             
             
-            print ("D2***")
-            print ("DICT2: ", dict2, type(of: dict2))
-            print  ("BackColor" , dict2?.backColor)
+            //print ("D2***")
+            //print ("DICT2: ", dict2, type(of: dict2))
+            //print  ("BackColor" , dict2?.backColor)
             
             
             thisButton = KeyboardButton (   buttonId: (dict["button"] as? Int)!,

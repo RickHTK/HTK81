@@ -115,3 +115,12 @@ func buttonArray (notePlaying: String, noteHistory : [noteDetail] , position : I
     
     return buttonGrid
 }
+
+
+func buttonArray2 (notePlaying: String, noteHistory : [noteDetail] , position : Int, harmonicaBase : Int, sharpsFlats : Int, mode : Int, register : Int, translationMap : [Int : Int] ) -> [[interfaceButton]] {
+    
+    //let i = getKeyboardDisplayed(note: notePlaying, callType: .dynamicDisplayKey, harmonicaBase: 17, sharpsFlats: 0)
+    
+    
+    return [[]]
+}

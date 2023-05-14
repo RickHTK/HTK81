@@ -43,7 +43,8 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
     var body: some View {
         
         /// Has to be in the body of the view so as to react to changes in the conductor at each point of creation
-        let buttonGrid = buttonArray (notePlaying: "\(conductor.data.noteName)",
+        
+        let buttonGridX = buttonArray (notePlaying: "\(conductor.data.noteName)",
                                   noteHistory : conductor.data.lastNotes,
                                   position: position,
                                   harmonicaBase: harmonicaBase,
@@ -51,6 +52,10 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
                                   mode: mode, register: register,
                                   translationMap: translationMap
                                  )
+        
+        //let buttonGrid2 = setupKeyboard(note: "\(conductor.data.noteName)", callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
+        
+        let buttonGrid = setupKeyboard(note: "\(conductor.data.noteName)", callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
         
         ZStack(alignment: .leading) {
 
