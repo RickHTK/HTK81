@@ -173,56 +173,6 @@ let freqRangeDict :  [String : (Float, Float)] =
 "F#-Maj ": (349.2282,3322.438),
 ]
 
-
-
-
-
-/*
-struct keyboardButton  {
-    var button : Int = 0; // button
-    var offset : String? = nil; // offset
-    var wingdings : String? = nil; // wingdings
-    var background : String? = nil; // background
-    var backColor : UIColor? = nil; // background
-    var displayed : String? = nil; // displayed Y/N
-    var textColor : String? = nil; // Text Colour
-    var foreColor : UIColor? = nil; // Text Colour
-    var boilerplate : String? = nil; // Text displayed
-    var buttonLabel : String? = nil; // Text displayed
-    var fontSize : Int = 10; // text size
-    
-    init (
-            i_button: Int,
-            i_offset: String,
-            i_wingdings : String,
-            i_background : String,
-            i_backColor : UIColor,
-            i_displayed : String,
-            i_textColor : String,
-            i_foreColor : UIColor,
-            i_boilerplate : String,
-            i_buttonLabel : String,
-            i_fontSize : Int
-    )
-    {
-        
-        button = i_button
-        offset = i_offset
-        wingdings = i_wingdings
-        background = i_background
-        backColor = i_backColor
-        displayed = i_displayed
-        textColor = i_textColor
-        foreColor = i_foreColor
-        boilerplate = i_boilerplate
-        buttonLabel = i_buttonLabel
-        fontSize = i_fontSize
-        
-    }
-    
-    
-}*/
-
 class Notes {
     var pianoKey : Int? = nil; // pianoKey
     var noteNameSharps : String? = nil; // noteName
@@ -237,16 +187,13 @@ protocol Tuner {
     var pitch: Float {get}
     var amplitude: Float {get}
     var noteName : String {get}
-    //var noteNameWithFlats : String {get}
 }
 
 struct TunerData : Tuner {
     var pitch: Float = 0.0
     var amplitude: Float = 0.0
     var noteName = "-"
-    //var noteNameWithFlats = "-"
     var pianoKey : Int = 0
-    //var noteHistory : [noteDetail] = []
     var lastNotes : [noteDetail] = []
 }
 
@@ -254,10 +201,8 @@ struct TunerMonitorData : Tuner {
     var pitch: Float
     var amplitude: Float
     var noteName : String
-    //var noteNameWithFlats :String
     var sustainedTime : Int
 }
-
 
 struct noteDetail{
     var note : String

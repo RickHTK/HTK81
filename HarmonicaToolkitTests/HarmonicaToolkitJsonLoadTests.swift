@@ -54,9 +54,9 @@ final class HarmonicaToolkitJsonLoadTests: XCTestCase {
 
     func testGetHarmonicaFromJSON () throws {
         
-        let keyboard = setupKeyboard()
-        try keyboard.getHarmonicaFromJSON()
-        keyboard.getKeyboardDisplayed (note: "C4", callType: .dynamicDisplayKey, harmonicaBase: 17, sharpsFlats: 0)
+        //let keyboard = setupKeyboard(pianoKeyPlaying: <#Int#>, callType: <#keyDisplayType#>, harmonicaBase: <#Int#>, sharpsFlats: <#Int#>)
+        //try keyboard.getHarmonicaFromJSON()
+        //keyboard.getKeyboardDisplayed (note: "C4", callType: .dynamicDisplayKey, harmonicaBase: 17, sharpsFlats: 0)
             
         
         

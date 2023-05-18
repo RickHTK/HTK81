@@ -3,18 +3,20 @@
 
 class setupKeyboard {
     var harmonicaKeyboard : [KeyboardRow]
-    var keyboardNotePlaying : String = ""
+    var keyboardNotePlaying : Int = 0
     var keyboardCallType: keyDisplayType
     var keyboardHarmonicaBase: Int
     var keyboardSharpsFlats: Int
     let pianoKeyboard = setupPiano().getPianoFromJSON ()
     
-    init (note: String, callType: keyDisplayType, harmonicaBase: Int, sharpsFlats: Int) {
+    
+    init (pianoKeyPlaying:Int, callType: keyDisplayType, harmonicaBase: Int, sharpsFlats: Int) {
         harmonicaKeyboard = []
-        keyboardNotePlaying = note
+        keyboardNotePlaying = pianoKeyPlaying
         keyboardCallType = callType
         keyboardHarmonicaBase = harmonicaBase
         keyboardSharpsFlats = sharpsFlats
+        print ("Piano Key passed in : ", pianoKeyPlaying)
     }
     
     
@@ -89,6 +91,10 @@ class setupKeyboard {
                 print ("ROW: ", thisRow.rowNumber, thisRow.rowName, thisButton.button, thisButton.offset, thisButton.displayed)
 
                 
+                /// What is shown on the button
+                
+                
+                
                 if thisButton.displayed == "B" {
                     buttonLabel = thisButton.boilerplate
                     
@@ -99,7 +105,7 @@ class setupKeyboard {
                     
                     let holeNote =  notesBase + thisButton.offset + keyboardHarmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
                     
-                    
+                    print ("KEYCHECK : ", pianoKeyboard[holeNote].pianoKey , keyboardNotePlaying)
                
                     if keyboardSharpsFlats == 0 {
                         buttonLabel = pianoKeyboard[holeNote].noteNameFlats
@@ -112,9 +118,11 @@ class setupKeyboard {
                     //print ("noteName in buttondefs : ", notes[holeNote].noteName!)
                     
                     // The note being played currently
-                    if pianoKeyboard[holeNote].noteNameSharps == keyboardNotePlaying  && keyboardCallType == .dynamicDisplayKey && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
+                    
+                    if pianoKeyboard[holeNote].pianoKey == keyboardNotePlaying  && keyboardCallType == .dynamicDisplayKey && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
                             
                         //thisButton.displayed = "P"
+                        print ("PLAYING :", pianoKeyboard[holeNote].noteNameSharps)
                             
                         }
                 }
@@ -128,7 +136,12 @@ class setupKeyboard {
                     buttonLabel = "NA" // changed
                 }
                 
-                displayedKeyboardRow.append( interfaceButton (buttonColor: getColor(colour: thisButton.background), textColor: getColor(colour: thisButton.textColor), title: thisButton.wingdings, wingdings: thisButton.wingdings, rowNo: thisRow.rowNumber, colNo: columnNumber, Tag: 100*thisRow.rowNumber * columnNumber, displayed: thisButton.displayed))
+             
+                
+                
+            
+                
+                displayedKeyboardRow.append( interfaceButton (buttonColor: getColor(colour: thisButton.background), textColor: getColor(colour: thisButton.textColor), title: buttonLabel, wingdings: thisButton.wingdings, rowNo: thisRow.rowNumber, colNo: columnNumber, Tag: 100*thisRow.rowNumber * columnNumber, displayed: thisButton.displayed))
             }
             displayedKeyboard.append (displayedKeyboardRow)
             displayedKeyboardRow = []

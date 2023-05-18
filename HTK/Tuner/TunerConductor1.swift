@@ -158,13 +158,16 @@ class TunerConductor: TunerConductorModel {
         guard amp > 1.0 else { return } // can change base amplitude in settings
         guard pitch > freqRange.lowestNote && pitch < freqRange.highestNote
         else {
-            print ("FREQ RANGE FAILURE")
             return
         }       /// pitch range depends on the harmonica key
         
         /// Observable Data
         data.pitch = pitch
         data.amplitude = amp
+        
+        
+        let pianoNoteNumber = Int (12 * (log2 (pitch/440)) + 49)
+        print ("PITCH: ", pitch, "KeyNo: ", pianoNoteNumber)
         
         var noteDetected : String = ""
         var frequency = pitch
@@ -183,19 +186,22 @@ class TunerConductor: TunerConductorModel {
         /// BLOCK 2 -- Find the Octave and Note being played
         if frequency > 0 {
             octave = Int(log2f(pitch / frequency))
-            //print ("Octave ", octave)
+            
+            
+            
             // Find the note
             for checkRange in 0 ..< noteFreqRange.count {
                 
                 if noteFreqRange[checkRange].lowerRange < frequency && frequency < noteFreqRange[checkRange].higherRange {
                     
-                    pianoKey =  (12 + octave * 12 + checkRange)
+                    pianoKey =  (12 + octave * 12 + checkRange) // Wrong calculation
                     index = checkRange
                     noteDetected = "\(noteNamesWithSharps[checkRange])\(octave)"
                     
                     noteFound2 = noteDetail (note: noteDetected, sustainLength: 1, pianoKey: pianoKey)
                 }
             }
+            print ("frequency:", frequency, "Octave ", octave, "note: ", noteDetected, "piano: ", pianoKey)
         }
         else {
             octave = 0  //This can lead to failures

@@ -141,7 +141,7 @@ struct MasterView: View {
             
             
             
-            NavigationLink(destination: TunerView <TunerConductor> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensetivityIndex, adsOnOff: .AdsOff, conductor: TunerConductor(freqRangeIn: freqRange)))
+            NavigationLink(destination: TunerView <TunerConductor2> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensetivityIndex, adsOnOff: .AdsOff, conductor: TunerConductor2(freqRangeIn: freqRange)))
             {
                 Label("", systemImage: "mic").font(.system(size: 40))
                 

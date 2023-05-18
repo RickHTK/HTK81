@@ -55,7 +55,7 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
         
         //let buttonGrid2 = setupKeyboard(note: "\(conductor.data.noteName)", callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
         
-        let buttonGrid = setupKeyboard(note: "\(conductor.data.noteName)", callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
+        let buttonGrid = setupKeyboard(pianoKeyPlaying: conductor.data.pianoKey, callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
         
         ZStack(alignment: .leading) {
 
