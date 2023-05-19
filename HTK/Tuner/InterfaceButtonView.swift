@@ -16,22 +16,17 @@ struct interfaceButton  : View, Identifiable, Hashable {
     // Function to conform to equatable
     static func == (lhs: interfaceButton, rhs: interfaceButton) -> Bool {
         return
-        
             lhs.Tag == rhs.Tag
         && lhs.displayed == rhs.displayed
         && lhs.id == rhs.id
         && lhs.title == rhs.title
         && lhs.wingdings == rhs.wingdings
+        //&& lhs.buttonColor == rhs.buttonColor
     }
     
-    
     var id = UUID() // Variable to satisfy Identifiable
-    
-    //var nonDisplayedColor : UIColor = .white
-    
-    // variable parameters  passed from Array
-    var buttonColor: UIColor // = .blue
-    var textColor: UIColor // = .black
+    var buttonColor: UIColor
+    var textColor: UIColor
     var title: String
     var wingdings: String
     var rowNo: Int
@@ -39,16 +34,11 @@ struct interfaceButton  : View, Identifiable, Hashable {
     var Tag: Int
     var displayed: String
     
-    
-    //var fontType: Bool = true
-    
     // Function to conform to hashable
     func hash(into hasher: inout Hasher) {
         hasher.combine(Tag)
     }
     
-    
-
     var body: some View {
         
         let historyButtonStyle = keyboardButtonLabelStyle (fontSize: 24, fontName: "Wingdings2", textColor: textColor)

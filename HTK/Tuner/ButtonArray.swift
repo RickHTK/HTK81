@@ -8,7 +8,7 @@
  Returns a 2D grid of Interface Buttons to be placedin the keyboard view
  */
 
-func buttonArray (notePlaying: String, noteHistory : [noteDetail] , position : Int, harmonicaBase : Int, sharpsFlats : Int, mode : Int, register : Int, translationMap : [Int : Int] ) -> [[interfaceButton]] {
+func buttonArray (notePlaying: Int, noteHistory : [noteDetail] , position : Int, harmonicaBase : Int, sharpsFlats : Int, mode : Int, register : Int, translationMap : [Int : Int] ) -> [[interfaceButton]] {
     
     let buttonColumns = [0,1,2,3,4,5,6,7,8,9,10,11]
     let actionRows = [1,2,3,4,5,6,7,8]
@@ -17,7 +17,6 @@ func buttonArray (notePlaying: String, noteHistory : [noteDetail] , position : I
     var historyButtonRow : [interfaceButton] = []
     let buttonKey = getButtonDefs(note: notePlaying, callType: "dynamic", harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats)
     let staticButtonKey = getButtonDefs(note: notePlaying, callType: "static", harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats)
-    
     
     print ("Note ", notePlaying)
     
@@ -40,7 +39,7 @@ func buttonArray (notePlaying: String, noteHistory : [noteDetail] , position : I
                                                  wingdings: chosenButton!.wingdings!,
                                                  rowNo: rowValue,
                                                  colNo: columnValue,
-                                                 Tag: rowValue * 100 + columnValue,
+                                                 Tag: buttonTagNo,
                                                  displayed: chosenButton!.displayed!
             )
             buttonRow.append (currentButton)

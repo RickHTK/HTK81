@@ -16,7 +16,6 @@ class setupKeyboard {
         keyboardCallType = callType
         keyboardHarmonicaBase = harmonicaBase
         keyboardSharpsFlats = sharpsFlats
-        print ("Piano Key passed in : ", pianoKeyPlaying)
     }
     
     
@@ -29,50 +28,8 @@ class setupKeyboard {
         }
         
         let rawHarmonica = DBFileLoader.loadHarmonicaStructureJson(harmonicaStructure)
-        
         harmonicaKeyboard = rawHarmonica.keyboardRows
-        
-        
-        
-        
-        
-        
-        
-        
-        //var parameterlist : [Any] = []
-        
-        //var thisButton : KeyboardButton
-        
-        
-        /*
-        for i in harmonicaKeyboard {
-            
-            let tableForInsert = String (describing: type(of: i))
-            print ("Table For Insert: ", tableForInsert, type (of: tableForInsert))
-            
-            for j in i.keyboardKeys {
-                
-                let tableForInsert = String (describing: type(of: j))
-                var parameterList1 = [j.button,j.offset,j.wingdings,j.background,j.displayed,j.background,j.textColor] as [Any]
-                
-                
-                /*
-                thisButton = KeyboardButton (   buttonId: j.button,
-                                                offset: j.offset ,
-                                                wingdings: j.wingdings ,
-                                                backColor: getColor (colour: j.background),
-                                                displayed: j.displayed ,
-                                                textColor: getColor (colour: j.textColor),
-                                                boilerplate: j.boilerplate
-                )*/
-                
-                //htkDB.upsertDataDictionaryTable(tableName: tableForInsert, parameterList: parameterList1)
-            }
-            let parameterList2 = [i.rowNumber ,i.rowName] as [Any]
-            //htkDB.upsertDataDictionaryTable(tableName: tableForInsert, parameterList: parameterList2 )
-        }*/
-        
-   
+
     }
     
     func getKeyboardDisplayed () -> [[interfaceButton]] {
@@ -88,12 +45,10 @@ class setupKeyboard {
         for thisRow in harmonicaKeyboard {
             
             for (columnNumber , thisButton) in thisRow.keyboardKeys.enumerated() {
-                print ("ROW: ", thisRow.rowNumber, thisRow.rowName, thisButton.button, thisButton.offset, thisButton.displayed)
-
+                
+                var thisButtonDisplayed : String = thisButton.displayed
                 
                 /// What is shown on the button
-                
-                
                 
                 if thisButton.displayed == "B" {
                     buttonLabel = thisButton.boilerplate
@@ -103,6 +58,7 @@ class setupKeyboard {
                 // Playing buttons
                 else if thisButton.displayed == "1" {
                     
+                    
                     let holeNote =  notesBase + thisButton.offset + keyboardHarmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
                     
                     print ("KEYCHECK : ", pianoKeyboard[holeNote].pianoKey , keyboardNotePlaying)
@@ -111,7 +67,8 @@ class setupKeyboard {
                         buttonLabel = pianoKeyboard[holeNote].noteNameFlats
                     }
                     else {
-                        buttonLabel = pianoKeyboard[holeNote].noteNameSharps
+                        //buttonLabel = pianoKeyboard[holeNote].noteNameSharps
+                        buttonLabel = String (pianoKeyboard[holeNote].pianoKey)
                     }
 
 
@@ -119,9 +76,9 @@ class setupKeyboard {
                     
                     // The note being played currently
                     
-                    if pianoKeyboard[holeNote].pianoKey == keyboardNotePlaying  && keyboardCallType == .dynamicDisplayKey && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
+                    if holeNote == keyboardNotePlaying  && keyboardCallType == .dynamicDisplayKey && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
                             
-                        //thisButton.displayed = "P"
+                        thisButtonDisplayed = "P"
                         print ("PLAYING :", pianoKeyboard[holeNote].noteNameSharps)
                             
                         }
@@ -135,13 +92,10 @@ class setupKeyboard {
                 else {
                     buttonLabel = "NA" // changed
                 }
+
                 
-             
-                
-                
-            
-                
-                displayedKeyboardRow.append( interfaceButton (buttonColor: getColor(colour: thisButton.background), textColor: getColor(colour: thisButton.textColor), title: buttonLabel, wingdings: thisButton.wingdings, rowNo: thisRow.rowNumber, colNo: columnNumber, Tag: 100*thisRow.rowNumber * columnNumber, displayed: thisButton.displayed))
+                displayedKeyboardRow.append( interfaceButton (buttonColor: getColor(colour: thisButton.background), textColor: getColor(colour: thisButton.textColor), title: buttonLabel, wingdings: thisButton.wingdings, rowNo: thisRow.rowNumber, colNo: columnNumber, Tag: 100*thisRow.rowNumber * columnNumber, displayed: thisButtonDisplayed
+                                                             ))
             }
             displayedKeyboard.append (displayedKeyboardRow)
             displayedKeyboardRow = []

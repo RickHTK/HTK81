@@ -154,7 +154,7 @@ struct KeyboardButton2 : Codable {
 // Uses a PLIST to get the current button definitions
 // Runs in dynamic or static mode.
 // in dynamic mode (call type = dynamic) displayed for the note being played is set to P which highlights the button
-func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFlats: Int) -> [KeyboardButton]{ //Type is not used
+func getButtonDefs(note: Int, callType: String, harmonicaBase: Int, sharpsFlats: Int) -> [KeyboardButton]{ //Type is not used
     
     var _buttonDefns = [KeyboardButton]() //Declare empty array
     var thisButton : KeyboardButton
@@ -186,13 +186,13 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
                                             )
             
             
-            // Boilerplate buttons
+            // labels for boilerplate buttons
             if thisButton.displayed == "B" {
                 thisButton.buttonLabel = thisButton.boilerplate
                 
             }
             
-            // Playing buttons
+            // labels for Playing buttons
             else if thisButton.displayed == "1" {
                 
                 let holeNote =  notesBase + thisButton.offset! + harmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
@@ -201,17 +201,20 @@ func getButtonDefs(note: String, callType: String, harmonicaBase: Int, sharpsFla
            
                 if sharpsFlats == 0 {
                     thisButton.buttonLabel = pianoNotes[holeNote].noteNameFlats
+                    
+                    
                 }
                 else {
                     thisButton.buttonLabel = pianoNotes[holeNote].noteNameSharps
+                    //thisButton.buttonLabel = String(pianoNotes[holeNote].pianoKey)
                 }
 
 
                 //print ("noteName in buttondefs : ", notes[holeNote].noteName!)
                 
                 // The note being played currently
-                if pianoNotes[holeNote].noteNameSharps == note  && callType == "dynamic" && thisButton.buttonId != 103 && thisButton.buttonId != 207  { //Not for buttons that play the same note as the main buttons
-                        
+                if  holeNote == note  && callType == "dynamic" && thisButton.buttonId != 103 && thisButton.buttonId != 207  { //Not for buttons that play the same note as the main buttons
+                    print ("Setting to P For : ", holeNote, pianoNotes[holeNote].pianoKey)
                     thisButton.displayed = "P"
                         
                     }

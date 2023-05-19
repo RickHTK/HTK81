@@ -5,14 +5,10 @@ import SwiftUI
 import AVFoundation
 import CSoundpipeAudioKit
 
-
-
-
-
 // Tuner View is the main view of the harmonica screen
 // it links the state object conductor and the visual harmonica keyboard
 
-struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorModel {
+struct TunerView<TunerObservable> : View where TunerObservable: TunerConductor2Model {
     
     @State private var orientation = UIDeviceOrientation.unknown
     
@@ -44,8 +40,8 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
         
         /// Has to be in the body of the view so as to react to changes in the conductor at each point of creation
         
-        let buttonGridX = buttonArray (notePlaying: "\(conductor.data.noteName)",
-                                  noteHistory : conductor.data.lastNotes,
+        let buttonGridX = buttonArray (notePlaying: conductor.pianoKeyPlaying, // "\(conductor.data.noteName)",
+                                  noteHistory : [], //conductor.data.lastNotes,
                                   position: position,
                                   harmonicaBase: harmonicaBase,
                                   sharpsFlats: sharpsFlats,
@@ -55,7 +51,7 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorMo
         
         //let buttonGrid2 = setupKeyboard(note: "\(conductor.data.noteName)", callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
         
-        let buttonGrid = setupKeyboard(pianoKeyPlaying: conductor.data.pianoKey, callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
+        let buttonGrid = setupKeyboard(pianoKeyPlaying: /*conductor.data.pianoKey*/ conductor.pianoKeyPlaying , callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
         
         ZStack(alignment: .leading) {
 
