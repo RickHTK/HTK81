@@ -17,42 +17,6 @@ struct keyboardButtonLabelStyle: ButtonStyle {
 }
 
 
-
-
-
-/*
-func getNotes( flatsSharps: Int) -> [Notes]{
-
-    var _notes = [Notes]()
-    
-    if _notes.count > 0 {
-        return _notes
-    }
-    
-    if let allData = NSArray(contentsOfFile: AUTO_PLIST_NOTES_PATH!) {
-        
-        for dict in allData {
-            guard let dict = dict as? [String: AnyObject] else {continue}
-            let notes = Notes()
-            notes.pianoKey = dict["pianoKey" ] as? Int // pianoKey
-            notes.noteNameSharps = dict["noteNameSharps"] as? String // noteName
-            notes.noteNameFlats = dict["noteNameFlats"] as? String // noteName
-            if flatsSharps == 1 {
-                notes.noteName = notes.noteNameSharps
-            }
-            else {
-                notes.noteName = notes.noteNameFlats
-                
-            }
-            //print ("This Note: ", notes.noteName, notes.noteNameSharps, notes.noteNameFlats)
-            notes.frequency = (dict["frequency"] as? NSString)?.floatValue // frequency
-            _notes.append(notes)
-            notes.defaultAction = dict["defaultAction"] as! Int
-        }
-    }
-    return _notes
-}*/
-
 func getColor (colour: String) -> UIColor
 {
     
@@ -154,6 +118,7 @@ struct KeyboardButton2 : Codable {
 // Uses a PLIST to get the current button definitions
 // Runs in dynamic or static mode.
 // in dynamic mode (call type = dynamic) displayed for the note being played is set to P which highlights the button
+/*
 func getButtonDefs(note: Int, callType: String, harmonicaBase: Int, sharpsFlats: Int) -> [KeyboardButton]{ //Type is not used
     
     var _buttonDefns = [KeyboardButton]() //Declare empty array
@@ -237,4 +202,4 @@ func getButtonDefs(note: Int, callType: String, harmonicaBase: Int, sharpsFlats:
     
     return _buttonDefns
      
-}
+}*/

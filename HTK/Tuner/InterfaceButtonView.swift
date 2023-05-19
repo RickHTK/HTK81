@@ -32,7 +32,7 @@ struct interfaceButton  : View, Identifiable, Hashable {
     var rowNo: Int
     var colNo: Int
     var Tag: Int
-    var displayed: String
+    var displayed: harmonicaKeyboardDisplayType
     
     // Function to conform to hashable
     func hash(into hasher: inout Hasher) {
@@ -54,9 +54,9 @@ struct interfaceButton  : View, Identifiable, Hashable {
         // This is the label text shown on the button
         label: { Text (title)} // can be replaced with accessibility id for testing
             .frame ( minWidth: 0, maxWidth: .infinity, minHeight: 20, maxHeight: .infinity, alignment: .center )
-            .buttonStyle (displayed == "H" ? historyButtonStyle : ( displayed == "1" ? playingButtonStyle : (displayed == "B" ? BoilerplateButtonStyle : (displayed == "P" ? NotePlayingButtonStyle : NotDisplayed))))
+            .buttonStyle (displayed == .history ? historyButtonStyle : ( displayed == .playable ? playingButtonStyle : (displayed == .boilerplate ? BoilerplateButtonStyle : (displayed == .playing ? NotePlayingButtonStyle : NotDisplayed))))
             .tag (rowNo * 100 + colNo)
-            .background(displayed == "P" ? .black  : Color(buttonColor))
+            .background(displayed == .playing ? .black  : Color(buttonColor))
             .clipped()
             .accessibilityIdentifier(accessibilityIdentifierString)
             

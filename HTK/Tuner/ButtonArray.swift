@@ -7,7 +7,7 @@
 /*
  Returns a 2D grid of Interface Buttons to be placedin the keyboard view
  */
-
+/*
 func buttonArray (notePlaying: Int, noteHistory : [noteDetail] , position : Int, harmonicaBase : Int, sharpsFlats : Int, mode : Int, register : Int, translationMap : [Int : Int] ) -> [[interfaceButton]] {
     
     let buttonColumns = [0,1,2,3,4,5,6,7,8,9,10,11]
@@ -122,4 +122,5 @@ func buttonArray2 (notePlaying: String, noteHistory : [noteDetail] , position : 
     
     
     return [[]]
-}
+}*/
+ 

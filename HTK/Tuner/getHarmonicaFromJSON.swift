@@ -9,6 +9,12 @@ class setupKeyboard {
     var keyboardSharpsFlats: Int
     let pianoKeyboard = setupPiano().getPianoFromJSON ()
     
+    enum harmonicaKeyboardLabelDisplayType : Int {
+        case sharps
+        case flats
+        case pianoKeys
+    }
+
     
     init (pianoKeyPlaying:Int, callType: keyDisplayType, harmonicaBase: Int, sharpsFlats: Int) {
         harmonicaKeyboard = []
@@ -37,6 +43,7 @@ class setupKeyboard {
         var displayedKeyboardRow : [interfaceButton] = []
         var displayedKeyboard : [[interfaceButton]] = [[]]
         var buttonLabel : String = ""
+        var labelsDisplayed : harmonicaKeyboardLabelDisplayType = .flats
         
         do
         {  try getHarmonicaFromJSON() }
@@ -46,17 +53,17 @@ class setupKeyboard {
             
             for (columnNumber , thisButton) in thisRow.keyboardKeys.enumerated() {
                 
-                var thisButtonDisplayed : String = thisButton.displayed
+                var thisButtonDisplayed : harmonicaKeyboardDisplayType = thisButton.displayed
                 
                 /// What is shown on the button
                 
-                if thisButton.displayed == "B" {
+                if thisButton.displayed == .boilerplate {
                     buttonLabel = thisButton.boilerplate
                     
                 }
                 
                 // Playing buttons
-                else if thisButton.displayed == "1" {
+                else if thisButton.displayed == .playable {
                     
                     
                     let holeNote =  notesBase + thisButton.offset + keyboardHarmonicaBase // B-Maj harmonica gives note 102, C-maj shows rest
@@ -67,8 +74,15 @@ class setupKeyboard {
                         buttonLabel = pianoKeyboard[holeNote].noteNameFlats
                     }
                     else {
-                        //buttonLabel = pianoKeyboard[holeNote].noteNameSharps
-                        buttonLabel = String (pianoKeyboard[holeNote].pianoKey)
+                        switch labelsDisplayed {
+                        case  .flats:
+                            buttonLabel = pianoKeyboard[holeNote].noteNameFlats
+                        case .sharps:
+                            buttonLabel = pianoKeyboard[holeNote].noteNameSharps
+                        case .pianoKeys:
+                            buttonLabel = String (pianoKeyboard[holeNote].pianoKey)
+                        }
+                        
                     }
 
 
@@ -78,14 +92,13 @@ class setupKeyboard {
                     
                     if holeNote == keyboardNotePlaying  && keyboardCallType == .dynamicDisplayKey && thisButton.button != 103 && thisButton.button != 207  { //Not for buttons that play the same note as the main buttons
                             
-                        thisButtonDisplayed = "P"
-                        print ("PLAYING :", pianoKeyboard[holeNote].noteNameSharps)
+                        thisButtonDisplayed = .playing
                             
                         }
                 }
                 
                 // History buttons
-                else if thisButton.displayed == "H"  {
+                else if thisButton.displayed == .history  {
                     buttonLabel = thisButton.wingdings
                 }
                 
