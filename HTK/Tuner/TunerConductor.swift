@@ -44,7 +44,7 @@ class TunerConductor2: TunerConductorModel {
 
     let dummyNote = noteDetail ( note: "£", sustainLength : 1, pianoKey: 0)
 
-    var notesDetectedQueue = RingBufferQueue(count: 20)
+    var notesDetectedQueue = RingBufferQueue(bufferSize: 20, bufferSensitivity: 3)
     
     init(freqRangeIn: (lowestNote: Float, highestNote : Float))
     {
