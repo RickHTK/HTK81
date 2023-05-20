@@ -10,7 +10,7 @@ import SwiftUI
 
 
 
-
+/*
 let harmonicaNames:[(   baseNote:           Int,
                         harmonicaName:      String,
                         harmonicaShortName: String,
@@ -55,38 +55,9 @@ let harmonicaNames:[(   baseNote:           Int,
 (45,    "F-Maj", "F",     9,  4,     11,  6,      1,      8,      3,      10,     5,      0,      7,      2),
 (46,    "F#-Maj", "F#",   10, 5,     0,   7,      2,      9,      4,      11,     6,      1,      8,      3)
 ]
-
+*/
 
 // The same dictionary in two senses.
-
-
-let harmonicaBaseDict_DEL =
-[ // should be calculated..
-    "Low G" : -5,
-    "Low Ab" :-4,
-    "Low A" :-3,
-    "Low Bb" : -2,
-    "Low B" : -2,
-    "Low C" : 0,
-    "Low C#" : 1,
-    "Low D" : 2,
-    "Low Eb" : 3,
-    "Low E" : 4,
-    "Low F"  : 5,
-    "Low F#" : 6,
-    "G-Maj" : 7,
-    "Ab-Maj" : 8,
-    "A-Maj"  : 9,
-    "Bb-Maj" : 10,
-    "B-Maj" : 11,
-    "C-Maj" : 17,
-    "C#-Maj" : 13,
-    "D-Maj" : 14,
-    "Eb-Maj" : 15,
-    "E-Maj" : 16,
-    "F-Maj" : 17,
-    "F#-Maj" : 18
-]
 
 let harmonicaBaseDict =
 [ // should be calculated..
@@ -210,6 +181,7 @@ struct noteDetail{
     var pianoKey : Int
 }
 
+/*
 var harmonicaList =
 [ "Low G",
   "Low Ab",
@@ -236,7 +208,7 @@ var harmonicaList =
   "F-Maj",
   "F#-Maj"
 ]
-
+*/
 
 
 struct harmonica
@@ -291,7 +263,6 @@ var harmonicaList2  =
     ("twelvthPosition", 12)
 ]
 
-
 let harmonicaDictRev =
 
 [ 0 : "Low G",
@@ -320,6 +291,36 @@ let harmonicaDictRev =
 23 : "F#-Maj"
 ]
 
+let harmonicaShortNameDict =
+
+[
+    "Low G"  : "G",
+    "Low Ab" : "Ab",
+    "Low A"  : "A",
+    "Low Bb" : "Bb",
+    "Low B"  : "B",
+    "Low C"  : "C",
+    "Low C#" : "C#",
+    "Low D"  : "D",
+    "Low Eb" : "Eb",
+    "Low E"  : "E",
+    "Low F"  : "F",
+    "Low F#" : "F#",
+    "G-Maj"  : "G",
+    "Ab-Maj" : "Ab",
+    "A-Maj"  : "A",
+    "Bb-Maj" : "Bb",
+    "B-Maj"  : "B",
+    "C-Maj"  : "C",
+    "C#-Maj" : "C#",
+    "D-Maj"  : "D",
+    "Eb-Maj" : "Eb",
+    "E-Maj"  : "E",
+    "F-Maj"  : "F",
+    "F#-Maj" : "F#"
+
+]
+
 
 // Returns an ordered list
 
@@ -330,7 +331,6 @@ func orderHarmonicaArray () -> [String] {
     
     retArray.append (harmonicaDictRev[i] ?? "")
 }
-    //print (retArray)
     return retArray
 }
 
@@ -341,7 +341,6 @@ func orderModeArray () -> [String] {
     
     retArray.append (modeDictRev[i] ?? "")
 }
-    //print (retArray)
     return retArray
 }
 

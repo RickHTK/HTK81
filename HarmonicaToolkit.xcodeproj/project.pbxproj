@@ -47,20 +47,18 @@
 		CE4633392A0443D70092F254 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE4633382A0443D70092F254 /* SoundpipeAudioKit */; };
 		CE46333B2A0443DE0092F254 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = CE46333A2A0443DE0092F254 /* GoogleMobileAds */; };
 		CE46333D2A0443E80092F254 /* SporthAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE46333C2A0443E80092F254 /* SporthAudioKit */; };
-		CE65200D2A157E4500AC842C /* TestCircularQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65200C2A157E4500AC842C /* TestCircularQueue.swift */; };
-		CE6629E72A043368006451D6 /* HarmonicaToolkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6629E62A043368006451D6 /* HarmonicaToolkitTests.swift */; };
 		CE6B12D62A06CC96009D78A8 /* BespokePitchTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */; };
-		CE6B12D82A06DBBF009D78A8 /* HarmonicaToolkitTunerButtonArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B12D72A06DBBF009D78A8 /* HarmonicaToolkitTunerButtonArray.swift */; };
+		CE6F63532A18CB6600571B73 /* pianoNotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE13FB7D2A000CBF00168035 /* pianoNotes.plist */; };
+		CE6F63542A18CD2600571B73 /* richterHarmonica.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE46333E2A0444ED0092F254 /* richterHarmonica.plist */; };
+		CE6F63562A1903A700571B73 /* HarmonicaToolkitTranslationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F63552A1903A700571B73 /* HarmonicaToolkitTranslationTests.swift */; };
+		CE6F635A2A192B2400571B73 /* richterHarmonicaTesting.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6F63592A192B2400571B73 /* richterHarmonicaTesting.plist */; };
+		CE6F635B2A192DF100571B73 /* richterHarmonicaTesting.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6F63592A192B2400571B73 /* richterHarmonicaTesting.plist */; };
 		CE757CC2295F25390011420E /* InterfaceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC1295F25390011420E /* InterfaceButtonView.swift */; };
 		CE757CC6295F26CA0011420E /* ButtonDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */; };
-		CE7D0BCB2A14AD5F006D1A1E /* HarmonicaToolkitTunerConductor2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D0BCA2A14AD5F006D1A1E /* HarmonicaToolkitTunerConductor2Tests.swift */; };
 		CE8E6C302A12D1C2006563DC /* TunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E6C2F2A12D1C2006563DC /* TunerConductor.swift */; };
 		CE8E6C322A136AD1006563DC /* QueueStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E6C312A136AD1006563DC /* QueueStruct.swift */; };
-		CE9DE00B2A0689CC00628B5E /* MockTunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DE00A2A0689CC00628B5E /* MockTunerConductor.swift */; };
-		CE9DE00D2A06B64000628B5E /* MockMicrophone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DE00C2A06B64000628B5E /* MockMicrophone.swift */; };
 		CEA2EFF32A0902EE000918F4 /* richterHarmonica.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */; };
 		CEA2EFF52A09057E000918F4 /* JsonEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */; };
-		CEA2EFF72A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF62A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift */; };
 		CEA2EFF92A0907D6000918F4 /* DBEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */; };
 		CEA4D84A2A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D8492A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift */; };
 		CEA4D84C2A0B747800CD8294 /* pianoNotes.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA4D84B2A0B747800CD8294 /* pianoNotes.json */; };
@@ -107,39 +105,45 @@
 		1DB54A57286E364800AE5FF0 /* Wingdings2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wingdings2.ttf; sourceTree = "<group>"; };
 		1DB88B0728C53FB400A1CBA4 /* SubscriptionInfoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionInfoSheetView.swift; sourceTree = "<group>"; };
 		1DC0D4C2295DF60A005AAB14 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
-		1DCFB7A528BCD33700336DD2 /* HarmonicaToolkit copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HarmonicaToolkit copy-Info.plist"; path = "/Users/rick/Documents/github/HTK51 grids/HarmonicaToolkit copy-Info.plist"; sourceTree = "<absolute>"; };
 		6350E7CC27A9360200D0F510 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		C446DE442528D8E600138D0A /* HarmonicaToolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarmonicaToolkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C446DE472528D8E600138D0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C446DE4B2528D8E600138D0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C446DE4D2528D8E700138D0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C446DE552528D8E700138D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C446DE602528D8E800138D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C446DEA12528D9CA00138D0A /* TunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
 		C4A2F2C3253D45D4007C1032 /* HarmonicaToolkit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HarmonicaToolkit.entitlements; sourceTree = "<group>"; };
 		CE13FB7429FEE44B00168035 /* HarmonicaToolkitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITests.swift; sourceTree = "<group>"; };
 		CE13FB7629FEE44B00168035 /* HarmonicaToolkitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE13FB7D2A000CBF00168035 /* pianoNotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pianoNotes.plist; sourceTree = "<group>"; };
-		CE301006295F4E4000C970B3 /* HarmonicaToolkitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTests.swift; sourceTree = "<group>"; };
 		CE35FEFE29F52D1100385F15 /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
 		CE4632EE2A043AD90092F254 /* HarmonicaToolkitUITests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarmonicaToolkitUITests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4632F02A043AD90092F254 /* HarmonicaToolkitUITests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITests2.swift; sourceTree = "<group>"; };
 		CE4632F22A043AD90092F254 /* HarmonicaToolkitUITests2LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITests2LaunchTests.swift; sourceTree = "<group>"; };
 		CE46333E2A0444ED0092F254 /* richterHarmonica.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = richterHarmonica.plist; sourceTree = "<group>"; };
-		CE65200C2A157E4500AC842C /* TestCircularQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCircularQueue.swift; sourceTree = "<group>"; };
 		CE6629E42A043368006451D6 /* HarmonicaToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarmonicaToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE6629E62A043368006451D6 /* HarmonicaToolkitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTests.swift; sourceTree = "<group>"; };
-		CE6B12D72A06DBBF009D78A8 /* HarmonicaToolkitTunerButtonArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTunerButtonArray.swift; sourceTree = "<group>"; };
+		CE6F63412A18BBD300571B73 /* XCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCExtension.swift; sourceTree = "<group>"; };
+		CE6F63422A18BBD300571B73 /* MockTunerConductorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTunerConductorModel.swift; sourceTree = "<group>"; };
+		CE6F63432A18BBD300571B73 /* MockTunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTunerConductor.swift; sourceTree = "<group>"; };
+		CE6F63442A18BBD300571B73 /* HarmonicaLoadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaLoadTests.swift; sourceTree = "<group>"; };
+		CE6F63452A18BBD300571B73 /* HarmonicaToolkitJsonLoadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitJsonLoadTests.swift; sourceTree = "<group>"; };
+		CE6F63462A18BBD300571B73 /* HarmonicaToolkitTunerButtonArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTunerButtonArray.swift; sourceTree = "<group>"; };
+		CE6F63472A18BBD300571B73 /* PitchHighlightsCorrectKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchHighlightsCorrectKeys.swift; sourceTree = "<group>"; };
+		CE6F63482A18BBD300571B73 /* MockMicrophone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMicrophone.swift; sourceTree = "<group>"; };
+		CE6F63492A18BBD300571B73 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		CE6F634A2A18BBD300571B73 /* MockBaseTap0001.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBaseTap0001.swift; sourceTree = "<group>"; };
+		CE6F634B2A18BBD300571B73 /* TestCircularQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCircularQueue.swift; sourceTree = "<group>"; };
+		CE6F634C2A18BBD300571B73 /* HarmonicaToolkitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HarmonicaToolkitTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE6F634D2A18BBD300571B73 /* HarmonicaToolkitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTests.swift; sourceTree = "<group>"; };
+		CE6F634E2A18BBD300571B73 /* HarmonicaToolkitTunerConductor2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTunerConductor2Tests.swift; sourceTree = "<group>"; };
+		CE6F63552A1903A700571B73 /* HarmonicaToolkitTranslationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTranslationTests.swift; sourceTree = "<group>"; };
+		CE6F63592A192B2400571B73 /* richterHarmonicaTesting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = richterHarmonicaTesting.plist; sourceTree = "<group>"; };
 		CE757CC1295F25390011420E /* InterfaceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceButtonView.swift; sourceTree = "<group>"; };
 		CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefinitions.swift; sourceTree = "<group>"; };
-		CE7D0BCA2A14AD5F006D1A1E /* HarmonicaToolkitTunerConductor2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitTunerConductor2Tests.swift; sourceTree = "<group>"; };
 		CE8E6C2F2A12D1C2006563DC /* TunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerConductor.swift; sourceTree = "<group>"; };
 		CE8E6C312A136AD1006563DC /* QueueStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueStruct.swift; sourceTree = "<group>"; };
-		CE9DE00A2A0689CC00628B5E /* MockTunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTunerConductor.swift; sourceTree = "<group>"; };
-		CE9DE00C2A06B64000628B5E /* MockMicrophone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMicrophone.swift; sourceTree = "<group>"; };
 		CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = richterHarmonica.json; sourceTree = "<group>"; };
 		CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonEncoder.swift; sourceTree = "<group>"; };
-		CEA2EFF62A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitJsonLoadTests.swift; sourceTree = "<group>"; };
 		CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEncoder.swift; sourceTree = "<group>"; };
 		CEA4D8492A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getHarmonicaFromJSON.swift; sourceTree = "<group>"; };
 		CEA4D84B2A0B747800CD8294 /* pianoNotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pianoNotes.json; sourceTree = "<group>"; };
@@ -182,13 +186,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D119C3428CC8485003737C0 /* Tuner */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tuner;
-			sourceTree = "<group>";
-		};
 		1D1BC6EB28D37F3F00F672A4 /* App_Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +225,8 @@
 			children = (
 				CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */,
 				CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */,
+				CEA4D8492A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift */,
+				CE757CC1295F25390011420E /* InterfaceButtonView.swift */,
 				CEA4D84B2A0B747800CD8294 /* pianoNotes.json */,
 				CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */,
 				1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */,
@@ -242,10 +241,8 @@
 				1D8384D528C348D20046C017 /* GridView.swift */,
 				1D7CB7C82898592E005BFF68 /* BannerAdsView.swift */,
 				1D8384D728C3491C0046C017 /* setupParams.swift */,
-				CE757CC1295F25390011420E /* InterfaceButtonView.swift */,
 				CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */,
 				CE35FEFE29F52D1100385F15 /* DummyView.swift */,
-				CEA4D8492A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift */,
 				CEA4D84F2A0B868B00CD8294 /* getPianoFromJSON.swift */,
 				CE8E6C312A136AD1006563DC /* QueueStruct.swift */,
 			);
@@ -270,12 +267,7 @@
 				1D4903CC28C35A70002BF0B4 /* StoreObjects */,
 				C446DE462528D8E600138D0A /* HTK */,
 				C446DE5D2528D8E800138D0A /* Tests */,
-				CE757CB2295EE5510011420E /* HarmonicaToolkitTests */,
-				CE13FB7329FEE44B00168035 /* HarmonicaToolkitUITests */,
-				CE6629E52A043368006451D6 /* HarmonicaToolkitTests */,
-				CE4632EF2A043AD90092F254 /* HarmonicaToolkitUITests2 */,
 				C446DE452528D8E600138D0A /* Products */,
-				1DCFB7A528BCD33700336DD2 /* HarmonicaToolkit copy-Info.plist */,
 				CE757CBA295EED880011420E /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -304,8 +296,9 @@
 		C446DE5D2528D8E800138D0A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1D119C3428CC8485003737C0 /* Tuner */,
-				C446DE602528D8E800138D0A /* Info.plist */,
+				CE4632EF2A043AD90092F254 /* HarmonicaToolkitUITests2 */,
+				CE13FB7329FEE44B00168035 /* HarmonicaToolkitUITests */,
+				CE6F63402A18BBD300571B73 /* HarmonicaToolkitTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -313,8 +306,6 @@
 		CE13FB7329FEE44B00168035 /* HarmonicaToolkitUITests */ = {
 			isa = PBXGroup;
 			children = (
-				CE46333E2A0444ED0092F254 /* richterHarmonica.plist */,
-				CE13FB7D2A000CBF00168035 /* pianoNotes.plist */,
 				CE13FB7429FEE44B00168035 /* HarmonicaToolkitUITests.swift */,
 				CE13FB7629FEE44B00168035 /* HarmonicaToolkitUITestsLaunchTests.swift */,
 			);
@@ -324,30 +315,33 @@
 		CE4632EF2A043AD90092F254 /* HarmonicaToolkitUITests2 */ = {
 			isa = PBXGroup;
 			children = (
+				CE46333E2A0444ED0092F254 /* richterHarmonica.plist */,
+				CE13FB7D2A000CBF00168035 /* pianoNotes.plist */,
 				CE4632F02A043AD90092F254 /* HarmonicaToolkitUITests2.swift */,
 				CE4632F22A043AD90092F254 /* HarmonicaToolkitUITests2LaunchTests.swift */,
 			);
 			path = HarmonicaToolkitUITests2;
 			sourceTree = "<group>";
 		};
-		CE6629E52A043368006451D6 /* HarmonicaToolkitTests */ = {
+		CE6F63402A18BBD300571B73 /* HarmonicaToolkitTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE65200C2A157E4500AC842C /* TestCircularQueue.swift */,
-				CE7D0BCA2A14AD5F006D1A1E /* HarmonicaToolkitTunerConductor2Tests.swift */,
-				CEA2EFF62A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift */,
-				CE6629E62A043368006451D6 /* HarmonicaToolkitTests.swift */,
-				CE6B12D72A06DBBF009D78A8 /* HarmonicaToolkitTunerButtonArray.swift */,
-			);
-			path = HarmonicaToolkitTests;
-			sourceTree = "<group>";
-		};
-		CE757CB2295EE5510011420E /* HarmonicaToolkitTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE301006295F4E4000C970B3 /* HarmonicaToolkitTests.swift */,
-				CE9DE00A2A0689CC00628B5E /* MockTunerConductor.swift */,
-				CE9DE00C2A06B64000628B5E /* MockMicrophone.swift */,
+				CE6F63592A192B2400571B73 /* richterHarmonicaTesting.plist */,
+				CE6F63442A18BBD300571B73 /* HarmonicaLoadTests.swift */,
+				CE6F63552A1903A700571B73 /* HarmonicaToolkitTranslationTests.swift */,
+				CE6F63412A18BBD300571B73 /* XCExtension.swift */,
+				CE6F63422A18BBD300571B73 /* MockTunerConductorModel.swift */,
+				CE6F63432A18BBD300571B73 /* MockTunerConductor.swift */,
+				CE6F63452A18BBD300571B73 /* HarmonicaToolkitJsonLoadTests.swift */,
+				CE6F63462A18BBD300571B73 /* HarmonicaToolkitTunerButtonArray.swift */,
+				CE6F63472A18BBD300571B73 /* PitchHighlightsCorrectKeys.swift */,
+				CE6F63482A18BBD300571B73 /* MockMicrophone.swift */,
+				CE6F63492A18BBD300571B73 /* File.swift */,
+				CE6F634A2A18BBD300571B73 /* MockBaseTap0001.swift */,
+				CE6F634B2A18BBD300571B73 /* TestCircularQueue.swift */,
+				CE6F634C2A18BBD300571B73 /* HarmonicaToolkitTests-Bridging-Header.h */,
+				CE6F634D2A18BBD300571B73 /* HarmonicaToolkitTests.swift */,
+				CE6F634E2A18BBD300571B73 /* HarmonicaToolkitTunerConductor2Tests.swift */,
 			);
 			path = HarmonicaToolkitTests;
 			sourceTree = "<group>";
@@ -501,6 +495,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6F63542A18CD2600571B73 /* richterHarmonica.plist in Resources */,
+				CE6F63532A18CB6600571B73 /* pianoNotes.plist in Resources */,
+				CE6F635A2A192B2400571B73 /* richterHarmonicaTesting.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6F635B2A192DF100571B73 /* richterHarmonicaTesting.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,14 +560,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9DE00B2A0689CC00628B5E /* MockTunerConductor.swift in Sources */,
-				CE9DE00D2A06B64000628B5E /* MockMicrophone.swift in Sources */,
-				CE7D0BCB2A14AD5F006D1A1E /* HarmonicaToolkitTunerConductor2Tests.swift in Sources */,
 				CE6B12D62A06CC96009D78A8 /* BespokePitchTap.swift in Sources */,
-				CE65200D2A157E4500AC842C /* TestCircularQueue.swift in Sources */,
-				CE6B12D82A06DBBF009D78A8 /* HarmonicaToolkitTunerButtonArray.swift in Sources */,
-				CE6629E72A043368006451D6 /* HarmonicaToolkitTests.swift in Sources */,
-				CEA2EFF72A09062B000918F4 /* HarmonicaToolkitJsonLoadTests.swift in Sources */,
+				CE6F63562A1903A700571B73 /* HarmonicaToolkitTranslationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

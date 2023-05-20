@@ -9,25 +9,10 @@ import XCTest
 
 final class HarmonicaToolkitV103UITests: XCTestCase {
     
-    let harmonicaList =
-    [ "Low G",
-      "Low Ab",
-      "Low A",
-      "Low Bb",
-      "Low B",
-      "Low C",
-      "Low C#",
-      "Low D",
-      "Low Eb",
-      "Low E",
-      "Low F",
-      "Low F#",
-      "G-Maj",
-      "Ab-Maj",
-      "A-Maj",
-      "Bb-Maj",
-      "B-Maj",
-      "C-Maj",
+
+      
+      let harmonicaList =
+      [ "Low G",
       "C#-Maj",
       "D-Maj",
       "Eb-Maj",
@@ -113,12 +98,7 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testExample2() throws {
-        let app = XCUIApplication()
-        app.launch()
-        
-        
-    }
+
     
     func testCanSelectAllHarmonicas() throws {
         // UI tests must launch the application that they test.
@@ -143,9 +123,38 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
             /// When not found on list, scroll
             if !app.collectionViews.buttons[testHarmonica].exists
             {
-                app.buttons["HarmonicaPicker"].swipeDown()
+                app.buttons["HarmonicaPicker"].swipeDown(velocity: 2)
+            }
+            if !app.collectionViews.buttons[testHarmonica].exists
+            {
+                sleep (1)
+                app.buttons["HarmonicaPicker"].swipeDown(velocity: 3)
             }
             
+            if !app.collectionViews.buttons[testHarmonica].exists
+            {
+                sleep (1)
+                app.buttons["HarmonicaPicker"].swipeDown(velocity: 4)
+            }
+            
+            if !app.collectionViews.buttons[testHarmonica].exists
+            {
+                sleep (1)
+                app.buttons["HarmonicaPicker"].swipeDown()
+                print (" swipe down 4")
+            }
+            if !app.collectionViews.buttons[testHarmonica].exists
+            {
+                sleep (1)
+                app.buttons["HarmonicaPicker"].swipeDown()
+                print (" swipe down 5")
+            }
+            if !app.collectionViews.buttons[testHarmonica].exists
+            {
+                sleep (1)
+                app.buttons["HarmonicaPicker"].swipeDown()
+                print (" swipe down 6")
+            }
             app.collectionViews.buttons[testHarmonica].tap()
             
             
@@ -535,13 +544,25 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
     }
     
     static func getFile(_ name: String, withExtension: String) -> String? {
+        print ("GETFILE **")
         guard let url = Bundle(for: Self.self)
-            .url(forResource: name, withExtension: withExtension) else { return nil }
+            .url(forResource: name, withExtension: withExtension)
+        else {
+            print ("Failed 1")
+            return nil
+            
+        }
+        
         guard let path = Bundle(for: Self.self)
             .path(forResource: name, ofType: withExtension) else { return nil }
         print ("URL: ", url)
         print ("PATH: ", path)
-        guard let data = try? Data(contentsOf: url) else { return nil }
+        guard let data = try? Data(contentsOf: url)
+        else {
+            print ("Failed 2")
+            return nil
+            
+        }
         return path
     }
     
@@ -550,8 +571,8 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let xmlData = Self.getFile("pianoNotes", withExtension: "plist")
-        print (xmlData)
+        let xmlData = HarmonicaToolkitV103UITests.getFile("pianoNotes", withExtension: "plist")
+        print ("XML: ", xmlData)
         XCTAssertNotNil(xmlData, "File not found")
     }
     
@@ -634,7 +655,11 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
         //let app = XCUIApplication()
         //app.launch()
         
-
+        /*
+         var _buttonDefns = [KeyboardButton]() //Declare empty array
+         var thisButton : KeyboardButton
+         let notes = getNotes(flatsSharps: sharpsFlats)
+         */
         //let AUTO_PLIST_HARPDEF_PATH = Bundle.main.path(forResource: "richterHarmonica", ofType: "plist")
         let AUTO_PLIST_HARPDEF_PATH = Self.getFile("richterHarmonica", withExtension: "plist")
         
@@ -675,7 +700,7 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
     }
     
     func testCorrectHarmonicaBase  () throws {
-        
+        // Defunct Test?
         
         let noteDict =  getNotesTest()
         let harpDef =  getButtonDefsTest()
@@ -717,11 +742,16 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
         
         app.buttons.element(boundBy: 0).tap()
         
-        let harmonicaBaseScreen =  app.buttons["400"].label
+        let harmonicaBaseScreen =  app.buttons["301"].label
+        print ("HBASE SCREEN: ", harmonicaBaseScreen )
         let harmonicaBasePiano = noteNameDict[harmonicaBaseScreen]?.pianoKey
         
+        print ("HBASE: ", harmonicaBasePiano)
         
-        
+        /*
+        Checking Button: 100
+        Optional(100) Optional(0) Optional("B") Optional("Blow Bend")
+         */
         //print ("BASE KEY: " , app.buttons["400"].label)
         
         for row in (1...8)
@@ -729,8 +759,8 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
             for column in (0 ... 11)
             {
                 let thisButton : Int = row*100+column
-                //print ("Checking Button:" , thisButton)
-                //print (harpDef[thisButton]?.button, harpDef[thisButton]!.offset, harpDef[thisButton]!.displayed, harpDef[thisButton]!.boilerplate)
+                print ("Checking Button:" , thisButton)
+                print (harpDef[thisButton]?.button, harpDef[thisButton]!.offset, harpDef[thisButton]!.displayed, harpDef[thisButton]!.boilerplate)
                 let pianoKey = harmonicaBasePiano! + harpDef[thisButton]!.offset!
                 let expectedLabel = pianoKeyDict [pianoKey]
                 
@@ -738,17 +768,15 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
                 
                 if harpDef[thisButton]!.displayed == "1" {
                     
-                    //print ("expected label: ", expectedLabel?.noteNameSharps)
-                    //print ("actual label" , app.buttons[String(thisButton)].label)
-                    XCTAssertEqual(expectedLabel?.noteNameSharps, app.buttons[String(thisButton)].label)
+                    print ("expected label: ", expectedLabel?.noteNameSharps)
+                    print ("actual label" , app.buttons[String(thisButton)].label)
+                    XCTAssertEqual(expectedLabel?.noteNameFlats, app.buttons[String(thisButton)].label)
                     noteCount += 1
                 }
             }
         }
         
         print ("Number of notes Checked" , noteCount)
-
-        
         XCTAssertEqual(noteCount, 45) //44 notes plus button 400
         
         

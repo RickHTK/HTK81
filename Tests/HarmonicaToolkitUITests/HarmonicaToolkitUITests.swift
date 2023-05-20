@@ -9,7 +9,7 @@ import XCTest
 
 final class HarmonicaToolkitV103UITests: XCTestCase {
     
-    /*let harmonicaList =
+    let harmonicaList =
     [ "Low G",
       "Low Ab",
       "Low A",
@@ -27,10 +27,7 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
       "A-Maj",
       "Bb-Maj",
       "B-Maj",
-      "C-Maj",*/
-      
-      let harmonicaList =
-      [ "Low G",
+      "C-Maj",
       "C#-Maj",
       "D-Maj",
       "Eb-Maj",
@@ -116,7 +113,12 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-
+    func testExample2() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        
+    }
     
     func testCanSelectAllHarmonicas() throws {
         // UI tests must launch the application that they test.
@@ -141,38 +143,9 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
             /// When not found on list, scroll
             if !app.collectionViews.buttons[testHarmonica].exists
             {
-                app.buttons["HarmonicaPicker"].swipeDown(velocity: 2)
-            }
-            if !app.collectionViews.buttons[testHarmonica].exists
-            {
-                sleep (1)
-                app.buttons["HarmonicaPicker"].swipeDown(velocity: 3)
+                app.buttons["HarmonicaPicker"].swipeDown()
             }
             
-            if !app.collectionViews.buttons[testHarmonica].exists
-            {
-                sleep (1)
-                app.buttons["HarmonicaPicker"].swipeDown(velocity: 4)
-            }
-            
-            if !app.collectionViews.buttons[testHarmonica].exists
-            {
-                sleep (1)
-                app.buttons["HarmonicaPicker"].swipeDown()
-                print (" swipe down 4")
-            }
-            if !app.collectionViews.buttons[testHarmonica].exists
-            {
-                sleep (1)
-                app.buttons["HarmonicaPicker"].swipeDown()
-                print (" swipe down 5")
-            }
-            if !app.collectionViews.buttons[testHarmonica].exists
-            {
-                sleep (1)
-                app.buttons["HarmonicaPicker"].swipeDown()
-                print (" swipe down 6")
-            }
             app.collectionViews.buttons[testHarmonica].tap()
             
             
@@ -562,6 +535,7 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
     }
     
     static func getFile(_ name: String, withExtension: String) -> String? {
+        print ("GETFILE **")
         guard let url = Bundle(for: Self.self)
             .url(forResource: name, withExtension: withExtension) else { return nil }
         guard let path = Bundle(for: Self.self)
@@ -661,11 +635,7 @@ final class HarmonicaToolkitV103UITests: XCTestCase {
         //let app = XCUIApplication()
         //app.launch()
         
-        /*
-         var _buttonDefns = [KeyboardButton]() //Declare empty array
-         var thisButton : KeyboardButton
-         let notes = getNotes(flatsSharps: sharpsFlats)
-         */
+
         //let AUTO_PLIST_HARPDEF_PATH = Bundle.main.path(forResource: "richterHarmonica", ofType: "plist")
         let AUTO_PLIST_HARPDEF_PATH = Self.getFile("richterHarmonica", withExtension: "plist")
         

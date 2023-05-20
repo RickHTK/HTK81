@@ -5,6 +5,8 @@ import SwiftUI
 class MockTunerConductor : TunerConductorModel
 {
     @Published var data = TunerData()
+    @Published var pianoKeyPlaying : Int = 0
+    
     func start() {
         print ("Mock Conductor Starting")
         

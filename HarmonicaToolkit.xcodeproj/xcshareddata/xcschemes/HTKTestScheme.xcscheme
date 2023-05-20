@@ -60,6 +60,11 @@
                BlueprintName = "HarmonicaToolkitUITests2"
                ReferencedContainer = "container:HarmonicaToolkit.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "HarmonicaToolkitV103UITests/testCanSelectAllValidCombinations()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

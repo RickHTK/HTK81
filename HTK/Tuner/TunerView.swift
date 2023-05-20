@@ -8,16 +8,17 @@ import CSoundpipeAudioKit
 // Tuner View is the main view of the harmonica screen
 // it links the state object conductor and the visual harmonica keyboard
 
-struct TunerView<TunerObservable> : View where TunerObservable: TunerConductor2Model {
+struct TunerView<TunerObservable> : View where TunerObservable: TunerConductorModel {
     
     @State private var orientation = UIDeviceOrientation.unknown
     
-    var position : Int = 16
-    var harmonicaBase : Int = 0
-    var sharpsFlats: Int = 0
+    var position : Int
+    var harmonicaBase : Int
+    var sharpsFlats: Int
     let mode : Int
     let register : Int //= 0
     let translationMap : [Int : Int]
+    let harmonicaName : String
 
     let adsOnOff : ads = .AdsOn
     
@@ -25,7 +26,7 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductor2M
     
     @ObservedObject var conductor : TunerObservable
     
-    init ( position : Int = 15, harmonicaBase: Int = 0, sharpsFlats: Int = 0, freqRange: (Float, Float) =  (2800.00, 80.00), mode: Int = 0 , register: Int = 0, translationMap: [Int:Int] = [0:0], sustainSensitivity :Int = 1, adsOnOff: ads = .AdsOn, conductor: TunerObservable)
+    init ( position : Int = 15, harmonicaBase: Int = 0, sharpsFlats: Int = 0, freqRange: (Float, Float) =  (2800.00, 80.00), mode: Int = 0 , register: Int = 0, translationMap: [Int:Int] = [0:0], sustainSensitivity :Int = 1, adsOnOff: ads = .AdsOn, harmonicaName: String = "X" , conductor: TunerObservable)
     {
         self.position  = position
         self.harmonicaBase = harmonicaBase
@@ -34,6 +35,7 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductor2M
         self.register = register
         self.translationMap = translationMap
         self.conductor = conductor
+        self.harmonicaName = harmonicaName
     }
 
     var body: some View {
@@ -52,7 +54,7 @@ struct TunerView<TunerObservable> : View where TunerObservable: TunerConductor2M
         
         //let buttonGrid2 = setupKeyboard(note: "\(conductor.data.noteName)", callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
         
-        let buttonGrid = setupKeyboard(pianoKeyPlaying: /*conductor.data.pianoKey*/ conductor.pianoKeyPlaying , callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
+        let buttonGrid = setupKeyboard(pianoKeyPlaying: conductor.pianoKeyPlaying , callType: .dynamicDisplayKey, harmonicaBase: harmonicaBase, harmonicaName: harmonicaName, sharpsFlats: sharpsFlats).getKeyboardDisplayed()
         
         ZStack(alignment: .leading) {
 

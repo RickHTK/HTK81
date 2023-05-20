@@ -54,6 +54,7 @@ struct MasterView: View {
     @ObservedObject var store : Store = Store()
     
     @State private var selectedHarmonica : String = "C-Maj"
+    
     @State private var selectedPosition : String = "1st"
     @State private var selectedMode : String  = "Major Key"
     @State private var selectedSustainSensitivity: String  = "2"
@@ -65,8 +66,7 @@ struct MasterView: View {
     @State private var selectedRegister : String = "Low"
     @State private var modeKeyList : [String] = defaultMode
     @State private var translationMap : [Int:Int]  = [0:0]
-    @State private var harmonicaScreenText : String = "Default"
-    
+    //@State private var harmonicaScreenText : String = "Default"
     @State var text: String = ""
     @State var showSheet = false
     
@@ -75,12 +75,8 @@ struct MasterView: View {
     
     @State var advertisement : ads = .AdsOn
 
-    
-    
-    
     init() {
         UINavigationBar.changeAppearance(clear: true)
-        
 
     }
     
@@ -94,9 +90,12 @@ struct MasterView: View {
         // These are the positions sent to tunerview
         let positionIndex = positionDict[selectedPosition] ?? 1
         let harmonicaIndex = (harmonicaBaseDict[selectedHarmonica] ?? 99)
+        let selectedHarmonicaShort = (harmonicaShortNameDict[selectedHarmonica] ?? "")
+        
         let modeIndex = modeDict[selectedMode] ?? 99
         let registerIndex = registerDict[selectedRegister] ?? 99
         let sustainSensetivityIndex = sustainSensitivityDict [selectedSustainSensitivity]  ?? 99
+        //let selectedHarmonicaShort =
         
         // These are set values for the harmonica.
         let sharpsFlats = keyTypeDict[selectedHarmonica] ?? 1
@@ -109,43 +108,13 @@ struct MasterView: View {
             
             
             // NAVIGATION TO TUNER VIEW -- THE SCREEN THAT MIMICS THE HARMONICA
-            
-
-            
-            
-                //Label("Text", systemImage: "mic").buttonStyle(.plain) //.font(.system(size: 40))
-                
-                /*
-                if positionIndex == 0 {Text (" Play \(selectedHarmonica) In First Position - No Translation").foregroundColor(.yellow).bold().font(.system(size: 20))
-                        .padding(16)
-                        .background(.blue)
-                        .frame(maxWidth: .infinity)
-                        .background(.blue)
-                        .cornerRadius(8)
-                    
-                }
-                else {
-                    Text  ("Translate to \(selectedPosition) Position >")
-                        .foregroundColor(.yellow).bold()
-                        .font(.system(size: 20))
-                        .padding(16)
-                        .background(.blue)
-                        .frame(maxWidth: .infinity)
-                        .background(.blue)
-                        .cornerRadius(8)
-                    
-                }
-                 {UILabel ()}*/
                 
             
-            
-            
-            
-            NavigationLink(destination: TunerView <TunerConductor2> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensetivityIndex, adsOnOff: .AdsOff, conductor: TunerConductor2(freqRangeIn: freqRange)))
+            NavigationLink(destination: TunerView <TunerConductor2> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensetivityIndex, adsOnOff: .AdsOff, harmonicaName: selectedHarmonicaShort, conductor: TunerConductor2(freqRangeIn: freqRange)))
             {
                 Label("", systemImage: "mic").font(.system(size: 40))
                 
-                if positionIndex == 0 {Text (" Play \(selectedHarmonica) In First Position - No Translation").foregroundColor(.yellow).bold().font(.system(size: 20))
+                if positionIndex == 0 {Text (" Play \(selectedHarmonica) In First Position >").foregroundColor(.yellow).bold().font(.system(size: 20))
                         .padding(16)
                         .background(.blue)
                         .frame(maxWidth: .infinity)
@@ -177,8 +146,7 @@ struct MasterView: View {
                 VStack {
                     
                     generalPickerView (selectedKeyValue: $selectedHarmonica, gIndex: harmonicaIndex, pickerArray: harmonicaBaseKeys, pickerLabel: "Harmonica") //, defaultValue: "B-Maj") // Default value has no effect
-                    
-                    
+
                         .frame(maxWidth: .infinity)
                         .background(.blue)
                         .cornerRadius(8)
@@ -327,7 +295,7 @@ struct MasterView: View {
             modeKeyList = modeKeys
             selectedMode = modeKeysMap [positionDict[value] ?? 0]
             selectedRegister = registers [registerDict[value] ?? 0]
-            translationMap = getMapping(sharpsFlats: sharpsFlats, mode: modeIndex, register: registerDict [selectedRegister]!)
+            translationMap = getMapping(sharpsFlats: sharpsFlats, mode: modeIndex, register: registerDict [selectedRegister]!, selectedPosition: selectedPosition)
         }
         // This is a fix to make the mode pickers update when the position changes
         modeRefresh.incrementId()
@@ -345,7 +313,7 @@ struct MasterView: View {
             //modeKeyList = modeKeys
             //selectedMode = modeKeysMap [positionDict[value] ?? 0]
             //selectedRegister = registers [registerDict[value] ?? 0]
-            translationMap = getMapping(sharpsFlats: sharpsFlats, mode: modeIndex, register: registerDict [selectedRegister]!)
+            translationMap = getMapping(sharpsFlats: sharpsFlats, mode: modeIndex, register: registerDict [selectedRegister]!, selectedPosition: selectedPosition)
         }
         // This is a fix to make the mode pickers update when the position changes
         //modeRefresh.incrementId()
@@ -353,48 +321,65 @@ struct MasterView: View {
     }
     
     
-    func getMapping (sharpsFlats : Int , mode : Int, register : Int)  -> [Int:Int]
-    {
-        //print ("Getting Mapping for: ", position, harmonicaBase, mode, registerIndex)
+
+} //STRUCT END
+
+
+func getMapping (sharpsFlats : Int , mode : Int, register : Int, selectedPosition : String)  -> [Int:Int]
+{
+    print ("Getting Mapping for: ", selectedPosition, mode, register, sharpsFlats)
+    
+    // let pianoNotes = getNotes(flatsSharps: sharpsFlats)
+    let pianoNotes = setupPiano().getPianoFromJSON()
+    
+    //var harmonicaActions : [(Int,Int)] = []
+    var harmonicaActionsDict = [Int: Int]()
+    let position : Int = positionDict [selectedPosition]!
+    let positionOffset : Int  = (position * 7) % 12
+    let posOffsetReg : Int = positionOffset + (register * 12)
+    var translationMap : [Int:Int] = [:]
+    
+    print ("Pos INFO: ", "position: ", position, "positionoffset", positionOffset, "posoffreg: ", posOffsetReg)
+    
+    
+    // No Translation if mode is 0
+    if mode != 0 {
         
-        // let pianoNotes = getNotes(flatsSharps: sharpsFlats)
-        let pianoNotes = setupPiano().getPianoFromJSON()
-        
-        //var harmonicaActions : [(Int,Int)] = []
-        var harmonicaActionsDict = [Int: Int]()
-        let position : Int = positionDict [selectedPosition]!
-        let positionOffset : Int  = (position * 7) % 12
-        let posOffsetReg : Int = positionOffset + (register * 12)
-        var translationMap : [Int:Int] = [9999:9999]
-        
-        print ("Pos INFO: ", "position: ", position, "positionoffset", positionOffset, "posoffreg: ", posOffsetReg)
-        
-        
-        // No Translation if mode is 0
-        if mode != 0 {
-            
-            for i in pianoNotes {
-                if i.defaultAction != 0 {
-                    //harmonicaActions.append ((i.pianoKey ?? 0 , i.defaultAction))
-                    harmonicaActionsDict.updateValue (i.defaultAction, forKey: i.pianoKey)
-                }
-            }
-            // This does the calculation to calculate the translation defined in the settings screen
-            for i in pianoNotes {
-                if i.defaultAction != 0 {
-                    
-                    let modeCorrection = (i.pianoKey - 40) % 12 // the mote played
-                    let modeOffsetValue = modeOffset [modeCorrection]![mode - 1]
-                    let translationKey = i.pianoKey + posOffsetReg + modeOffsetValue
-                    let translationAction = harmonicaActionsDict [translationKey] ?? 999
-                    
-                    translationMap.updateValue(translationAction, forKey: i.defaultAction)
-                }
+        for i in pianoNotes {
+            if i.defaultAction != 0 {
+                //harmonicaActions.append ((i.pianoKey ?? 0 , i.defaultAction))
+                harmonicaActionsDict.updateValue (i.defaultAction, forKey: i.pianoKey)
             }
         }
-        return translationMap
+        // This does the calculation to calculate the translation defined in the settings screen
+        for i in pianoNotes {
+            
+            if i.defaultAction != 0 {
+                
+                print ("Piano", i.pianoKey, i.defaultAction)
+                
+                let modeCorrection = (i.pianoKey - 40) % 12 // the mote played
+                print ("Mode Corrected: ", modeCorrection)
+                
+                let modeOffsetValue = modeOffset [modeCorrection]![mode - 1]
+                
+                print ("mode offset val: ", modeOffsetValue)
+                
+                let translationKey = i.pianoKey + posOffsetReg + modeOffsetValue
+                
+                print ("TransKey: ", translationKey)
+                
+                let translationAction = harmonicaActionsDict [translationKey] ?? 999
+                
+                print ("TRANS ACTION: ", translationAction)
+                
+                translationMap.updateValue(translationAction, forKey: i.defaultAction)
+            }
+        }
     }
-} //STRUCT END
+    return translationMap
+}
+
 
 
 // This defines what the pickers should look like

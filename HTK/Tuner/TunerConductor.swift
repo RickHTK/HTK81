@@ -11,7 +11,7 @@ import SoundpipeAudioKit
 import SwiftUI
 import AVFoundation
 
-protocol TunerConductor2Model : ObservableObject {
+protocol TunerConductorModel : ObservableObject {
     //var data : TunerData { get }
     var pianoKeyPlaying : Int { get }
     func start()
@@ -20,7 +20,7 @@ protocol TunerConductor2Model : ObservableObject {
     //var noteFrequencies : [Float] { get }
 }
 
-class TunerConductor2: TunerConductor2Model {
+class TunerConductor2: TunerConductorModel {
 
     @Published var pianoKeyPlaying : Int
     
