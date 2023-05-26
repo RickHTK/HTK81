@@ -1,0 +1,789 @@
+{
+    "instrument": "Piano",
+    "pianoKeys": [
+        {
+            "pianoKey": 0,
+            "noteNameSharps": "G♯0",
+            "noteNameFlats": "A♭0",
+            "frequency": 1,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 1,
+            "noteNameSharps": "A0",
+            "noteNameFlats": "A0",
+            "frequency": 1,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 2,
+            "noteNameSharps": "A♯0",
+            "noteNameFlats": "B♭0",
+            "frequency": 1,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 3,
+            "noteNameSharps": "B0",
+            "noteNameFlats": "B0",
+            "frequency": 1,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 4,
+            "noteNameSharps": "C1",
+            "noteNameFlats": "C1",
+            "frequency": 32.7032,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 5,
+            "noteNameSharps": "C♯1",
+            "noteNameFlats": "D♭1",
+            "frequency": 34.64783,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 6,
+            "noteNameSharps": "D1",
+            "noteNameFlats": "D1",
+            "frequency": 36.7081,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 7,
+            "noteNameSharps": "D♯1",
+            "noteNameFlats": "E♭1",
+            "frequency": 38.89087,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 8,
+            "noteNameSharps": "E1",
+            "noteNameFlats": "E1",
+            "frequency": 41.20344,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 9,
+            "noteNameSharps": "F1",
+            "noteNameFlats": "F1",
+            "frequency": 43.65353,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 10,
+            "noteNameSharps": "F♯1",
+            "noteNameFlats": "G♭1",
+            "frequency": 46.2493,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 11,
+            "noteNameSharps": "G1",
+            "noteNameFlats": "G1",
+            "frequency": 48.99943,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 12,
+            "noteNameSharps": "G♯1",
+            "noteNameFlats": "A♭1",
+            "frequency": 51.91309,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 13,
+            "noteNameSharps": "A1",
+            "noteNameFlats": "A1",
+            "frequency": 55,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 14,
+            "noteNameSharps": "A♯1",
+            "noteNameFlats": "B♭1",
+            "frequency": 58.27047,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 15,
+            "noteNameSharps": "B1",
+            "noteNameFlats": "B1",
+            "frequency": 61.73541,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 16,
+            "noteNameSharps": "C2",
+            "noteNameFlats": "C2",
+            "frequency": 65.40639,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 17,
+            "noteNameSharps": "C♯2",
+            "noteNameFlats": "D♭2",
+            "frequency": 69.29566,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 18,
+            "noteNameSharps": "D2",
+            "noteNameFlats": "D2",
+            "frequency": 73.41619,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 19,
+            "noteNameSharps": "D♯2",
+            "noteNameFlats": "E♭2",
+            "frequency": 77.78175,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 20,
+            "noteNameSharps": "E2",
+            "noteNameFlats": "E2",
+            "frequency": 82.40689,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 21,
+            "noteNameSharps": "F2",
+            "noteNameFlats": "F2",
+            "frequency": 87.30706000000001,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 22,
+            "noteNameSharps": "F♯2",
+            "noteNameFlats": "G♭2",
+            "frequency": 92.49861,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 23,
+            "noteNameSharps": "G2",
+            "noteNameFlats": "G2",
+            "frequency": 97.99885999999999,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 24,
+            "noteNameSharps": "G♯2",
+            "noteNameFlats": "A♭2",
+            "frequency": 103.8262,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 25,
+            "noteNameSharps": "A2",
+            "noteNameFlats": "A2",
+            "frequency": 110,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 26,
+            "noteNameSharps": "A♯2",
+            "noteNameFlats": "B♭2",
+            "frequency": 116.5409,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 27,
+            "noteNameSharps": "B2",
+            "noteNameFlats": "B2",
+            "frequency": 123.4708,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 28,
+            "noteNameSharps": "C3",
+            "noteNameFlats": "C3",
+            "frequency": 130.8128,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 29,
+            "noteNameSharps": "C♯3",
+            "noteNameFlats": "D♭3",
+            "frequency": 138.5913,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 30,
+            "noteNameSharps": "D3",
+            "noteNameFlats": "D3",
+            "frequency": 146.8324,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 31,
+            "noteNameSharps": "D♯3",
+            "noteNameFlats": "E♭3",
+            "frequency": 155.5635,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 32,
+            "noteNameSharps": "E3",
+            "noteNameFlats": "E3",
+            "frequency": 164.8138,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 33,
+            "noteNameSharps": "F3",
+            "noteNameFlats": "F3",
+            "frequency": 174.6141,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 34,
+            "noteNameSharps": "F♯3",
+            "noteNameFlats": "G♭3",
+            "frequency": 184.9972,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 35,
+            "noteNameSharps": "G3",
+            "noteNameFlats": "G3",
+            "frequency": 195.9977,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 36,
+            "noteNameSharps": "G♯3",
+            "noteNameFlats": "A♭3",
+            "frequency": 207.6523,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 37,
+            "noteNameSharps": "A3",
+            "noteNameFlats": "A3",
+            "frequency": 220,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 38,
+            "noteNameSharps": "A♯3",
+            "noteNameFlats": "B♭3",
+            "frequency": 233.0819,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 39,
+            "noteNameSharps": "B3",
+            "noteNameFlats": "B3",
+            "frequency": 246.9417,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 40,
+            "noteNameSharps": "C4",
+            "noteNameFlats": "C4",
+            "frequency": 261.6256,
+            "defaultAction": 301
+        },
+        {
+            "pianoKey": 41,
+            "noteNameSharps": "C♯4",
+            "noteNameFlats": "D♭4",
+            "frequency": 277.1826,
+            "defaultAction": 601
+        },
+        {
+            "pianoKey": 42,
+            "noteNameSharps": "D4",
+            "noteNameFlats": "D4",
+            "frequency": 293.6648,
+            "defaultAction": 501
+        },
+        {
+            "pianoKey": 43,
+            "noteNameSharps": "D♯4",
+            "noteNameFlats": "E♭4",
+            "frequency": 311.127,
+            "defaultAction": 101
+        },
+        {
+            "pianoKey": 44,
+            "noteNameSharps": "E4",
+            "noteNameFlats": "E4",
+            "frequency": 329.6276,
+            "defaultAction": 302
+        },
+        {
+            "pianoKey": 45,
+            "noteNameSharps": "F4",
+            "noteNameFlats": "F4",
+            "frequency": 349.2282,
+            "defaultAction": 702
+        },
+        {
+            "pianoKey": 46,
+            "noteNameSharps": "F♯4",
+            "noteNameFlats": "G♭4",
+            "frequency": 369.9944,
+            "defaultAction": 602
+        },
+        {
+            "pianoKey": 47,
+            "noteNameSharps": "G4",
+            "noteNameFlats": "G4",
+            "frequency": 391.9954,
+            "defaultAction": 502
+        },
+        {
+            "pianoKey": 48,
+            "noteNameSharps": "G♯4",
+            "noteNameFlats": "A♭4",
+            "frequency": 415.3047,
+            "defaultAction": 803
+        },
+        {
+            "pianoKey": 49,
+            "noteNameSharps": "A4",
+            "noteNameFlats": "A4",
+            "frequency": 440,
+            "defaultAction": 703
+        },
+        {
+            "pianoKey": 50,
+            "noteNameSharps": "A♯4",
+            "noteNameFlats": "B♭4",
+            "frequency": 466.1638,
+            "defaultAction": 603
+        },
+        {
+            "pianoKey": 51,
+            "noteNameSharps": "B4",
+            "noteNameFlats": "B4",
+            "frequency": 493.8833,
+            "defaultAction": 503
+        },
+        {
+            "pianoKey": 52,
+            "noteNameSharps": "C5",
+            "noteNameFlats": "C5",
+            "frequency": 523.2511,
+            "defaultAction": 304
+        },
+        {
+            "pianoKey": 53,
+            "noteNameSharps": "C♯5",
+            "noteNameFlats": "D♭5",
+            "frequency": 554.3653,
+            "defaultAction": 604
+        },
+        {
+            "pianoKey": 54,
+            "noteNameSharps": "D5",
+            "noteNameFlats": "D5",
+            "frequency": 587.3295000000001,
+            "defaultAction": 504
+        },
+        {
+            "pianoKey": 55,
+            "noteNameSharps": "D♯5",
+            "noteNameFlats": "E♭5",
+            "frequency": 622.254,
+            "defaultAction": 104
+        },
+        {
+            "pianoKey": 56,
+            "noteNameSharps": "E5",
+            "noteNameFlats": "E5",
+            "frequency": 659.2551,
+            "defaultAction": 305
+        },
+        {
+            "pianoKey": 57,
+            "noteNameSharps": "F5",
+            "noteNameFlats": "F5",
+            "frequency": 698.4565,
+            "defaultAction": 505
+        },
+        {
+            "pianoKey": 58,
+            "noteNameSharps": "F♯5",
+            "noteNameFlats": "G♭5",
+            "frequency": 739.9888,
+            "defaultAction": 105
+        },
+        {
+            "pianoKey": 59,
+            "noteNameSharps": "G5",
+            "noteNameFlats": "G5",
+            "frequency": 783.9909,
+            "defaultAction": 306
+        },
+        {
+            "pianoKey": 60,
+            "noteNameSharps": "G♯5",
+            "noteNameFlats": "A♭5",
+            "frequency": 830.6094000000001,
+            "defaultAction": 606
+        },
+        {
+            "pianoKey": 61,
+            "noteNameSharps": "A5",
+            "noteNameFlats": "A5",
+            "frequency": 880,
+            "defaultAction": 506
+        },
+        {
+            "pianoKey": 62,
+            "noteNameSharps": "A♯5",
+            "noteNameFlats": "B♭5",
+            "frequency": 932.3275,
+            "defaultAction": 106
+        },
+        {
+            "pianoKey": 63,
+            "noteNameSharps": "B5",
+            "noteNameFlats": "B5",
+            "frequency": 987.7666,
+            "defaultAction": 507
+        },
+        {
+            "pianoKey": 64,
+            "noteNameSharps": "C6",
+            "noteNameFlats": "C6",
+            "frequency": 1046.502,
+            "defaultAction": 307
+        },
+        {
+            "pianoKey": 65,
+            "noteNameSharps": "C♯6",
+            "noteNameFlats": "D♭6",
+            "frequency": 1108.731,
+            "defaultAction": 807
+        },
+        {
+            "pianoKey": 66,
+            "noteNameSharps": "D6",
+            "noteNameFlats": "D6",
+            "frequency": 1174.659,
+            "defaultAction": 508
+        },
+        {
+            "pianoKey": 67,
+            "noteNameSharps": "D♯6",
+            "noteNameFlats": "E♭6",
+            "frequency": 1244.508,
+            "defaultAction": 208
+        },
+        {
+            "pianoKey": 68,
+            "noteNameSharps": "E6",
+            "noteNameFlats": "E6",
+            "frequency": 1318.51,
+            "defaultAction": 308
+        },
+        {
+            "pianoKey": 69,
+            "noteNameSharps": "F6",
+            "noteNameFlats": "F6",
+            "frequency": 1396.913,
+            "defaultAction": 509
+        },
+        {
+            "pianoKey": 70,
+            "noteNameSharps": "F♯6",
+            "noteNameFlats": "G♭6",
+            "frequency": 1479.978,
+            "defaultAction": 209
+        },
+        {
+            "pianoKey": 71,
+            "noteNameSharps": "G6",
+            "noteNameFlats": "G6",
+            "frequency": 1567.982,
+            "defaultAction": 309
+        },
+        {
+            "pianoKey": 72,
+            "noteNameSharps": "G♯6",
+            "noteNameFlats": "A♭6",
+            "frequency": 1661.219,
+            "defaultAction": 809
+        },
+        {
+            "pianoKey": 73,
+            "noteNameSharps": "A6",
+            "noteNameFlats": "A6",
+            "frequency": 1760,
+            "defaultAction": 510
+        },
+        {
+            "pianoKey": 74,
+            "noteNameSharps": "A♯6",
+            "noteNameFlats": "B♭6",
+            "frequency": 1864.655,
+            "defaultAction": 110
+        },
+        {
+            "pianoKey": 75,
+            "noteNameSharps": "B6",
+            "noteNameFlats": "B6",
+            "frequency": 1975.533,
+            "defaultAction": 210
+        },
+        {
+            "pianoKey": 76,
+            "noteNameSharps": "C7",
+            "noteNameFlats": "C7",
+            "frequency": 2093.005,
+            "defaultAction": 310
+        },
+        {
+            "pianoKey": 77,
+            "noteNameSharps": "C♯7",
+            "noteNameFlats": "D♭7",
+            "frequency": 2217.461,
+            "defaultAction": 810
+        },
+        {
+            "pianoKey": 78,
+            "noteNameSharps": "D7",
+            "noteNameFlats": "D7",
+            "frequency": 2349.318,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 79,
+            "noteNameSharps": "D♯7",
+            "noteNameFlats": "E♭7",
+            "frequency": 2489.016,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 80,
+            "noteNameSharps": "E7",
+            "noteNameFlats": "E7",
+            "frequency": 2637.02,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 81,
+            "noteNameSharps": "F7",
+            "noteNameFlats": "F7",
+            "frequency": 2793.826,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 82,
+            "noteNameSharps": "F♯7",
+            "noteNameFlats": "G♭7",
+            "frequency": 2959.955,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 83,
+            "noteNameSharps": "G7",
+            "noteNameFlats": "G7",
+            "frequency": 3135.963,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 84,
+            "noteNameSharps": "G♯7",
+            "noteNameFlats": "A♭7",
+            "frequency": 3322.438,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 85,
+            "noteNameSharps": "A7",
+            "noteNameFlats": "A7",
+            "frequency": 3520,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 86,
+            "noteNameSharps": "A♯7",
+            "noteNameFlats": "B♭7",
+            "frequency": 3729.31,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 87,
+            "noteNameSharps": "B7",
+            "noteNameFlats": "B7",
+            "frequency": 3951.066,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 88,
+            "noteNameSharps": "C8",
+            "noteNameFlats": "C8",
+            "frequency": 4186.009,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 89,
+            "noteNameSharps": "C♯8",
+            "noteNameFlats": "D♭8",
+            "frequency": 4434.922,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 90,
+            "noteNameSharps": "D8",
+            "noteNameFlats": "D8",
+            "frequency": 4698.636,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 91,
+            "noteNameSharps": "D♯8",
+            "noteNameFlats": "E♭8",
+            "frequency": 4978.032,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 92,
+            "noteNameSharps": "E8",
+            "noteNameFlats": "E8",
+            "frequency": 5274.041,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 93,
+            "noteNameSharps": "F8",
+            "noteNameFlats": "F8",
+            "frequency": 5587.652,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 94,
+            "noteNameSharps": "F♯8",
+            "noteNameFlats": "G♭8",
+            "frequency": 5919.911,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 95,
+            "noteNameSharps": "G8",
+            "noteNameFlats": "G8",
+            "frequency": 6271.927,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 96,
+            "noteNameSharps": "G♯8",
+            "noteNameFlats": "A♭8",
+            "frequency": 6644.875,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 97,
+            "noteNameSharps": "A8",
+            "noteNameFlats": "A8",
+            "frequency": 7040,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 98,
+            "noteNameSharps": "A♯8",
+            "noteNameFlats": "B♭8",
+            "frequency": 7458.62,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 99,
+            "noteNameSharps": "B8",
+            "noteNameFlats": "B8",
+            "frequency": 7902.133,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 100,
+            "noteNameSharps": "C9",
+            "noteNameFlats": "C9",
+            "frequency": 4186.009,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 101,
+            "noteNameSharps": "D♭9",
+            "noteNameFlats": "D♭9",
+            "frequency": 4434.922,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 102,
+            "noteNameSharps": "D9",
+            "noteNameFlats": "D9",
+            "frequency": 4698.636,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 103,
+            "noteNameSharps": "E♭9",
+            "noteNameFlats": "E♭9",
+            "frequency": 4978.032,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 104,
+            "noteNameSharps": "E9",
+            "noteNameFlats": "E9",
+            "frequency": 5274.041,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 105,
+            "noteNameSharps": "F9",
+            "noteNameFlats": "F9",
+            "frequency": 5587.652,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 106,
+            "noteNameSharps": "E9",
+            "noteNameFlats": "E9",
+            "frequency": 5919.911,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 107,
+            "noteNameSharps": "G9",
+            "noteNameFlats": "G9",
+            "frequency": 6271.927,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 108,
+            "noteNameSharps": "A♭9",
+            "noteNameFlats": "A♭9",
+            "frequency": 6644.875,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 109,
+            "noteNameSharps": "A9",
+            "noteNameFlats": "A9",
+            "frequency": 7040,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 110,
+            "noteNameSharps": "B♭9",
+            "noteNameFlats": "B♭9",
+            "frequency": 7458.62,
+            "defaultAction": 0
+        },
+        {
+            "pianoKey": 111,
+            "noteNameSharps": "B9",
+            "noteNameFlats": "B9",
+            "frequency": 7902.133,
+            "defaultAction": 0
+        }
+    ]
+}

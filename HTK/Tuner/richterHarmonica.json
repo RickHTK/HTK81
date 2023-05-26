@@ -1,0 +1,1159 @@
+{
+    "instrument": "RichterStandard",
+    "keyboardRows": [
+        {
+            "rowNumber": 1,
+            "rowName": "OverBlows",
+            "keyboardKeys": [
+                {
+                    "button": 100,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 2,
+                    "textColor": "orange",
+                    "boilerplate": "Blow Bend"
+                },
+                {
+                    "button": 101,
+                    "offset": 3,
+                    "wingdings": "j",
+                    "background": "orange",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 102,
+                    "offset": 8,
+                    "wingdings": "k",
+                    "background": "orange",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 103,
+                    "offset": 12,
+                    "wingdings": "l",
+                    "background": "orange",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 104,
+                    "offset": 15,
+                    "wingdings": "m",
+                    "background": "orange",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 105,
+                    "offset": 18,
+                    "wingdings": "n",
+                    "background": "orange",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 106,
+                    "offset": 22,
+                    "wingdings": "o",
+                    "background": "orange",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xx"
+                },
+                {
+                    "button": 107,
+                    "offset": 99,
+                    "wingdings": "XX",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 108,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 109,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 110,
+                    "offset": 34,
+                    "wingdings": "s",
+                    "background": "lblue2",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 111,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 2,
+                    "textColor": "lblue2",
+                    "boilerplate": "Over Blow"
+                }
+            ]
+        },
+        {
+            "rowNumber": 2,
+            "rowName": "BlowBends",
+            "keyboardKeys": [
+                {
+                    "button": 200,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 201,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 202,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xx"
+                },
+                {
+                    "button": 203,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 204,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 205,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 206,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 207,
+                    "offset": 23,
+                    "wingdings": "p",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 208,
+                    "offset": 27,
+                    "wingdings": "q",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 209,
+                    "offset": 30,
+                    "wingdings": "r",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 210,
+                    "offset": 35,
+                    "wingdings": "s",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 211,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                }
+            ]
+        },
+        {
+            "rowNumber": 3,
+            "rowName": "Blow",
+            "keyboardKeys": [
+                {
+                    "button": 300,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 301,
+                    "offset": 0,
+                    "wingdings": "j",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 302,
+                    "offset": 4,
+                    "wingdings": "k",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 303,
+                    "offset": 7,
+                    "wingdings": "l",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 304,
+                    "offset": 12,
+                    "wingdings": "m",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 305,
+                    "offset": 16,
+                    "wingdings": "n",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 306,
+                    "offset": 19,
+                    "wingdings": "o",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 307,
+                    "offset": 24,
+                    "wingdings": "p",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 308,
+                    "offset": 28,
+                    "wingdings": "q",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 309,
+                    "offset": 31,
+                    "wingdings": "r",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 310,
+                    "offset": 36,
+                    "wingdings": "s",
+                    "background": "blowColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 311,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                }
+            ]
+        },
+        {
+            "rowNumber": 4,
+            "rowName": "Draw",
+            "keyboardKeys": [
+                {
+                    "button": 400,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 5,
+                    "textColor": "black",
+                    "boilerplate": "1"
+                },                {
+                    "button": 401,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "1"
+                },
+                {
+                    "button": 402,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "2"
+                },
+                {
+                    "button": 403,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "3"
+                },
+                {
+                    "button": 404,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "4"
+                },
+                {
+                    "button": 405,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "5"
+                },
+                {
+                    "button": 406,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "6"
+                },
+                {
+                    "button": 407,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "7"
+                },
+                {
+                    "button": 408,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "8"
+                },
+                {
+                    "button": 409,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "9"
+                },
+                {
+                    "button": 410,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "black",
+                    "displayed": 0,
+                    "textColor": "black",
+                    "boilerplate": "10"
+                },
+                {
+                    "button": 411,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                }
+            ]
+        },
+        {
+            "rowNumber": 5,
+            "rowName": "DrawBends",
+            "keyboardKeys": [
+                {
+                    "button": 500,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 501,
+                    "offset": 2,
+                    "wingdings": "u",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 502,
+                    "offset": 7,
+                    "wingdings": "v",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 503,
+                    "offset": 11,
+                    "wingdings": "w",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 504,
+                    "offset": 14,
+                    "wingdings": "x",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 505,
+                    "offset": 17,
+                    "wingdings": "y",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 506,
+                    "offset": 21,
+                    "wingdings": "z",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 507,
+                    "offset": 23,
+                    "wingdings": "{",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 508,
+                    "offset": 26,
+                    "wingdings": "|",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 509,
+                    "offset": 29,
+                    "wingdings": "}",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 510,
+                    "offset": 33,
+                    "wingdings": "~",
+                    "background": "drawColor",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 511,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                }
+            ]
+        },
+        {
+            "rowNumber": 6,
+            "rowName": "Draw -2",
+            "keyboardKeys": [
+                {
+                    "button": 600,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 601,
+                    "offset": 1,
+                    "wingdings": "u",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 602,
+                    "offset": 6,
+                    "wingdings": "v",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 603,
+                    "offset": 10,
+                    "wingdings": "w",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 604,
+                    "offset": 13,
+                    "wingdings": "x",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 605,
+                    "offset": 16,
+                    "wingdings": "y",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 606,
+                    "offset": 20,
+                    "wingdings": "z",
+                    "background": "lblue1",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 607,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 608,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 609,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 610,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 611,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                }
+            ]
+        },
+        {
+            "rowNumber": 7,
+            "rowName": "Draw -3",
+            "keyboardKeys": [
+                {
+                    "button": 700,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 701,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 702,
+                    "offset": 5,
+                    "wingdings": "v",
+                    "background": "lblue2",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 703,
+                    "offset": 9,
+                    "wingdings": "w",
+                    "background": "lblue2",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 704,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 705,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 706,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 707,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 708,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 709,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 710,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 711,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                }
+            ]
+        },
+        {
+            "rowNumber": 8,
+            "rowName": "OverDraw",
+            "keyboardKeys": [
+                {
+                    "button": 800,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 2,
+                    "textColor": "lblue3",
+                    "boilerplate": "Draw Ben"
+                },
+                {
+                    "button": 801,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 802,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 803,
+                    "offset": 8,
+                    "wingdings": "w",
+                    "background": "lblue3",
+                    "displayed": 1,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 804,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 805,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 806,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 0,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 807,
+                    "offset": 25,
+                    "wingdings": "{",
+                    "background": "lgreen",
+                    "displayed": 1,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 808,
+                    "offset": 29,
+                    "wingdings": "|",
+                    "background": "lgreen",
+                    "displayed": 1,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 809,
+                    "offset": 32,
+                    "wingdings": "}",
+                    "background": "lgreen",
+                    "displayed": 1,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 810,
+                    "offset": 37,
+                    "wingdings": "~",
+                    "background": "lgreen",
+                    "displayed": 1,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 811,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 2,
+                    "textColor": "lgreen",
+                    "boilerplate": "Over Draw"
+                }
+            ]
+        },
+        {
+            "rowNumber": 9,
+            "rowName": "History",
+            "keyboardKeys": [
+                {
+                    "button": 900,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "Notes"
+                },
+                {
+                    "button": 901,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "blue",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 902,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "lgreen",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 903,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 904,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 905,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 906,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 907,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xx"
+                },
+                {
+                    "button": 908,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 909,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 910,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 911,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                }
+            ]
+        },
+        {
+            "rowNumber": 10,
+            "rowName": "Translation",
+            "keyboardKeys": [
+                {
+                    "button": 1000,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1001,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xx"
+                },
+                {
+                    "button": 1002,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1003,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1004,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1005,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1006,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1007,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1008,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1009,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1010,
+                    "offset": 0,
+                    "wingdings": "_",
+                    "background": "white",
+                    "displayed": 3,
+                    "textColor": "black",
+                    "boilerplate": "xxx"
+                },
+                {
+                    "button": 1011,
+                    "offset": 0,
+                    "wingdings": ";",
+                    "background": "lgrey",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "xx"
+                }
+            ]
+        },
+        {
+            "rowNumber": 99,
+            "rowName": "Fake",
+            "keyboardKeys": [
+                {
+                    "button": 9999,
+                    "offset": 0,
+                    "wingdings": "£",
+                    "background": "lgrey",
+                    "displayed": 3,
+                    "textColor": "white",
+                    "boilerplate": "REST"
+                }
+            ]
+        }
+    ]
+}
