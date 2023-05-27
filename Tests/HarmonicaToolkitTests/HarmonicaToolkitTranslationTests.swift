@@ -227,7 +227,28 @@ final class HarmonicaToolkitTranslationTests: XCTestCase {
         }
     }
         
-
+    func testuttonGrid () throws {
+    
+        let buttonGrid = setupKeyboard(pianoKeyPlaying: 40 , callType: .dynamicDisplayKey, harmonicaBase: 17, harmonicaName: "Test", sharpsFlats: 0).getKeyboardDisplayed()
+        
+        for buttonRow in buttonGrid {
+            for i in buttonRow {
+                print(i.buttonColor, i.title, i.Tag, i.rowNo*100 + i.colNo)
+                print (i)
+                
+        
+                //XCTAssertEqual(i.Tag, i.rowNo * 100 + i.colNo)
+                
+                
+            }
+        }
+    }
+    
+    
     
 
 }
+
+
+
+

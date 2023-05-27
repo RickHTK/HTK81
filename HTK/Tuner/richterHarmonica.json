@@ -117,7 +117,7 @@
         },
         {
             "rowNumber": 2,
-            "rowName": "BlowBends",
+            "rowName": "Blow Bend",
             "keyboardKeys": [
                 {
                     "button": 200,
@@ -458,7 +458,7 @@
         },
         {
             "rowNumber": 5,
-            "rowName": "DrawBends",
+            "rowName": "Draw Bend",
             "keyboardKeys": [
                 {
                     "button": 500,
@@ -809,7 +809,7 @@
                     "background": "white",
                     "displayed": 2,
                     "textColor": "lblue3",
-                    "boilerplate": "Draw Ben"
+                    "boilerplate": "Draw Bend"
                 },
                 {
                     "button": 801,

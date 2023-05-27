@@ -1,11 +1,12 @@
 import SwiftUI
 
 
+
 // This defines the style of the button label
 struct keyboardButtonLabelStyle: ButtonStyle {
 
     var fontSize : CGFloat
-    var fontName :String
+    var fontName : String
     var textColor : UIColor
     
     func makeBody(configuration: Configuration) -> some View {
@@ -15,6 +16,10 @@ struct keyboardButtonLabelStyle: ButtonStyle {
             .font(.custom(fontName, size: fontSize))
     }
 }
+
+
+
+
 
 
 func getColor (colour: String) -> UIColor

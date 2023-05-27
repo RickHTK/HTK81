@@ -57,6 +57,7 @@
 		CE757CC6295F26CA0011420E /* ButtonDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */; };
 		CE8E6C302A12D1C2006563DC /* TunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E6C2F2A12D1C2006563DC /* TunerConductor.swift */; };
 		CE8E6C322A136AD1006563DC /* QueueStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E6C312A136AD1006563DC /* QueueStruct.swift */; };
+		CE9A25EF2A21E27500BCFED6 /* HTKStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A25EE2A21E27500BCFED6 /* HTKStyles.swift */; };
 		CEA2EFF32A0902EE000918F4 /* richterHarmonica.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */; };
 		CEA2EFF52A09057E000918F4 /* JsonEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */; };
 		CEA2EFF92A0907D6000918F4 /* DBEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */; };
@@ -142,6 +143,7 @@
 		CE757CC5295F26CA0011420E /* ButtonDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefinitions.swift; sourceTree = "<group>"; };
 		CE8E6C2F2A12D1C2006563DC /* TunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerConductor.swift; sourceTree = "<group>"; };
 		CE8E6C312A136AD1006563DC /* QueueStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueStruct.swift; sourceTree = "<group>"; };
+		CE9A25EE2A21E27500BCFED6 /* HTKStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTKStyles.swift; sourceTree = "<group>"; };
 		CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = richterHarmonica.json; sourceTree = "<group>"; };
 		CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonEncoder.swift; sourceTree = "<group>"; };
 		CEA2EFF82A0907D6000918F4 /* DBEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEncoder.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				CEA2EFF42A09057E000918F4 /* JsonEncoder.swift */,
 				CEA4D8492A0A2DBB00CD8294 /* getHarmonicaFromJSON.swift */,
 				CE757CC1295F25390011420E /* InterfaceButtonView.swift */,
+				CE9A25EE2A21E27500BCFED6 /* HTKStyles.swift */,
 				CEA4D84B2A0B747800CD8294 /* pianoNotes.json */,
 				CEA2EFF22A0902EE000918F4 /* richterHarmonica.json */,
 				1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */,
@@ -516,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9A25EF2A21E27500BCFED6 /* HTKStyles.swift in Sources */,
 				CE8E6C322A136AD1006563DC /* QueueStruct.swift in Sources */,
 				CEA2EFF52A09057E000918F4 /* JsonEncoder.swift in Sources */,
 				1D2A6D3E28C362F9006C0A49 /* BuyButtonStyle.swift in Sources */,

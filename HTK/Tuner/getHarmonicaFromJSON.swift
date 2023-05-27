@@ -56,8 +56,6 @@ class setupKeyboard {
             
             for (columnNumber , thisButton) in thisRow.keyboardKeys.enumerated() {
                 
-                print ("DISPLAYING : ", columnNumber, thisButton.displayed)
-                
                 var thisButtonDisplayed : harmonicaKeyboardDisplayType = thisButton.displayed
                 
                 /// What is shown on the button
@@ -117,7 +115,7 @@ class setupKeyboard {
                     buttonLabel = "NA" // changed
                 }
 
-                displayedKeyboardRow.append( interfaceButton (buttonColor: getColor(colour: thisButton.background), textColor: getColor(colour: thisButton.textColor), title: buttonLabel, wingdings: thisButton.wingdings, rowNo: thisRow.rowNumber, colNo: columnNumber, Tag: 100*thisRow.rowNumber * columnNumber, displayed: thisButtonDisplayed
+                displayedKeyboardRow.append( interfaceButton (buttonColor: getColor(colour: thisButton.background), textColor: getColor(colour: thisButton.textColor), title: buttonLabel, wingdings: thisButton.wingdings,  Tag: 100*thisRow.rowNumber * columnNumber, displayed: thisButtonDisplayed
                                                              )
                 )
             }
