@@ -290,11 +290,11 @@
 		C446DE462528D8E600138D0A /* HTK */ = {
 			isa = PBXGroup;
 			children = (
+				CE62A44B2AC04E210058501D /* GitHub.rtf */,
 				1D1BC6EB28D37F3F00F672A4 /* App_Resources */,
 				1D53B37728CA1FC30075BF90 /* Global */,
 				1D53B37628CA1F480075BF90 /* Tuner */,
 				1D53B37428CA1F210075BF90 /* Store */,
-				CE62A44B2AC04E210058501D /* GitHub.rtf */,
 			);
 			path = HTK;
 			sourceTree = "<group>";
