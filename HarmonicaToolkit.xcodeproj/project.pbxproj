@@ -47,6 +47,7 @@
 		CE4633392A0443D70092F254 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE4633382A0443D70092F254 /* SoundpipeAudioKit */; };
 		CE46333B2A0443DE0092F254 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = CE46333A2A0443DE0092F254 /* GoogleMobileAds */; };
 		CE46333D2A0443E80092F254 /* SporthAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE46333C2A0443E80092F254 /* SporthAudioKit */; };
+		CE62A44C2AC04E210058501D /* GitHub.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CE62A44B2AC04E210058501D /* GitHub.rtf */; };
 		CE6B12D62A06CC96009D78A8 /* BespokePitchTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DF65D295B0DFC00D33FE1 /* BespokePitchTap.swift */; };
 		CE6F63532A18CB6600571B73 /* pianoNotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE13FB7D2A000CBF00168035 /* pianoNotes.plist */; };
 		CE6F63542A18CD2600571B73 /* richterHarmonica.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE46333E2A0444ED0092F254 /* richterHarmonica.plist */; };
@@ -122,6 +123,7 @@
 		CE4632F02A043AD90092F254 /* HarmonicaToolkitUITests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITests2.swift; sourceTree = "<group>"; };
 		CE4632F22A043AD90092F254 /* HarmonicaToolkitUITests2LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITests2LaunchTests.swift; sourceTree = "<group>"; };
 		CE46333E2A0444ED0092F254 /* richterHarmonica.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = richterHarmonica.plist; sourceTree = "<group>"; };
+		CE62A44B2AC04E210058501D /* GitHub.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = GitHub.rtf; sourceTree = "<group>"; };
 		CE6629E42A043368006451D6 /* HarmonicaToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarmonicaToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6F63412A18BBD300571B73 /* XCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCExtension.swift; sourceTree = "<group>"; };
 		CE6F63422A18BBD300571B73 /* MockTunerConductorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTunerConductorModel.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				1D53B37728CA1FC30075BF90 /* Global */,
 				1D53B37628CA1F480075BF90 /* Tuner */,
 				1D53B37428CA1F210075BF90 /* Store */,
+				CE62A44B2AC04E210058501D /* GitHub.rtf */,
 			);
 			path = HTK;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				1D2A6D4628C373EF006C0A49 /* Products.storekit in Resources */,
 				1D2A6D4428C372CC006C0A49 /* Products.plist in Resources */,
 				C446DE4E2528D8E700138D0A /* Assets.xcassets in Resources */,
+				CE62A44C2AC04E210058501D /* GitHub.rtf in Resources */,
 				1D2A6D4128C370DE006C0A49 /* Descriptions.plist in Resources */,
 				CEA2EFF32A0902EE000918F4 /* richterHarmonica.json in Resources */,
 				CEA4D84C2A0B747800CD8294 /* pianoNotes.json in Resources */,
