@@ -94,7 +94,7 @@ struct MasterView: View {
         
         let modeIndex = modeDict[selectedMode] ?? 99
         let registerIndex = registerDict[selectedRegister] ?? 99
-        let sustainSensetivityIndex = sustainSensitivityDict [selectedSustainSensitivity]  ?? 99
+        let sustainSensitivityIndex = sustainSensitivityDict [selectedSustainSensitivity]  ?? 99
         //let selectedHarmonicaShort =
         
         // These are set values for the harmonica.
@@ -110,7 +110,7 @@ struct MasterView: View {
             // NAVIGATION TO TUNER VIEW -- THE SCREEN THAT MIMICS THE HARMONICA
                 
             
-            NavigationLink(destination: TunerView <TunerConductor2> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensetivityIndex, adsOnOff: .AdsOff, harmonicaName: selectedHarmonicaShort, conductor: TunerConductor2(freqRangeIn: freqRange)))
+            NavigationLink(destination: TunerView <TunerConductor2> ( position : positionIndex, harmonicaBase: harmonicaIndex, sharpsFlats: sharpsFlats, freqRange: freqRange, mode: modeIndex, register: registerIndex, translationMap: translationMap, sustainSensitivity: sustainSensitivityIndex, adsOnOff: .AdsOff, harmonicaName: selectedHarmonicaShort, conductor: TunerConductor2(freqRangeIn: freqRange)))
             {
                 Label("", systemImage: "mic").font(.system(size: 40))
                 
