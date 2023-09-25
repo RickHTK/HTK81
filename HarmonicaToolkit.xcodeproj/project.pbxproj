@@ -32,13 +32,13 @@
 		1DA35E1128CD105A00969FB4 /* SporthAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1DA35E1028CD105A00969FB4 /* SporthAudioKit */; };
 		1DA35E1428CD109300969FB4 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 1DA35E1328CD109300969FB4 /* GoogleMobileAds */; };
 		1DB54A58286E364800AE5FF0 /* Wingdings2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB54A57286E364800AE5FF0 /* Wingdings2.ttf */; };
-		1DB88B0828C53FB400A1CBA4 /* SubscriptionInfoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB88B0728C53FB400A1CBA4 /* SubscriptionInfoSheetView.swift */; };
 		1DC0D4C3295DF629005AAB14 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC0D4C2295DF60A005AAB14 /* MasterView.swift */; };
 		6350E7CD27A9360200D0F510 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350E7CC27A9360200D0F510 /* KeyboardView.swift */; };
 		C446DE482528D8E600138D0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446DE472528D8E600138D0A /* AppDelegate.swift */; };
 		C446DE4C2528D8E600138D0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446DE4B2528D8E600138D0A /* ContentView.swift */; };
 		C446DE4E2528D8E700138D0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C446DE4D2528D8E700138D0A /* Assets.xcassets */; };
 		C446DF032528D9CA00138D0A /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446DEA12528D9CA00138D0A /* TunerView.swift */; };
+		CE15D4F62AC1A128007450A3 /* BuyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15D4F52AC1A128007450A3 /* BuyButtonView.swift */; };
 		CE35FEFF29F52D1100385F15 /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35FEFE29F52D1100385F15 /* DummyView.swift */; };
 		CE4632F12A043AD90092F254 /* HarmonicaToolkitUITests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4632F02A043AD90092F254 /* HarmonicaToolkitUITests2.swift */; };
 		CE4632F32A043AD90092F254 /* HarmonicaToolkitUITests2LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4632F22A043AD90092F254 /* HarmonicaToolkitUITests2LaunchTests.swift */; };
@@ -105,7 +105,6 @@
 		1D8384D528C348D20046C017 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		1D8384D728C3491C0046C017 /* setupParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupParams.swift; sourceTree = "<group>"; };
 		1DB54A57286E364800AE5FF0 /* Wingdings2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wingdings2.ttf; sourceTree = "<group>"; };
-		1DB88B0728C53FB400A1CBA4 /* SubscriptionInfoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionInfoSheetView.swift; sourceTree = "<group>"; };
 		1DC0D4C2295DF60A005AAB14 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		6350E7CC27A9360200D0F510 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		C446DE442528D8E600138D0A /* HarmonicaToolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarmonicaToolkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +117,7 @@
 		CE13FB7429FEE44B00168035 /* HarmonicaToolkitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITests.swift; sourceTree = "<group>"; };
 		CE13FB7629FEE44B00168035 /* HarmonicaToolkitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE13FB7D2A000CBF00168035 /* pianoNotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pianoNotes.plist; sourceTree = "<group>"; };
+		CE15D4F52AC1A128007450A3 /* BuyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonView.swift; sourceTree = "<group>"; };
 		CE35FEFE29F52D1100385F15 /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
 		CE4632EE2A043AD90092F254 /* HarmonicaToolkitUITests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarmonicaToolkitUITests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4632F02A043AD90092F254 /* HarmonicaToolkitUITests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonicaToolkitUITests2.swift; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 				1D2A6D3B28C362EF006C0A49 /* Store.swift */,
 				1D2A6D3928C362DD006C0A49 /* ListCellView.swift */,
 				1D2A6D3728C362CE006C0A49 /* ProductDetailView.swift */,
-				1DB88B0728C53FB400A1CBA4 /* SubscriptionInfoSheetView.swift */,
 				1D2A6D3528C361E4006C0A49 /* StoreView.swift */,
+				CE15D4F52AC1A128007450A3 /* BuyButtonView.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -526,6 +526,7 @@
 				CE9A25EF2A21E27500BCFED6 /* HTKStyles.swift in Sources */,
 				CE8E6C322A136AD1006563DC /* QueueStruct.swift in Sources */,
 				CEA2EFF52A09057E000918F4 /* JsonEncoder.swift in Sources */,
+				CE15D4F62AC1A128007450A3 /* BuyButtonView.swift in Sources */,
 				1D2A6D3E28C362F9006C0A49 /* BuyButtonStyle.swift in Sources */,
 				C446DE482528D8E600138D0A /* AppDelegate.swift in Sources */,
 				1D45BE0128C8AD2500823044 /* StatusInfoView.swift in Sources */,
@@ -545,7 +546,6 @@
 				1D8384D828C3491C0046C017 /* setupParams.swift in Sources */,
 				CEA4D8502A0B868B00CD8294 /* getPianoFromJSON.swift in Sources */,
 				1D45BE0228C8AD2500823044 /* SubscriptionsView.swift in Sources */,
-				1DB88B0828C53FB400A1CBA4 /* SubscriptionInfoSheetView.swift in Sources */,
 				1D2E96E828C750A700B68342 /* HelpView.swift in Sources */,
 				1D2A6D4828C3CC28006C0A49 /* OrientationExt.swift in Sources */,
 				176E7F2C253A13AB00602020 /* SplashView.swift in Sources */,

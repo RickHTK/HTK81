@@ -13,12 +13,15 @@ struct ProductDetailView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     
     @EnvironmentObject var store: Store
+
+    @State var isPurchased: Bool = false
     
     @State private var isFuelStoreShowing = false
     
     @State private var carOffsetX: CGFloat = 0
     @State private var isCarHidden = false
     @State private var showSpeed = false
+    @State private var showManageSubscriptionsSheet = false
 
     let product: Product
     
@@ -30,9 +33,12 @@ struct ProductDetailView: View {
         return store.productDescription(for: product.id)
     }
     
+    
+    
     var body: some View {
         ZStack {
             Group {
+                
                 VStack {
                     Image ("HTK-icon")
                         .resizable()
@@ -49,13 +55,25 @@ struct ProductDetailView: View {
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
 
-                    if product.subscription != nil {
-                        SubscriptionInfoSheet()
+                    if store.subscriptionGroupStatus != nil {
+                        
+                        VStack {
+                                Button(action: {
+                                    withAnimation { showManageSubscriptionsSheet.toggle()}
+                                }) { Label("Manage Subscriptions", systemImage: "creditcard.circle")}.buttonStyle(.borderedProminent)
+                        }.manageSubscriptionsSheet(isPresented: self.$showManageSubscriptionsSheet)
+                    }
+                    else{
+                        BuyButtonView(product: product)
+                            .buttonStyle(BuyButtonStyle(isPurchased: isPurchased))
+                            .disabled(isPurchased)
                     }
                 }
             }
             .blur(radius: isFuelStoreShowing ? 10 : 0)
             .contentShape(Rectangle())
+            .onAppear{print (store.subscriptionGroupStatus)}
+                       
 
         }
         .navigationTitle(product.displayName)

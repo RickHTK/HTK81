@@ -12,27 +12,17 @@ struct ListCellView: View {
     
     @EnvironmentObject var store: Store
     @State var isPurchased: Bool = false
-    @State var previouslyPurchased: Bool = false
+    //@State var previouslyPurchased: Bool = false
     
     @State var errorTitle = ""
     @State var isShowingError: Bool = false
     
-    
-    //@State private var showManageSubscriptions = false
-    
     let product: Product
     let purchasingEnabled: Bool
-    
-    var productDescription: String {
-        store.productDescription(for: product.id)
-    }
     
     init(product: Product, purchasingEnabled: Bool = true )  {
         self.product = product
         self.purchasingEnabled = purchasingEnabled
-        //let purchasedSubscriptions = Store.purchasedSubscriptions
-        
-        
         
     }
     
@@ -42,41 +32,39 @@ struct ListCellView: View {
          await checkPurchasedAlready()
          }
          */
-        HStack {
+        
+        VStack {
             
-            Image("HTK-icon")
-                .resizable()
-                .frame(width: 60, height: 60)
-                .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                .padding(.trailing, 20)
-            
-            //Spacer()
-            
-            
-            if purchasingEnabled {
+            productDetail
+            HStack {
                 
-                productDetail
-                Spacer()
-                //Spacer()
-                buyButton
-                    .buttonStyle(BuyButtonStyle(isPurchased: isPurchased))
-                    .disabled(isPurchased)
-                Text ("Subscribe")
+                Image("HTK-icon")
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                    .padding(.trailing, 20)
                 
-            } else {
-                HStack
-                {
-                    productDetail
-                    Spacer()
-                    Image(systemName: "checkmark.circle.fill")
-                        .resizable()
-                        .frame(width: 45, height: 45)
-                        .foregroundColor(.blue)
+                if purchasingEnabled {
                     
-                    Text ("Subscribed")
+                    Spacer()
+                    //Spacer()
+                    BuyButtonView(product: product)
+                        .buttonStyle(BuyButtonStyle(isPurchased: isPurchased))
+                        .disabled(isPurchased)
+                    Text ("Subscribe")
+                    
+                } else {
+                    HStack
+                    {
+                        Spacer()
+                        Image(systemName: "checkmark.circle.fill")
+                            .resizable()
+                            .frame(width: 45, height: 45)
+                            .foregroundColor(.blue)
+                        
+                        Text ("Subscribed")
+                    }
                 }
-                
-                
             }
         }
         .alert(isPresented: $isShowingError, content: {
@@ -98,106 +86,5 @@ struct ListCellView: View {
         }
     }
     
-    
-    
-    func subscribeButton(_ subscription: Product.SubscriptionInfo) -> some View {
-        let unit: String
-        let plural = 1 < subscription.subscriptionPeriod.value
-        switch subscription.subscriptionPeriod.unit {
-        case .day:
-            unit = plural ? "\(subscription.subscriptionPeriod.value) days" : "day"
-        case .week:
-            unit = plural ? "\(subscription.subscriptionPeriod.value) weeks" : "week"
-        case .month:
-            unit = plural ? "\(subscription.subscriptionPeriod.value) months" : "month"
-        case .year:
-            unit = plural ? "\(subscription.subscriptionPeriod.value) years" : "year"
-        @unknown default:
-            unit = "period"
-        }
-        
-        return VStack {
-            Text(product.displayPrice)
-                .foregroundColor(.white)
-                .bold()
-                .padding(EdgeInsets(top: -4.0, leading: 0.0, bottom: -8.0, trailing: 0.0))
-            Divider()
-                .background(Color.white)
-            Text(unit)
-                .foregroundColor(.white)
-                .font(.system(size: 12))
-                .padding(EdgeInsets(top: -8.0, leading: 0.0, bottom: -4.0, trailing: 0.0))
-        }
-    }
-    
-    var buyButton: some View {
-        
-        Button (action: {
-            Task {
-                await buy()
-            }
-        }
-        )
-        {
-            if isPurchased {
-                Text(Image(systemName: "checkmark"))
-                    .bold()
-                    .foregroundColor(.white)
-            } else {
-                if let subscription = product.subscription {
-                    subscribeButton(subscription)
-                } else {
-                    Text(product.displayPrice)
-                        .foregroundColor(.white)
-                        .bold()
-                }
-            }
-        }
-        .onAppear {
-            Task {
-                isPurchased = (try? await store.isPurchased(product)) ?? false
-            }
-        }
-    }
-    
-    
-    
-    func buy() async {
-        do {
-            if try await store.purchase(product) != nil {
-                withAnimation {
-                    isPurchased = true
-                }
-            }
-        } catch StoreError.failedVerification {
-            errorTitle = "Your purchase could not be verified by the App Store."
-            isShowingError = true
-        } catch {
-            print("Failed purchase for \(product.id): \(error)")
-        }
-    }
-    
-    
-    
-    
 }
 
-/*
- struct SubscriptionInfoSheet: View {
- @State private var showManageSubscriptionsSheet = false
- 
- var body: some View {
- VStack {
- 
- 
- 
- Button(action: {
- withAnimation { showManageSubscriptionsSheet.toggle()}
- }) { Label("Manage Subscriptions", systemImage: "creditcard.circle")}.buttonStyle(.borderedProminent)}
- }
- #if os(iOS)
- manageSubscriptionsSheet(isPresented: $showManageSubscriptionsSheet)
- #endif
- }
- 
- */

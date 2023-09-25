@@ -1,0 +1,160 @@
+<mxfile host="Electron" modified="2023-09-25T11:01:29.584Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="lSzgcY4ymDLMqv9qsnCS" version="21.7.5" type="device">
+  <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
+    <mxGraphModel dx="2283" dy="999" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Visible on settings Screen" style="swimlane;whiteSpace=wrap;startSize=32;" parent="1" vertex="1">
+          <mxGeometry x="164.5" y="128" width="165.5" height="562" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Content View" style="" parent="2" vertex="1">
+          <mxGeometry x="16" y="62" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Master View" style="" parent="2" vertex="1">
+          <mxGeometry x="16" y="142" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;" parent="2" source="8" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-51" value="General Picker&#xa; View" style="" vertex="1" parent="2">
+          <mxGeometry x="45.5" y="322" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-52" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="2" target="6hByxWAeKCbgqhJfGHf9-51" source="10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="81.5" y="267" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3" value="Visible on harmonica Screen" style="swimlane;whiteSpace=wrap;startSize=32;" parent="1" vertex="1">
+          <mxGeometry x="330.5" y="128" width="280" height="562" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-42" value="Tuner View" style="" vertex="1" parent="3">
+          <mxGeometry x="22.5" y="252" width="234.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-43" value="Keyboard View" style="" vertex="1" parent="3">
+          <mxGeometry x="147.5" y="362" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-44" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0" edge="1" parent="3" target="6hByxWAeKCbgqhJfGHf9-43">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="202.5" y="304" as="sourcePoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-45" value="Interface Button &#xa;View" style="" vertex="1" parent="3">
+          <mxGeometry x="147.5" y="472" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-46" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0" edge="1" parent="3" target="6hByxWAeKCbgqhJfGHf9-45">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="203" y="412" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-47" value="Grid Content View" style="" vertex="1" parent="3">
+          <mxGeometry x="22.5" y="362" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-49" value="Banner Ad" style="" vertex="1" parent="3">
+          <mxGeometry x="-150" y="472" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-70" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0" edge="1" parent="3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="59.25" y="302" as="sourcePoint" />
+            <mxPoint x="59.25" y="362" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-88" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0" edge="1" parent="3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="59.5" y="412" as="sourcePoint" />
+            <mxPoint x="59.5" y="472" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-89" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;exitX=0.995;exitY=0.82;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="3" source="10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="59.5" y="192" as="sourcePoint" />
+            <mxPoint x="59.5" y="252" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="19.5" y="182" />
+              <mxPoint x="59.5" y="182" />
+              <mxPoint x="59.5" y="212" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4" value="Visible on Store Screen" style="swimlane;whiteSpace=wrap;startSize=32;" parent="1" vertex="1">
+          <mxGeometry x="610.5" y="128" width="179.5" height="562" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-71" value="Store View" style="" vertex="1" parent="4">
+          <mxGeometry x="30.5" y="142" width="104.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-74" value="List Cell View" style="" vertex="1" parent="4">
+          <mxGeometry x="30.5" y="252" width="104.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-75" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0" edge="1" parent="4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="85.25" y="192" as="sourcePoint" />
+            <mxPoint x="85.25" y="252" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-87" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;" edge="1" parent="4" target="6hByxWAeKCbgqhJfGHf9-86">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="276.75" as="sourcePoint" />
+            <mxPoint x="230" y="277" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" value="Buy Button" style="" parent="4" vertex="1">
+          <mxGeometry x="28.75" y="432" width="261.25" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-100" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;entryX=0.207;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="4" source="6hByxWAeKCbgqhJfGHf9-74" target="33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="89.25" y="332" as="sourcePoint" />
+            <mxPoint x="89.25" y="392" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-53" value="Visible During Startup" style="swimlane;whiteSpace=wrap;startSize=32;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="128" width="174.5" height="562" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-55" value="Splash View" style="" vertex="1" parent="6hByxWAeKCbgqhJfGHf9-53">
+          <mxGeometry x="34.75" y="62" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-69" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="6hByxWAeKCbgqhJfGHf9-55" target="8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="58.75" y="220" as="sourcePoint" />
+            <mxPoint x="294.25" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-78" value="Visible on Product Detail Screen" style="swimlane;whiteSpace=wrap;startSize=32;" vertex="1" parent="1">
+          <mxGeometry x="790" y="128" width="160" height="562" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-86" value="Product Detail &#xa;View" style="" vertex="1" parent="6hByxWAeKCbgqhJfGHf9-78">
+          <mxGeometry x="35.5" y="252" width="104.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-101" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;entryX=0.207;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="6hByxWAeKCbgqhJfGHf9-78">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="302" as="sourcePoint" />
+            <mxPoint x="70" y="432" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-90" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;" edge="1" parent="1" source="10" target="6hByxWAeKCbgqhJfGHf9-71">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="260" as="sourcePoint" />
+            <mxPoint x="200" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-95" value="Apple Purchase Pop up" style="swimlane;whiteSpace=wrap;startSize=32;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="950" y="130" width="160" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-96" value="Purchase&#xa;Subscription " style="" vertex="1" parent="6hByxWAeKCbgqhJfGHf9-95">
+          <mxGeometry x="27.75" y="430" width="104.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-97" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;" edge="1" parent="1" source="33" target="6hByxWAeKCbgqhJfGHf9-96">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="584.75" as="sourcePoint" />
+            <mxPoint x="860" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6hByxWAeKCbgqhJfGHf9-68" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;entryX=0.072;entryY=-0.03;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.132;exitY=1.05;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="10" target="6hByxWAeKCbgqhJfGHf9-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="245.6" y="500" as="sourcePoint" />
+            <mxPoint x="246.40999999999994" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
